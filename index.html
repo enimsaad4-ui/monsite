@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-Frame-Options" content="ALLOWALL">
+<title>فضاء لمادة الاجتماعيات — المستوى السادس ابتدائي</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  /* Brand palette */
+  --ink:#0D0D0D;--ink2:#1A1A2E;
+  --surface:#FFFFFF;--surface2:#F8F9FF;--surface3:#EEF0FF;
+  --border:#E2E4F0;--border2:#CBD0E8;
+
+  /* Subject accents */
+  --hist:#D4380D;--hist-bg:#FFF2EE;--hist-soft:#FFCFBD;--hist-glow:rgba(212,56,13,.15);
+  --geo:#0070F3;--geo-bg:#EFF6FF;--geo-soft:#BDD7FF;--geo-glow:rgba(0,112,243,.15);
+  --civ:#7C3AED;--civ-bg:#F5F0FF;--civ-soft:#D4BBFF;--civ-glow:rgba(124,58,237,.15);
+
+  /* Primary green */
+  --p:#16A34A;--p2:#15803D;--p-bg:#F0FDF4;--p-soft:#BBF7D0;
+
+  /* Gold / XP */
+  --xp:#F59E0B;--xp2:#D97706;--xp-bg:#FFFBEB;
+
+  /* UI */
+  --success:#16A34A;--error:#DC2626;--warn:#F59E0B;
+  --tx:#111827;--tx2:#374151;--tx3:#6B7280;--tx4:#9CA3AF;
+
+  --r:16px;--r2:12px;--r3:8px;
+  --s1:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);
+  --s2:0 4px 16px rgba(0,0,0,.08),0 2px 4px rgba(0,0,0,.04);
+  --s3:0 12px 40px rgba(0,0,0,.12),0 4px 12px rgba(0,0,0,.06);
+  --s4:0 24px 64px rgba(0,0,0,.16),0 8px 24px rgba(0,0,0,.08);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Cairo',system-ui,sans-serif;background:var(--surface2);color:var(--tx);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+
+/* ══ SCROLLBAR ══ */
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:99px}
+
+/* ══ TOP STRIPE ══ */
+.topbar{height:4px;background:linear-gradient(90deg,var(--hist) 0%,var(--xp) 33%,var(--p) 66%,var(--geo) 100%)}
+
+/* ══ HEADER ══ */
+header{background:var(--ink2);color:#fff;position:relative;overflow:hidden}
+header::before{content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 60% 80% at 90% 50%,rgba(22,163,74,.18),transparent),
+    radial-gradient(ellipse 40% 60% at 10% 20%,rgba(0,112,243,.12),transparent),
+    radial-gradient(ellipse 30% 40% at 50% 90%,rgba(124,58,237,.1),transparent);
+  pointer-events:none}
+header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent)}
+
+.hdr{max-width:1140px;margin:auto;padding:20px 24px 24px;position:relative;z-index:1;display:flex;align-items:center;gap:20px}
+.logo-wrap{position:relative;flex-shrink:0}
+.logo{width:64px;height:64px;border-radius:18px;background:linear-gradient(135deg,#16A34A,#0D9488);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:#fff;text-align:center;line-height:1.2;letter-spacing:-.2px;box-shadow:0 0 0 2px rgba(255,255,255,.15),0 8px 24px rgba(22,163,74,.4)}
+.logo-badge{position:absolute;top:-5px;left:-5px;background:var(--xp);color:#fff;font-size:8px;font-weight:900;padding:2px 5px;border-radius:6px;border:2px solid var(--ink2);white-space:nowrap}
+.ht{flex:1}
+.ht h1{font-size:20px;font-weight:900;line-height:1.2;letter-spacing:-.3px}
+.ht h1 span{background:linear-gradient(90deg,#4ADE80,#34D399);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ht p{font-size:12px;color:rgba(255,255,255,.55);margin-top:5px;font-weight:500}
+.hstats{display:flex;gap:6px;margin-top:12px;flex-wrap:wrap}
+.hstat{display:flex;align-items:center;gap:5px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);padding:5px 11px;border-radius:20px;font-size:11px;font-weight:700;color:rgba(255,255,255,.8);backdrop-filter:blur(8px);transition:.2s}
+.hstat:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.18)}
+.hstat-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.hstat-dot.h{background:var(--hist)}.hstat-dot.g{background:var(--geo)}.hstat-dot.c{background:var(--civ)}.hstat-dot.x{background:var(--xp)}
+
+/* ══ MAIN ══ */
+main{max-width:1140px;margin:auto;padding:28px 24px 60px}
+
+/* ══ SECTION LABEL ══ */
+.sec-lbl{display:flex;align-items:center;gap:10px;margin:0 0 16px;font-size:12px;font-weight:800;color:var(--tx3);text-transform:uppercase;letter-spacing:.8px}
+.sec-lbl::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* ══ UNITS GRID ══ */
+.ug{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:18px;margin-bottom:18px}
+
+/* ══ UNIT CARD ══ */
+.uc{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--s1);transition:all .22s cubic-bezier(.34,1.56,.64,1);cursor:default}
+.uc:hover{box-shadow:var(--s3);transform:translateY(-4px);border-color:var(--border2)}
+
+/* Unit card header */
+.uch{padding:14px 16px 12px;position:relative;overflow:hidden}
+.uch-bg{position:absolute;inset:0;opacity:.07}
+.uch.gr .uch-bg{background:linear-gradient(135deg,var(--p),var(--p2))}
+.uch.bl .uch-bg{background:linear-gradient(135deg,var(--geo),#2563EB)}
+.uch.pu .uch-bg{background:linear-gradient(135deg,var(--civ),#6D28D9)}
+.uch.or .uch-bg{background:linear-gradient(135deg,#EA580C,var(--hist))}
+.uch.cy .uch-bg{background:linear-gradient(135deg,#0891B2,#0E7490)}
+.uch.ro .uch-bg{background:linear-gradient(135deg,#E11D48,#BE123C)}
+
+.uch-inner{position:relative;display:flex;align-items:center;gap:10px}
+.ucn{width:38px;height:38px;border-radius:10px;font-size:16px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:2px solid rgba(255,255,255,.3)}
+.uch.gr .ucn{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;box-shadow:0 4px 12px rgba(22,163,74,.35)}
+.uch.bl .ucn{background:linear-gradient(135deg,var(--geo),#2563EB);color:#fff;box-shadow:0 4px 12px rgba(0,112,243,.35)}
+.uch.pu .ucn{background:linear-gradient(135deg,var(--civ),#6D28D9);color:#fff;box-shadow:0 4px 12px rgba(124,58,237,.35)}
+.uch.or .ucn{background:linear-gradient(135deg,#EA580C,var(--hist));color:#fff;box-shadow:0 4px 12px rgba(212,56,13,.35)}
+.uch.cy .ucn{background:linear-gradient(135deg,#0891B2,#0E7490);color:#fff;box-shadow:0 4px 12px rgba(8,145,178,.35)}
+.uch.ro .ucn{background:linear-gradient(135deg,#E11D48,#BE123C);color:#fff;box-shadow:0 4px 12px rgba(225,29,72,.35)}
+
+.uch-txt h3{font-size:13px;font-weight:800;color:var(--tx);line-height:1.3}
+.uch-txt p{font-size:10.5px;color:var(--tx3);margin-top:1px;font-weight:500}
+.uch-count{margin-right:auto;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:3px 8px;font-size:10px;font-weight:700;color:var(--tx3);white-space:nowrap;margin-right:0;margin-left:auto}
+
+/* Unit body — lesson list */
+.ucl{padding:10px 12px 12px;display:flex;flex-direction:column;gap:4px}
+
+/* ══ LESSON BUTTON ══ */
+.lb{display:flex;align-items:center;gap:9px;padding:9px 11px;border-radius:10px;cursor:pointer;border:1.5px solid transparent;transition:all .16s cubic-bezier(.34,1.56,.64,1);font-size:12.5px;font-weight:600;color:var(--tx2);background:var(--surface);position:relative;user-select:none}
+.lb:hover{transform:translateX(-3px) scale(1.008);border-color:var(--border2);background:var(--surface2);box-shadow:var(--s2)}
+
+/* active states */
+.lb.ha{background:var(--hist-bg);border-color:var(--hist-soft);color:var(--hist)}
+.lb.ga{background:var(--geo-bg);border-color:var(--geo-soft);color:var(--geo)}
+.lb.ca{background:var(--civ-bg);border-color:var(--civ-soft);color:var(--civ)}
+
+/* lesson icon pill */
+.li{width:28px;height:28px;border-radius:8px;font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:800;transition:.15s}
+.li.h{background:var(--hist-bg);color:var(--hist)}.li.g{background:var(--geo-bg);color:var(--geo)}.li.c{background:var(--civ-bg);color:var(--civ)}
+.lb:hover .li{transform:scale(1.1)}
+
+.ln{flex:1;line-height:1.35}
+
+/* subject badge */
+.llb{font-size:9px;padding:2px 7px;border-radius:6px;font-weight:800;border:1px solid;white-space:nowrap}
+.llb.h{background:var(--hist-bg);color:var(--hist);border-color:var(--hist-soft)}
+.llb.g{background:var(--geo-bg);color:var(--geo);border-color:var(--geo-soft)}
+.llb.c{background:var(--civ-bg);color:var(--civ);border-color:var(--civ-soft)}
+
+/* arrow indicator */
+.lb::after{content:'‹';position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:16px;color:var(--tx4);opacity:0;transition:.15s}
+.lb:hover::after{opacity:1;left:6px}
+
+/* ══ QUIZ PANEL ══ */
+#quiz{display:none;margin-bottom:28px}
+@keyframes quizIn{from{opacity:0;transform:translateY(20px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.quiz-wrap{border-radius:20px;overflow:hidden;box-shadow:var(--s4);animation:quizIn .35s cubic-bezier(.34,1.56,.64,1)}
+
+/* Quiz header */
+.qhdr{padding:20px 24px 18px;position:relative;overflow:hidden;color:#fff}
+.qhdr::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
+.qhdr.h{background:linear-gradient(135deg,#7F1D1D,var(--hist),#C2410C)}
+.qhdr.g{background:linear-gradient(135deg,#1E3A8A,var(--geo),#2563EB)}
+.qhdr.c{background:linear-gradient(135deg,#3B0764,var(--civ),#7C3AED)}
+
+.qhr{display:flex;align-items:flex-start;gap:14px;position:relative}
+.qhico{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;backdrop-filter:blur(4px)}
+.qhinfo{flex:1}
+.qhbdg{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.25);padding:3px 10px;border-radius:20px;font-size:10px;font-weight:800;margin-bottom:6px;backdrop-filter:blur(4px);letter-spacing:.3px}
+.qhtit{font-size:15px;font-weight:900;line-height:1.35;letter-spacing:-.2px}
+.qcls{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:#fff;padding:7px 14px;border-radius:10px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:11px;font-weight:800;flex-shrink:0;transition:.2s;backdrop-filter:blur(4px);display:flex;align-items:center;gap:5px}
+.qcls:hover{background:rgba(255,255,255,.28);transform:scale(1.04)}
+
+/* Progress strip */
+.qpstrip{margin-top:14px;position:relative}
+.qpb{height:6px;background:rgba(255,255,255,.15);border-radius:99px;overflow:hidden}
+.qpf{height:100%;background:linear-gradient(90deg,rgba(255,255,255,.6),rgba(255,255,255,.9));border-radius:99px;transition:.5s cubic-bezier(.34,1.56,.64,1)}
+.qpt{font-size:10px;color:rgba(255,255,255,.65);margin-top:5px;font-weight:700;display:flex;justify-content:space-between}
+
+/* Quiz body */
+.qbody{background:var(--surface);padding:20px 22px;border:1.5px solid var(--border);border-top:none;border-radius:0 0 20px 20px}
+
+/* ══ LEVEL SEPARATORS ══ */
+.lvsep{display:flex;align-items:center;gap:10px;margin:20px 0 12px;font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase}
+.lvsep::before,.lvsep::after{content:'';flex:1;height:1px;background:var(--border)}
+.lvsep.b1{color:var(--success)}.lvsep.b2{color:var(--xp2)}.lvsep.b3{color:var(--geo)}
+.lvsep.k1{color:var(--p)}.lvsep.k2{color:var(--hist)}.lvsep.k3{color:var(--civ)}
+
+/* ══ QUESTION CARD ══ */
+.qc{border:1.5px solid var(--border);border-radius:14px;margin-bottom:14px;overflow:hidden;transition:all .25s cubic-bezier(.34,1.56,.64,1);background:var(--surface)}
+.qc:hover{box-shadow:var(--s2)}
+.qc.ok{border-color:rgba(22,163,74,.4);background:linear-gradient(135deg,#F0FDF4 0%,var(--surface) 100%)}
+.qc.ko{border-color:rgba(220,38,38,.4);background:linear-gradient(135deg,#FEF2F2 0%,var(--surface) 100%)}
+
+.qch{padding:12px 15px;background:var(--surface2);display:flex;align-items:flex-start;gap:10px;border-bottom:1px solid var(--border)}
+.qc.ok .qch{background:linear-gradient(135deg,#DCFCE7,#F0FDF4)}
+.qc.ko .qch{background:linear-gradient(135deg,#FEE2E2,#FEF2F2)}
+
+.qnum{width:28px;height:28px;border-radius:8px;font-weight:900;font-size:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.qnum.h{background:linear-gradient(135deg,var(--hist),#C2410C)}.qnum.g{background:linear-gradient(135deg,var(--geo),#2563EB)}.qnum.c{background:linear-gradient(135deg,var(--civ),#7C3AED)}
+
+.qtx{font-size:13.5px;font-weight:600;flex:1;line-height:1.7;color:var(--tx)}
+.qtags{display:flex;flex-direction:column;gap:3px;align-items:flex-end;flex-shrink:0;margin-top:1px}
+.ltag{font-size:8.5px;font-weight:800;padding:2px 7px;border-radius:6px;border:1px solid;white-space:nowrap;letter-spacing:.2px}
+.ltag.b1{background:#DCFCE7;color:#15803D;border-color:#BBF7D0}
+.ltag.b2{background:#FEF9C3;color:#A16207;border-color:#FDE68A}
+.ltag.b3{background:#DBEAFE;color:#1D4ED8;border-color:#BFDBFE}
+.ltag.k1{background:#D1FAE5;color:#065F46;border-color:#A7F3D0}
+.ltag.k2{background:#FFEDD5;color:#9A3412;border-color:#FED7AA}
+.ltag.k3{background:#EDE9FE;color:#5B21B6;border-color:#DDD6FE}
+.ttype{font-size:8px;font-weight:700;padding:2px 6px;border-radius:6px;background:var(--surface3);color:var(--tx3);border:1px solid var(--border)}
+
+/* ══ SUPPORT BLOCKS ══ */
+.sup{margin:10px 14px 0;border-radius:10px;overflow:hidden;border:1px solid var(--border)}
+.suph{padding:7px 12px;font-size:10px;font-weight:800;display:flex;align-items:center;gap:6px;letter-spacing:.2px}
+.supb{padding:10px 13px;font-size:12px;line-height:1.85;color:var(--tx2)}
+.sup.doc .suph{background:#DBEAFE;color:#1E40AF}.sup.doc .supb{background:#EFF6FF}
+.sup.stat .suph{background:#FEF9C3;color:#92400E}.sup.stat .supb{background:#FFFDE7}
+.sup.law .suph{background:#EDE9FE;color:#4C1D95}.sup.law .supb{background:#F5F3FF}
+.sup.img .suph{background:#FFEDD5;color:#9A3412}.sup.img .supb{background:#FFF7ED}
+.sup.task .suph{background:#D1FAE5;color:#065F46}.sup.task .supb{background:#ECFDF5}
+.sup table{width:100%;border-collapse:collapse;font-size:11.5px}
+.sup th{background:rgba(0,0,0,.04);padding:5px 8px;border:1px solid var(--border);font-weight:800;text-align:center}
+.sup td{padding:5px 8px;border:1px solid var(--border);text-align:center}
+.sup td:first-child{text-align:right;font-weight:600}
+
+/* ══ MCQ OPTIONS ══ */
+.opts{padding:10px 14px 8px;display:flex;flex-direction:column;gap:7px}
+.opt{display:flex;align-items:center;gap:10px;padding:10px 13px;border:1.5px solid var(--border);border-radius:10px;cursor:pointer;font-size:13px;background:var(--surface);transition:all .16s cubic-bezier(.34,1.56,.64,1);color:var(--tx);font-weight:500}
+.opt:hover:not(.dis){background:var(--surface3);border-color:var(--border2);transform:translateX(-3px);box-shadow:var(--s1)}
+.opt.ok{background:linear-gradient(135deg,#DCFCE7,#F0FDF4);border-color:rgba(22,163,74,.5);color:#14532D;font-weight:700;transform:none}
+.opt.ko{background:linear-gradient(135deg,#FEE2E2,#FEF2F2);border-color:rgba(220,38,38,.5);color:#7F1D1D;font-weight:700;transform:none}
+.opt.rv{background:linear-gradient(135deg,#DCFCE7,#F0FDF4);border-color:rgba(22,163,74,.4);color:#14532D}
+.opt.dis{cursor:not-allowed;opacity:.85}
+
+.olet{width:26px;height:26px;border-radius:7px;background:var(--surface2);font-weight:900;font-size:10.5px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--tx3);border:1px solid var(--border);transition:.15s}
+.opt.ok .olet,.opt.rv .olet{background:var(--success);color:#fff;border-color:var(--success);box-shadow:0 2px 8px rgba(22,163,74,.3)}
+.opt.ko .olet{background:var(--error);color:#fff;border-color:var(--error);box-shadow:0 2px 8px rgba(220,38,38,.3)}
+.opt:hover:not(.dis) .olet{background:var(--border2);color:var(--tx)}
+
+/* ══ TRUE/FALSE ══ */
+.tfr{padding:10px 14px;display:flex;gap:10px}
+.tfb{flex:1;padding:12px;border:2px solid var(--border);border-radius:12px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:15px;font-weight:800;background:var(--surface);text-align:center;transition:all .18s cubic-bezier(.34,1.56,.64,1);color:var(--tx);display:flex;align-items:center;justify-content:center;gap:7px}
+.tfb:hover:not(.dis){transform:translateY(-3px) scale(1.02);box-shadow:var(--s2)}
+.tfb-t:hover:not(.dis){background:var(--p-bg);border-color:var(--p-soft);color:var(--p)}
+.tfb-f:hover:not(.dis){background:#FEF2F2;border-color:#FECACA;color:var(--error)}
+.tfb.sah{background:linear-gradient(135deg,#DCFCE7,#F0FDF4);border-color:rgba(22,163,74,.5);color:#14532D;transform:none}
+.tfb.kha{background:linear-gradient(135deg,#FEE2E2,#FEF2F2);border-color:rgba(220,38,38,.5);color:#7F1D1D;transform:none}
+.tfb.dis{cursor:not-allowed;opacity:.85}
+
+/* ══ FEEDBACK ══ */
+.fbk{margin:4px 14px 10px;padding:10px 14px;border-radius:10px;font-size:13px;font-weight:600;line-height:1.6;display:flex;align-items:flex-start;gap:8px}
+.fbk.ok{background:linear-gradient(135deg,#DCFCE7,#F0FDF4);color:#14532D;border:1px solid rgba(22,163,74,.25)}
+.fbk.ko{background:linear-gradient(135deg,#FEE2E2,#FEF2F2);color:#7F1D1D;border:1px solid rgba(220,38,38,.25)}
+.fbk-ico{font-size:16px;flex-shrink:0;margin-top:1px}
+
+/* ══ MODEL ANSWER ══ */
+.model{margin:4px 14px 12px;border-radius:12px;overflow:hidden;border:1.5px solid rgba(245,158,11,.4);box-shadow:0 2px 12px rgba(245,158,11,.08)}
+.model-h{background:linear-gradient(135deg,#FFFBEB,#FEF3C7);padding:9px 14px;font-size:12px;font-weight:800;color:#92400E;display:flex;align-items:center;gap:7px;cursor:pointer;user-select:none;justify-content:space-between;transition:.15s;border-bottom:1px solid rgba(245,158,11,.2)}
+.model-h:hover{background:linear-gradient(135deg,#FEF3C7,#FDE68A);filter:brightness(1.03)}
+.model-h-left{display:flex;align-items:center;gap:7px}
+.model-arr{font-size:14px;transition:.2s}
+.model-b{background:#FFFBEB;padding:12px 15px;font-size:11.5px;line-height:1.95;color:#78350F;white-space:pre-wrap;font-family:'Cairo',monospace;display:none}
+.model-b.open{display:block;animation:fadeIn .2s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+
+/* ══ SCORE SECTION ══ */
+.sw{padding:28px 24px;text-align:center;border-top:1.5px solid var(--border);margin-top:12px;background:linear-gradient(135deg,var(--surface2),var(--surface))}
+
+.sc-ring{position:relative;width:110px;height:110px;margin:0 auto 16px}
+.sc-ring svg{width:110px;height:110px;transform:rotate(-90deg)}
+.sc-bg{fill:none;stroke:var(--border);stroke-width:8}
+.sc-fg{fill:none;stroke-width:8;stroke-linecap:round;transition:stroke-dashoffset .8s cubic-bezier(.34,1.56,.64,1)}
+.sc-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.sc-pct{font-size:24px;font-weight:900;line-height:1}
+.sc-sub{font-size:10px;color:var(--tx3);font-weight:600}
+
+.smsg{font-size:18px;font-weight:900;letter-spacing:-.3px;margin-bottom:4px}
+.ssub{font-size:12px;color:var(--tx3);margin-bottom:18px;font-weight:500}
+
+.bylv-wrap{display:flex;justify-content:center;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+.bylv-item{background:var(--surface2);border:1.5px solid var(--border);border-radius:10px;padding:8px 14px;text-align:center;min-width:80px}
+.bylv-n{font-size:18px;font-weight:900}
+.bylv-l{font-size:9.5px;color:var(--tx3);margin-top:2px;font-weight:600}
+
+.sbts{display:flex;gap:10px;justify-content:center}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:10px 20px;border-radius:11px;border:none;font-family:'Cairo',sans-serif;font-size:13px;font-weight:800;cursor:pointer;transition:all .2s cubic-bezier(.34,1.56,.64,1);letter-spacing:-.1px}
+.btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:var(--s3)}
+.btn:active{transform:scale(.97)}
+.bgr{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;box-shadow:0 4px 16px rgba(22,163,74,.3)}
+.bgo{background:linear-gradient(135deg,var(--xp),var(--xp2));color:#fff;box-shadow:0 4px 16px rgba(245,158,11,.3)}
+
+/* ══ FOOTER ══ */
+footer{background:var(--ink2);color:rgba(255,255,255,.4);text-align:center;padding:16px;font-size:11px;border-top:1px solid rgba(255,255,255,.06)}
+footer strong{color:rgba(255,255,255,.7)}
+
+/* ══ ANIMATIONS ══ */
+@keyframes pp{0%{transform:scale(1)}40%{transform:scale(1.04)}100%{transform:scale(1)}}.pp{animation:pp .3s ease}
+@keyframes sk{0%{transform:translateX(0)}20%{transform:translateX(-8px)}60%{transform:translateX(6px)}100%{transform:translateX(0)}}.sk{animation:sk .35s ease}
+@keyframes slideDown{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:translateY(0)}}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:680px){
+  .hdr{flex-direction:column;text-align:center;gap:14px}
+  .hstats{justify-content:center}
+  .ug{grid-template-columns:1fr}
+  .qbody,.qhdr{padding:14px 16px}
+  .opts{padding:8px 12px}
+  .tfr{padding:8px 12px}
+  .fbk,.model{margin-inline:12px}
+  .sbts{flex-direction:column;align-items:center}
+  main{padding:20px 16px 48px}
+}
+</style>
+</head>
+<body>
+<div class="topbar"></div>
+<header>
+<div class="hdr">
+  <div class="logo-wrap">
+    <div class="logo" style="font-size:9px;letter-spacing:-.3px">فضاء الاجتماعيات</div>
+  </div>
+  <div class="ht">
+    <h1><span>مادة الاجتماعيات</span> — المستوى السادس ابتدائي</h1>
+    <p>المنهاج المغربي 2021 — تقييم وفق مستويات بلوم وكراثوول</p>
+    <div class="hstats">
+      <span class="hstat"><span class="hstat-dot x"></span>360 سؤالاً</span>
+      <span class="hstat"><span class="hstat-dot h"></span>تاريخ</span>
+      <span class="hstat"><span class="hstat-dot g"></span>جغرافيا</span>
+      <span class="hstat"><span class="hstat-dot c"></span>تربية مدنية</span>
+      <span class="hstat">⭐ نموذج الجواب</span>
+      <span class="hstat">✅ تصحيح فوري</span>
+    </div>
+  </div>
+</div>
+</header>
+<main>
+<div class="ug" id="ug"></div>
+<div id="quiz"></div>
+</main>
+<footer>فضاء لمادة الاجتماعيات — المستوى السادس ابتدائي | المنهاج المغربي <strong>2021</strong></footer>
+<script>
+/* ═══ HELPERS ═══ */
+const S=(t,h,c)=>`<div class="sup ${t}"><div class="suph">${{doc:'📜',stat:'📊',law:'⚖️',img:'🖼️',task:'📝'}[t]||'📋'} ${h}</div><div class="supb">${c}</div></div>`;
+const TABLE=(hds,rows)=>`<table><tr>${hds.map(h=>`<th>${h}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</table>`;
+/* ═══ DATA ═══ */
+const DATA={
+/* ════ U1 ════ */
+h1:{lv:'b',nm:'المغرب مهد الإنسان — منهجية عمل المؤرخ ومواقع ما قبل التاريخ',qs:[
+  {lv:'b1',q:'حدِّد ثلاثة أنواع من مصادر المعلومات التي يستعملها المؤرخ.',t:'mcq',o:['الوثائق المكتوبة + الصور + الشهادات الشفوية','الخيال والتخمين','الروايات الخيالية فقط','التنجيم والأساطير'],a:0},
+  {lv:'b1',q:'سمِّ: قصبة تيط في المغرب تُعدُّ من أقدم المواقع الأثرية التي تدل على وجود الإنسان في المغرب.',t:'tf',correct:true,corr:'صحيح. مواقع مثل تيط وداغوغ في المغرب تعود إلى مئات الآلاف من السنين وتشهد على وجود الإنسان منذ ما قبل التاريخ.'},
+  {lv:'b2',q:'لاحظ الجدول واستنتج: ما الفارق الزمني بين أقدم أثر بشري وأحدثه في المغرب؟',t:'mcq',
+   sup:S('stat','📊 مواقع ما قبل التاريخ في المغرب',TABLE(['الموقع','المنطقة','العمر التقريبي'],[['سيدي عبدالرحمان','الدار البيضاء','300,000 سنة'],['داغوغ','الرباط','200,000 سنة'],['تيغنيف','شرق المغرب','700,000 سنة'],['مغارة الحمام','تطوان','120,000 سنة']])),
+   o:['700,000 — 120,000 = 580,000 سنة فارق','لا فارق','100,000 سنة فقط','مليون سنة'],a:0},
+  {lv:'b2',q:'لاحظ الجدول: هل كل المواقع الأثرية في المغرب تقع على الساحل فقط؟',t:'tf',
+   sup:S('stat','📊 توزيع المواقع',TABLE(['الموقع','الموقع الجغرافي'],[['سيدي عبدالرحمان','الساحل الأطلسي'],['تيغنيف','شرق المغرب'],['داغوغ','وادي بوسيكور']])),
+   correct:false,corr:'خطأ. المواقع الأثرية موزعة في مناطق مختلفة: ساحلية وداخلية وشرقية — مما يدل على انتشار الإنسان في كل المغرب.'},
+  {lv:'b3',q:'انطلاقاً من الجدول، أنجز استنتاجاً تاريخياً حول أهمية المغرب كمهد للإنسان.',t:'mcq',
+   sup:S('task','📝 المهمة','استعمل الجدول لتبرير عبارة: المغرب من أقدم مناطق الاستيطان البشري في العالم.'),
+   o:['الأدلة: تنوع المواقع + قِدَمها (700,000 سنة) + توزعها الجغرافي يثبت أن المغرب شهد وجوداً بشرياً مبكراً ومستمراً','لا يمكن الجزم بذلك','المغرب ليس مهداً للإنسان','هناك موقع واحد فقط'],a:0,
+   model:'الاستنتاج:\n1. أقدم موقع: تيغنيف (700,000 سنة)\n2. التوزع: من الساحل إلى الداخل\n3. الاستمرارية: مواقع من عصور مختلفة\n→ المغرب كان مسكوناً بشكل مستمر منذ مئات الآلاف من السنين.'},
+  {lv:'b3',q:'طبِّق منهجية المؤرخ: كيف تحدِّد عمر أثر تاريخي؟',t:'mcq',
+   sup:S('task','📝 الوضعية','عثر علماء الآثار على أدوات حجرية وعظام بشرية في مغارة بالمغرب. كيف يحدد المؤرخ تاريخها؟'),
+   o:['التأريخ بالكربون 14 + تحليل طبقات الأرض + المقارنة مع مواقع مشابهة','التخمين فقط','سؤال السكان المحليين','الاعتماد على الروايات فقط'],a:0,
+   model:'منهجية التأريخ:\n1- التأريخ الراديوكربوني (C14) للمواد العضوية\n2- تحليل الطبقات الجيولوجية\n3- مقارنة الأدوات مع مواقع معروفة\n4- التحليل الجيني للعظام البشرية'},
+  {lv:'b1',q:'عرِّف مفهوم "ما قبل التاريخ".',t:'mcq',o:['الحقبة الزمنية التي سبقت اختراع الكتابة وتوثيق الأحداث','الحقبة التي سبقت ميلاد الإنسان','الحقبة التي عاش فيها الديناصورات فقط','الحقبة التي انتهت بظهور الأديان'],a:0},
+  {lv:'b2',q:'لاحظ الجدول واستنتج: ما القارة التي تضم أقدم المواقع البشرية؟',t:'mcq',
+   sup:S('stat','📊 أقدم المواقع البشرية',TABLE(['الموقع','القارة','العمر'],[['لوتولي','أفريقيا','3,600,000 سنة'],['تيغنيف','أفريقيا','700,000 سنة'],['بكين','آسيا','500,000 سنة'],['أراغو','أوروبا','400,000 سنة']])),
+   o:['أفريقيا — تضم أقدم المواقع (لوتولي وتيغنيف)','آسيا','أوروبا','أمريكا'],a:0},
+  {lv:'b2',q:'الأدوات الحجرية المكتشفة في مواقع ما قبل التاريخ دليل على وجود الإنسان فقط لا على ذكائه.',t:'tf',
+   correct:false,corr:'خطأ. صناعة الأدوات تدل على القدرة على التخطيط والتفكير — وهذا دليل على الذكاء الإنساني.'},
+  {lv:'b3',q:'انطلاقاً من الجدول، قارن بين موقعَيْن من حيث القِدَم والأهمية التاريخية.',t:'mcq',
+   sup:S('task','📝 المهمة','قارن بين موقع سيدي عبدالرحمان وموقع تيغنيف.'),
+   o:['تيغنيف أقدم (700,000 سنة) وأكثر أهمية لأنه يُثبت أن المغرب شهد وجوداً بشرياً منذ أمد بعيد / سيدي عبدالرحمان (300,000 سنة) قرب مركز حضري كبير','كلاهما متساويان','سيدي عبدالرحمان أقدم','الموقعان غير مهمَّيْن'],a:0,
+   model:'المقارنة:\n| المعيار | تيغنيف | سيدي عبدالرحمان |\n|---|---|---|\n| العمر | 700,000 سنة | 300,000 سنة |\n| الموقع | شرق المغرب | الدار البيضاء |\n| الأهمية | أقدم موقع | الأقرب لمدينة كبرى |'},
+  {lv:'b3',q:'وضِّح الفرق بين المصدر الأولي والمصدر الثانوي في عمل المؤرخ.',t:'mcq',
+   sup:S('task','📝 التطبيق','المؤرخ أمامه: (أ) وثيقة أصلية من القرن 12، (ب) كتاب صدر 2020 يشرح تلك الوثيقة.'),
+   o:['(أ) مصدر أولي — من عصره مباشرة. (ب) مصدر ثانوي — تحليل لاحق. الأولي أكثر مصداقية لكن الثانوي يُساعد على الفهم','كلاهما أوليان','كلاهما ثانويان','لا فرق بينهما'],a:0,
+   model:'المصدر الأولي: من العصر نفسه (وثيقة، أثر، شهادة)\nالمصدر الثانوي: دراسة لاحقة تحلل الأولي\nالمؤرخ يستخدم الاثنَيْن معاً للوصول للحقيقة التاريخية.'}
+
+]},
+h2:{lv:'b',nm:'المغرب القديم — مظاهر الحضارة الأمازيغية',qs:[
+  {lv:'b1',q:'عدِّد ثلاثة مظاهر من الحضارة الأمازيغية القديمة في المغرب.',t:'mcq',o:['الكتابة التيفيناغ + الفنون الصخرية + التنظيم القبلي','الكتابة العربية + الأهرامات + الزراعة الصناعية','العمارة الحديثة فقط','لا توجد مظاهر حضارية'],a:0},
+  {lv:'b1',q:'حدِّد: التيفيناغ هو الخط الأمازيغي القديم الذي لا يزال مستعملاً إلى اليوم.',t:'tf',correct:true,corr:'نعم. الخط التيفيناغي الأمازيغي موروث حضاري قديم، وقد اعتمده المغرب رسمياً ضمن مكونات هويته الوطنية.'},
+  {lv:'b2',q:'لاحظ وصف النقوش الصخرية واستنتج: ما النشاط الاقتصادي الرئيسي للأمازيغ القدامى؟',t:'mcq',
+   sup:S('img','🖼️ وصف نقوش جبل يغور','النقوش تصور: 1- أبقار وجمالاً بأعداد كبيرة. 2- مشاهد صيد حيوانات. 3- رجال يحملون حراباً ورماحاً. 4- حيوانات برية (أسود وزرافات اختفت من المغرب).'),
+   o:['تربية الماشية + الصيد = اقتصاد رعوي متنقل','الصناعة الثقيلة','الزراعة المروية فقط','التجارة البحرية فقط'],a:0},
+  {lv:'b2',q:'هل غياب المدن الكبيرة في الحضارة الأمازيغية القديمة يعني غياب التنظيم الاجتماعي؟',t:'tf',
+   correct:false,corr:'خطأ. الأمازيغ كانوا منظمين قبلياً بزعماء وقوانين عرفية راسخة — غياب المدن لا يعني غياب التنظيم الاجتماعي.'},
+  {lv:'b3',q:'انطلاقاً من النقوش الصخرية، قدِّم دليلاً على أن المناخ في المغرب القديم كان مختلفاً.',t:'mcq',
+   sup:S('task','📝 المهمة','في نقوش جبل يغور: أسود وزرافات وأنهار. اليوم: هذه الحيوانات لا وجود لها في المغرب.'),
+   o:['وجود الأسود والزرافات دليل على مناخ رطب وغابات كثيفة قديماً — غير موجود اليوم بسبب التغير المناخي','المناخ لم يتغير أبداً','الرسومات كانت خيالية','لا علاقة بين الحيوانات والمناخ'],a:0,
+   model:'الدليل:\nالنقوش تُظهر أسوداً وزرافات → حيوانات الأحراش والسافانا\nاليوم: لا وجود لها في المغرب\nالاستنتاج: المناخ كان أكثر رطوبة وتغطيه الغابات الكثيفة قبل آلاف السنين.'},
+  {lv:'b1',q:'ما الخط الكتابي الذي اخترعه الأمازيغ القدامى؟',t:'mcq',o:['التيفيناغ','العربي','الفينيقي','اللاتيني'],a:0},
+  {lv:'b2',q:'لاحظ النقش الصخري وأجب: ما المعلومة التي يُمكن استخلاصها؟',t:'mcq',
+   sup:S('img','🖼️ نقش صخري أمازيغي','النقش يُظهر مجموعة من الرجال يحملون رماحاً ويحيطون بحيوانات كبيرة (ثيران وأسود). توجد خطوط التيفيناغ في الزاوية.'),
+   o:['الصيد الجماعي كان نشاطاً منظَّماً + وجود الكتابة يدل على مستوى حضاري متقدم','الأمازيغ لم يمارسوا الصيد','التيفيناغ اخترعه الرومان','لا معلومة يمكن استخلاصها'],a:0},
+  {lv:'b2',q:'الحضارة الأمازيغية القديمة كانت مقتصرة على المغرب فقط.',t:'tf',
+   correct:false,corr:'خطأ. امتدت الحضارة الأمازيغية عبر شمال أفريقيا كله من المحيط الأطلسي إلى مصر، وفي جزر الكناري.'},
+  {lv:'b3',q:'كيف يُساهم الاعتراف بالأمازيغية لغةً رسمية في تعزيز الهوية الوطنية؟',t:'mcq',
+   sup:S('task','📝 التفكير','دستور 2011م رسَّم الأمازيغية لغةً رسمية. ما الأثر التربوي والاجتماعي لهذا القرار؟'),
+   o:['يُعزِّز الانتماء لكل مكونات الهوية المغربية + يُصون التراث اللغوي الحضاري الأصيل + يدمج شريحة واسعة من المجتمع','يُشكِّل خطراً على الوحدة الوطنية','لا أثر له','يُعقِّد التعليم'],a:0,
+   model:'أثر الاعتراف بالأمازيغية:\n• تربوياً: تدريسها في المدارس يُعزِّز الهوية المزدوجة\n• اجتماعياً: إدماج المجتمعات الأمازيغية\n• ثقافياً: صون الموروث الحضاري\n• سياسياً: تجسيد التنوع والوحدة معاً'},
+  {lv:'b3',q:'قدِّم مثالاً على موروث أمازيغي لا يزال حياً في المجتمع المغربي اليوم.',t:'mcq',
+   sup:S('task','📝 التطبيق','فكِّر في عناصر من الحياة اليومية أو الموروث الشعبي ذات أصل أمازيغي.'),
+   o:['أسماء المدن (تيزنيت، أكادير، إيفران) + الموسيقى الأمازيغية + الطابع المعماري (تيفيناغ) + الأسماء الشخصية الأمازيغية','لا موروث أمازيغي باقٍ','الأمازيغية اندثرت كلياً','الموروث الأمازيغي خارجي المنشأ'],a:0,
+   model:'أمثلة الموروث الأمازيغي الحي:\n• أسماء المدن: أكادير، تيزنيت، إيفران\n• الموسيقى: أحيدوس، ريكة\n• الأطعمة: كوكو، أوباق\n• الأسماء: تيزيري، أمازير\n• الفلاحة: تقنيات الري التقليدية (خطارات)'}
+
+]},
+g1:{lv:'b',nm:'خريطة العالم المسطحة — قراءة خريطة العالم والكرة الأرضية',qs:[
+  {lv:'b1',q:'سمِّ أبرز الفروق بين الخريطة المسطحة والكرة الأرضية.',t:'mcq',o:['الخريطة تسهّل القراءة والقياس، الكرة تمثّل الشكل الحقيقي للأرض','كلاهما متطابقان تماماً','الكرة أسهل للقياسات','الخريطة تمثّل الشكل الحقيقي أكثر'],a:0},
+  {lv:'b1',q:'حدِّد: خطوط الطول تمتد من الشمال إلى الجنوب.',t:'tf',correct:true,corr:'نعم. خطوط الطول تمتد شمالاً وجنوباً، بينما دوائر العرض تمتد شرقاً وغرباً.'},
+  {lv:'b2',q:'لاحظ الخريطة واستنتج: في أي نصف الكرة يقع المغرب؟',t:'mcq',
+   sup:S('img','🗺️ خريطة العالم','المغرب في الجهة الشمالية الغربية من أفريقيا. خط الاستواء يمر جنوب أفريقيا. خط غرينتش يمر بالقرب من المغرب من الغرب.'),
+   o:['نصف الكرة الشمالي + الغربي','نصف الكرة الجنوبي','نصف الكرة الشرقي فقط','لا يمكن تحديده'],a:0},
+  {lv:'b2',q:'هل المسافة بين درجتَيْن من العرض تساوي دائماً المسافة بين درجتَيْن من الطول؟',t:'tf',
+   correct:false,corr:'خطأ. خطوط الطول تتقارب نحو القطبين، لذا المسافة الفعلية بين درجتَيْن من الطول تتناقص كلما ابتعدنا عن الاستواء.'},
+  {lv:'b3',q:'انطلاقاً من الخريطة، حدِّد الإحداثيات التقريبية للمغرب.',t:'mcq',
+   sup:S('task','📝 المهمة','استعمل خريطة العالم لتحديد موقع المغرب بالإحداثيات الجغرافية.'),
+   o:['الموقع: بين 28° و36° شمالاً / بين 1° و17° غرباً — شمال غرب أفريقيا','يقع عند خط الاستواء','جنوب أفريقيا','لا يمكن تحديد الموقع بالإحداثيات'],a:0,
+   model:'إحداثيات المغرب:\n▪ خط العرض: 28° - 36° شمالاً\n▪ خط الطول: 1° - 17° غرباً\nالموقع: شمال غرب أفريقيا\nالحدود: البحر الأبيض المتوسط شمالاً، المحيط الأطلسي غرباً'},
+  {lv:'b1',q:'ما عدد قارات العالم؟ سمِّها.',t:'mcq',o:['7 قارات: آسيا - أفريقيا - أمريكا الشمالية - أمريكا الجنوبية - أوروبا - أستراليا - القطب الجنوبي','5 قارات','6 قارات','8 قارات'],a:0},
+  {lv:'b2',q:'لاحظ الخريطة وأجب: ما المحيط الذي يقع غرب المغرب؟',t:'mcq',
+   sup:S('img','🗺️ موقع المغرب','المغرب شمال غرب أفريقيا. غربه محيط، شماله بحر داخلي، جنوبه الصحراء.'),
+   o:['المحيط الأطلسي','المحيط الهندي','المحيط الهادئ','بحر قزوين'],a:0},
+  {lv:'b2',q:'خط الاستواء يمر عبر وسط القارة الأفريقية.',t:'tf',
+   correct:true,corr:'نعم. خط الاستواء يقسم أفريقيا إلى جزأين تقريباً متساويَيْن من الشمال والجنوب.'},
+  {lv:'b3',q:'انطلاقاً من الخريطة، اشرح أهمية موقع المغرب كنقطة التقاء قارتَيْن.',t:'mcq',
+   sup:S('task','📝 التطبيق','المغرب يقع بين أفريقيا وأوروبا مع واجهتَيْن بحريتَيْن. ما الفوائد الاستراتيجية لهذا الموقع؟'),
+   o:['التجارة مع أوروبا + بوابة أفريقيا + الملاحة بين المحيط والمتوسط + السياحة المتنوعة','الموقع عادي وليس له قيمة','يُشكِّل عبئاً على المغرب','القرب من أوروبا خطر'],a:0,
+   model:'فوائد الموقع الاستراتيجي:\n• تجارياً: نقطة عبور رئيسية\n• سياحياً: ثقافتان في بلد واحد\n• اقتصادياً: شراكة مع الاتحاد الأوروبي\n• جيواستراتيجياً: مراقبة مضيق جبل طارق'},
+  {lv:'b3',q:'استعمل مفهوم خط العرض لتفسير تباين درجات الحرارة بين شمال المغرب وجنوبه.',t:'mcq',
+   sup:S('task','📝 التطبيق','طنجة (شمال): حرارة معتدلة / زاكورة (جنوب): حرارة شديدة صيفاً. كيف تفسِّر ذلك بالإحداثيات؟'),
+   o:['زاكورة أقرب لمدار السرطان (23.5° شمالاً) وإشعاع الشمس أعمق / طنجة أبعد فتلطّف درجة حرارتها البحر','الجبال هي السبب الوحيد','لا علاقة بين الإحداثيات والحرارة','الشمال دائماً أحرُّ'],a:0,
+   model:'التفسير بالإحداثيات:\nطنجة: 35° شمالاً → معتدل\nزاكورة: 30° شمالاً → قريب من الصحراء\nكلما ابتعدنا عن خط الاستواء → حرارة أقل صيفاً وأبرد شتاءً في المناطق المعتدلة.'}
+
+]},
+g2:{lv:'b',nm:'مواقع النطاقات المناخية الكبرى على الخريطة',qs:[
+  {lv:'b1',q:'عدِّد أربعة نطاقات مناخية رئيسية على الكرة الأرضية.',t:'mcq',o:['استوائي + مداري + معتدل + قطبي','قطبي فقط','معتدل وصحراوي فقط','لا توجد نطاقات مناخية'],a:0},
+  {lv:'b1',q:'حدِّد: المغرب يتميز بتنوع مناخي نادر — مناخ بحري في الشمال وشبه صحراوي في الجنوب.',t:'tf',correct:true,corr:'نعم. يتميز المغرب بتنوع مناخي كبير: متوسطي في الشمال، قاري في الداخل، صحراوي في الجنوب.'},
+  {lv:'b2',q:'لاحظ الخريطة واستنتج: لماذا تقع أمطار المغرب بصورة رئيسية في الشمال الغربي؟',t:'mcq',
+   sup:S('img','🗺️ خريطة تساقطات المغرب','الشمال الغربي (1000 ملم فأكثر) — الأطلس (600-1000 ملم) — الجنوب (أقل من 200 ملم)'),
+   o:['قرب المحيط الأطلسي + التضاريس الجبلية تعترض الرياح الرطبة','الجنوب يقع قرب البحر','الجبال تسبب الجفاف','توزيع المطر عشوائي'],a:0},
+  {lv:'b2',q:'هل المناخ الصحراوي مقتصر على منطقة واحدة في العالم؟',t:'tf',
+   correct:false,corr:'خطأ. المناخ الصحراوي موجود في أكثر من منطقة (الصحراء الكبرى، شبه الجزيرة العربية، جنوب أستراليا...).'},
+  {lv:'b3',q:'قارن بين النطاقَيْن الاستوائي والقطبي في جدول منظَّم.',t:'mcq',
+   sup:S('task','📝 المهمة','أنجز جدول مقارنة بين المناخ الاستوائي والقطبي.'),
+   o:['استوائي: حار+رطب+أمطار طول السنة / قطبي: بارد+جاف+تغطيه الثلوج','كلاهما باردان','لا فرق بينهما','الاستوائي أبرد'],a:0,
+   model:'| المعيار | الاستوائي | القطبي |\n|---|---|---|\n| الحرارة | 25°-30° | -30° إلى -60° |\n| الأمطار | 2000 ملم/سنة | جليد وثلج |\n| الغطاء | غابات كثيفة | تندرا أو جليد |\n| الموقع | حول الاستواء | حول القطبين |'},
+  {lv:'b1',q:'في أي نطاق مناخي يقع معظم المغرب؟',t:'mcq',o:['المناخ المتوسطي وشبه الجاف والجاف','الاستوائي','القطبي','المداري الرطب'],a:0},
+  {lv:'b2',q:'لاحظ الجدول واستنتج: ما العلاقة بين الموقع الجغرافي والنطاق المناخي؟',t:'mcq',
+   sup:S('stat','📊 النطاقات المناخية وموقعها',TABLE(['النطاق','الموقع من الاستواء','المتوسط الحراري'],[['استوائي','0°-10°','26°-28°'],['مداري','10°-25°','20°-26°'],['معتدل','35°-60°','10°-18°'],['قطبي','70°-90°','-20° إلى -60°']])),
+   o:['كلما ابتعدنا عن الاستواء نحو القطبين، انخفضت درجة الحرارة وتغيَّر النطاق المناخي','لا علاقة بين الموقع والمناخ','الحرارة ثابتة في كل النطاقات','المناخ يتحدد فقط بالارتفاع'],a:0},
+  {lv:'b2',q:'المغرب ينتمي لنطاق مناخي واحد فقط.',t:'tf',
+   correct:false,corr:'خطأ. يتميز المغرب بتعدد النطاقات المناخية: متوسطي في الشمال، جاف في الوسط، صحراوي في الجنوب.'},
+  {lv:'b3',q:'اشرح كيف تؤثر النطاقات المناخية على توزيع السكان في العالم.',t:'mcq',
+   sup:S('task','📝 التطبيق','لماذا يتركز السكان في النطاق المعتدل أكثر من القطبي أو الصحراوي؟'),
+   o:['النطاق المعتدل: درجات حرارة مناسبة + أمطار كافية + فلاحة منتجة = مناطق جذب سكاني / القطبي والصحراوي: قساوة تُعيق الاستيطان','السكان يتوزعون بالتساوي','النطاق القطبي هو الأكثر سكاناً','المناخ لا يؤثر على السكان'],a:0,
+   model:'العلاقة بين المناخ والسكان:\n• المعتدل: 70% من سكان العالم\n• المداري الرطب: 20%\n• الصحراوي والقطبي: 10% فقط\nالسبب: المناخ المعتدل يُيسِّر الفلاحة والمعيشة'},
+  {lv:'b3',q:'قدِّم حججاً تُبيِّن أن التغير المناخي يُهدِّد النطاقات المناخية الحالية.',t:'mcq',
+   sup:S('task','📝 المهمة','كيف يُؤثِّر الاحتباس الحراري على النطاقات المناخية الكبرى؟'),
+   o:['ارتفاع الحرارة يُوسِّع النطاقات الجافة + يُذيب الجليد القطبي + يُقلِّص النطاق المعتدل → تهديد لأنظمة الإنتاج الغذائي العالمي','التغير المناخي لا أثر له على النطاقات','النطاقات ثابتة للأبد','التغير المناخي يُحسِّن الأوضاع'],a:0,
+   model:'تأثير التغير المناخي:\n• توسع الصحاري نحو الشمال\n• ذوبان الجليد القطبي\n• اختلال التوازن المائي\n• تراجع الإنتاج الزراعي في المناطق المعتدلة'}
+
+]},
+c1:{lv:'k',nm:'أحترم القوانين — الحرية والمسؤولية',qs:[
+  {lv:'k1',q:'عرِّف مفهوم الحرية المسؤولة بكلماتك.',t:'mcq',o:['ممارسة حقوقي بما لا يُضرُّ بحقوق الآخرين وباحترام القوانين','فعل كل ما أريد دون قيود','إطاعة الآخرين دائماً دون تفكير','الامتناع عن كل شيء'],a:0},
+  {lv:'k1',q:'حدِّد: الدستور المغربي يضمن الحرية ويلزم بالمسؤولية في نفس الوقت.',t:'tf',correct:true,corr:'نعم. يكفل الدستور الحريات الأساسية ويجعلها مقترنة بالواجبات.'},
+  {lv:'k2',q:'لاحظ الوضعية وأبدِ موقفك: هل تصرف أمين صحيح؟',t:'mcq',
+   sup:S('doc','📋 وضعية','أمين يرفع صوت الموسيقى ليلاً في الحي بدعوى أن له الحرية في ذلك. جيرانه لا ينامون.'),
+   o:['لا. الحرية تنتهي حيث تبدأ حرية الآخرين — حق النوم والراحة محمي قانوناً','نعم، له الحق المطلق','الموسيقى ليست ضاراً','الجيران يجب أن يتحملوا'],a:0},
+  {lv:'k2',q:'في مجتمع تغيب فيه القوانين، هل تزداد الحرية الحقيقية؟',t:'tf',
+   correct:false,corr:'خطأ. غياب القوانين يُفضي إلى الفوضى وضياع الحقوق — القوانين هي ضامن الحريات.'},
+  {lv:'k3',q:'قيِّم وحدِّد موقفاً: كيف تتصرف عند رؤية زميل يتصرف بطريقة تضر الآخرين؟',t:'mcq',
+   sup:S('task','📝 الوضعية','زميلك يكتب على جدار المدرسة ويقول: هذا حقي في التعبير.'),
+   o:['أُخبره بهدوء أن حق التعبير لا يُبيح إتلاف الممتلكات العامة','أصمت ولا أتدخل','أُقلِّده','أشتكي فوراً دون حوار'],a:0,
+   model:'الموقف الصحيح:\n1- أُخبره بهدوء بالفرق بين حق التعبير وإتلاف الممتلكات\n2- أُذكِّره بالمسؤولية الجماعية\n3- إن استمر أُبلِّغ المسؤول المختص'},
+  {lv:'k1',q:'عدِّد ثلاثة حقوق أساسية يضمنها الدستور المغربي.',t:'mcq',o:['حرية التعبير + الحق في التعليم + الحق في الصحة','الحق في إيذاء الآخرين','الحق في رفض القوانين','الحق في الفوضى'],a:0},
+  {lv:'k2',q:'لاحظ الوضعية وحدِّد الحق والواجب في كل حالة.',t:'mcq',
+   sup:S('stat','📊 حقوق وواجبات',TABLE(['الوضعية','الحق','الواجب'],[['أستعمل الطريق العام','التنقل الآمن','احترام إشارات المرور'],['أدرس في المدرسة','التعليم المجاني','الحضور والانضباط'],['أسكن في الحي','بيئة نظيفة','عدم رمي الأزبال']])),
+   o:['لكل حق واجب مقابل — المواطنة المسؤولة تقوم على هذا التوازن','الحقوق بدون واجبات','الواجبات بدون حقوق','لا علاقة بين الحقوق والواجبات'],a:0},
+  {lv:'k2',q:'يمكن المطالبة بالحقوق دون أداء الواجبات.',t:'tf',
+   correct:false,corr:'خطأ. الحقوق والواجبات وجهان لعملة واحدة — المواطنة المسؤولة تجمعهما معاً.'},
+  {lv:'k3',q:'صمِّم ميثاقاً للمواطن الصغير يتضمن 3 حقوق و3 واجبات.',t:'mcq',
+   sup:S('task','📝 المهمة','أنت عضو في مجلس تلاميذ يُعِدُّ ميثاق المدرسة. ما الحقوق والواجبات التي تقترحها؟'),
+   o:['الحقوق: بيئة آمنة + تعليم جيد + حرية التعبير / الواجبات: الانضباط + احترام الآخرين + المشاركة الإيجابية','الحقوق فقط بدون واجبات','الواجبات فقط بدون حقوق','لا ميثاق ضروري'],a:0,
+   model:'ميثاق المواطن الصغير:\n🔵 الحقوق:\n1. بيئة تعليمية آمنة ومحترمة\n2. حرية التعبير عن الرأي\n3. المساواة في الفرص\n🟢 الواجبات:\n1. الانضباط واحترام المواعيد\n2. احترام زملائي ومعلمِيَّ\n3. المشاركة في الأنشطة المشتركة'},
+  {lv:'k3',q:'ناقش: هل يمكن أن تتعارض الحرية مع الأمن العام؟ قدِّم مثالاً.',t:'mcq',
+   sup:S('task','📝 التفكير النقدي','هل يحق لشخص ما إطلاق نار في الهواء ابتهاجاً بدعوى أنه حر؟'),
+   o:['نعم يتعارضان: حرية الشخص تنتهي حيث يبدأ خطر إيذاء الآخرين — إطلاق النار خطر على السلامة العامة حتى لو كان لغرض بهيج','الحرية مطلقة لا قيود عليها','الأمن يلغي كل الحريات','لا تعارض أبداً بينهما'],a:0,
+   model:'نعم، الحرية والأمن قد يتعارضان:\nمثال: المسيرات الاحتجاجية\n✅ حق التعبير والتظاهر = حرية مشروعة\n⚠️ تعطيل حركة المرور = اعتداء على حرية الآخرين\nالحل: الحرية المنظَّمة وفق القانون'}
+
+]},
+c2:{lv:'k',nm:'أشارك في مجلس القسم وانتخاب مكاتبه',qs:[
+  {lv:'k1',q:'حدِّد وظيفتَيْن رئيسيتَيْن لمجلس القسم.',t:'mcq',o:['تنظيم الحياة الدراسية + تقديم اقتراحات لتحسين المدرسة','مراقبة الأساتذة','التحكم في الغياب','لا وظيفة محددة'],a:0},
+  {lv:'k1',q:'سمِّ: الانتخاب الحر والنزيه داخل القسم تجربة ديمقراطية تربوية أساسية.',t:'tf',correct:true,corr:'نعم. التدرب على الانتخاب منذ المدرسة يُرسِّخ قيم الديمقراطية والمشاركة المدنية الفعالة.'},
+  {lv:'k2',q:'لاحظ نتائج الانتخاب وأبدِ رأيك: ماذا تُلاحظ في نسب المشاركة؟',t:'mcq',
+   sup:S('stat','📊 نتائج انتخاب مجلس القسم',TABLE(['المنصب','المرشح','الأصوات','النسبة'],[['الرئيس','سلمى','18','60%'],['الكاتب','أمين','12','40%'],['غير مصوتين','—','3','9%']])),
+   o:['نسبة مشاركة مرتفعة (91%) — إيجابية. 3 غائبون = فرصة لتحسين الوعي المدني','النسبة منخفضة جداً','لا معنى للنتائج','الانتخاب كان غير نزيه'],a:0},
+  {lv:'k2',q:'هل رفض قرار مجلس القسم من الأغلبية جائز من الناحية الديمقراطية؟',t:'tf',
+   correct:false,corr:'خطأ. الديمقراطية تقوم على مبدأ الأغلبية — القرار الذي ينتخبه غالبية الأعضاء يجب احترامه.'},
+  {lv:'k3',q:'قيِّم: كيف تُنظِّم جلسة مجلس القسم بطريقة ديمقراطية حقيقية؟',t:'mcq',
+   sup:S('task','📝 المهمة','أنتم مجلس القسم ستناقشون موضوع النظافة. كيف تُديرون الجلسة ديمقراطياً؟'),
+   o:['1-تحديد جدول الأعمال 2-الكلمة للجميع 3-التصويت على القرارات 4-توثيق المحضر 5-المتابعة','الرئيس يتخذ كل القرارات','التصويت بدون نقاش','لا حاجة لقواعد'],a:0,
+   model:'خطوات الجلسة الديمقراطية:\n1⃣ تحديد جدول الأعمال مسبقاً\n2⃣ الجميع يتكلم بالتسلسل\n3⃣ لا مقاطعة ولا تهجم\n4⃣ التصويت بالأغلبية\n5⃣ تدوين المحضر\n6⃣ متابعة تنفيذ القرارات'},
+  {lv:'k1',q:'ما الفرق بين الاقتراع السري والاقتراع العلني؟',t:'mcq',o:['السري: لا يعلم أحد كيف صوَّت الشخص / العلني: يُعلَن عن التصويت أمام الجميع','كلاهما متطابقان','السري أقل نزاهة','العلني هو الأكثر استعمالاً في الانتخابات'],a:0},
+  {lv:'k2',q:'لاحظ الجدول وأجب: ما الأسلوب الأنسب لانتخاب رئيس مجلس القسم؟',t:'mcq',
+   sup:S('stat','📊 أساليب التصويت',TABLE(['الأسلوب','المزايا','العيوب'],[['الاقتراع السري','يحمي من الضغط والخوف','أكثر تعقيداً في التنظيم'],['الاقتراع العلني','سريع وبسيط','يُعرِّض المصوِّت للضغط']])),
+   o:['الاقتراع السري — يضمن حرية الاختيار الحقيقية بعيداً عن الضغط الاجتماعي','العلني دائماً أفضل','لا فرق في الاختيار','أي أسلوب سيان'],a:0},
+  {lv:'k2',q:'يجوز لشخص واحد أن يشغل كل مناصب مجلس القسم في آنٍ واحد.',t:'tf',
+   correct:false,corr:'خطأ. الديمقراطية تقوم على توزيع المسؤوليات — تركيزها في شخص واحد يُفضي إلى الاستبداد.'},
+  {lv:'k3',q:'ما دور المعارضة في مجلس القسم الديمقراطي؟',t:'mcq',
+   sup:S('task','📝 التفكير','مَن فاز في انتخابات مجلس القسم هو من يتخذ القرارات. ما دور مَن لم يفز؟'),
+   o:['دور المعارضة: مراقبة القرارات + تقديم اقتراحات بديلة + تمثيل الأقلية + منع الاستبداد — دور إيجابي لا سلبي','المعارضة عديمة الفائدة','المعارضة تُعرقل العمل','مَن خسر لا دور له'],a:0,
+   model:'دور المعارضة الديمقراطي:\n1. مراقبة تنفيذ القرارات\n2. تقديم مقترحات بديلة\n3. التعبير عن رأي الأقلية\n4. ضمان الشفافية\n5. منع تجاوزات الأغلبية'},
+  {lv:'k3',q:'انطلاقاً من نتائج الانتخابات، كيف تضمن تمثيلاً حقيقياً لكل أعضاء القسم؟',t:'mcq',
+   sup:S('task','📝 المهمة','فاز أمين بـ18 صوتاً وخسرت سلمى بـ12 صوتاً. كيف تُشرك الاثنَيْن في العمل؟'),
+   o:['تعيين سلمى في منصب آخر (كاتبة/خازنة) + إشراكها في اللجان الفرعية = تمثيل للجميع + توظيف كل الكفاءات','لا مكان لمن خسر','إعادة الانتخاب من جديد','تجاهل الخاسر كلياً'],a:0,
+   model:'ضمان التمثيل الشامل:\n• الرئيس: مَن فاز بأعلى الأصوات\n• الكاتب: المرشح الثاني\n• الخازن: مرشح ثالث\n• اللجان: مشاركة الجميع\n→ كل صوت له قيمة وكل شخص له دور'}
+
+]},
+};
+/* ════ DATA2 ════ */
+const DATA2={
+h3:{lv:'b',nm:'المغرب القديم — الاحتلال الروماني والمقاومة الأمازيغية',qs:[
+  {lv:'b1',q:'حدِّد المنطقة المغربية التي خضعت للاحتلال الروماني واسمها القديم.',t:'mcq',o:['موريتانيا الطنجية — شمال المغرب','كل المغرب','الجنوب فقط','شرق المغرب فقط'],a:0},
+  {lv:'b1',q:'حدِّد: يوبا الثاني كان ملكاً أمازيغياً مثقفاً حكم موريتانيا الطنجية في العهد الروماني.',t:'tf',correct:true,corr:'صحيح. يوبا الثاني (25ق.م-23م) ترك تراثاً فكرياً وفنياً مزج الثقافتين الأمازيغية والرومانية.'},
+  {lv:'b2',q:'لاحظ الخريطة واستنتج: لماذا لم يمتد النفوذ الروماني إلى الجنوب؟',t:'mcq',
+   sup:S('img','🗺️ حدود موريتانيا الطنجية','الاحتلال الروماني يغطي الشريط الشمالي حتى نهر ملوية. الجنوب خارج النفوذ الروماني — يسكنه أمازيغ رحّل.'),
+   o:['الجبال العالية + الصحراء + مقاومة القبائل حالت دون التوسع الروماني جنوباً','لم يهتم الرومان بالجنوب','الجنوب كان مسكوناً بأمم أخرى','لا سبب واضح'],a:0},
+  {lv:'b2',q:'هل مقاومة الأمازيغ للرومان تعني رفض كل التأثير الروماني؟',t:'tf',
+   correct:false,corr:'خطأ. حتى في ظل المقاومة، استفاد الأمازيغ من بعض التقنيات الرومانية مع حفاظهم على هويتهم.'},
+  {lv:'b3',q:'انطلاقاً من الوثيقة، قدِّم أدلة على المزج الحضاري بين الأمازيغ والرومان.',t:'mcq',
+   sup:S('doc','📜 آثار وليلي','مسرح روماني + نقوش لاتينية + تماثيل. في نفس الوقت: رموز أمازيغية على المسكوكات وطقوس أمازيغية.'),
+   o:['المزج: عمارة رومانية + لغة لاتينية للإدارة مع الحفاظ على الديانة والتقاليد الأمازيغية','لا دليل على أي مزج','الأمازيغ محو تراثهم','الرومان لم يتأثروا بالأمازيغ'],a:0,
+   model:'الأدلة على المزج:\n• العمارة: مسرح + قنوات مياه رومانية\n• اللغة: نقوش لاتينية للإدارة\n• الديانة: طقوس أمازيغية محافظ عليها\n• العملة: رموز مختلطة'},
+  {lv:'b1',q:'ما اسم المدينة الرومانية الأشهر في المغرب التي لا تزال آثارها قائمة؟',t:'mcq',o:['وليلي (Volubilis) قرب مكناس','قرطاج','الإسكندرية','روما'],a:0},
+  {lv:'b2',q:'لاحظ الجدول واستنتج: ما المدة الزمنية التي امتد فيها الوجود الروماني في المغرب؟',t:'mcq',
+   sup:S('stat','📊 الوجود الروماني في المغرب',TABLE(['الحدث','التاريخ'],[['بداية النفوذ الروماني','40 ميلادي'],['ذروة الازدهار','100-200م'],['انسحاب الرومان','285م']])),
+   o:['حوالي 245 سنة (40م - 285م) — وجود مطوَّل أثَّر في المنطقة','50 سنة فقط','ألف سنة','لم يكن هناك وجود روماني'],a:0},
+  {lv:'b2',q:'المقاومة الأمازيغية للرومان كانت ذات طابع ديني فقط.',t:'tf',
+   correct:false,corr:'خطأ. المقاومة كانت متعددة الدوافع: سياسية (الاستقلال) + اقتصادية (رفض الضرائب) + ثقافية (الحفاظ على الهوية).'},
+  {lv:'b3',q:'انطلاقاً من آثار وليلي، استخلص مظاهر التأثير الروماني في المغرب.',t:'mcq',
+   sup:S('task','📝 المهمة','زيارة موقع وليلي تُظهر: قوسَ انتصار، حمامات عامة، ساحة تجارية، نقوشاً لاتينية، منازل بموزاييك. ما الاستنتاجات؟'),
+   o:['التأثير الروماني: نظام بلدي متطور + حمامات عامة + تجارة منظَّمة + فن راقٍ — تأثير حضاري عميق','لا تأثير للرومان على المغرب','التأثير كان عسكرياً فقط','وليلي مدينة أمازيغية بحتة'],a:0,
+   model:'مظاهر التأثير الروماني:\n• العمارة: أقواس، معابد، حمامات\n• التنظيم: ساحات تجارية، شوارع مرقَّمة\n• الفن: موزاييك، تماثيل\n• الإدارة: نظام بلدي ومجالس\n• اللغة: نقوش لاتينية'},
+  {lv:'b3',q:'قيِّم: هل يمكن أن يكون للتأثير الأجنبي أثر إيجابي دون أن يلغي الهوية؟',t:'mcq',
+   sup:S('task','📝 التفكير','الأمازيغ تأثروا بالرومان في العمارة والإدارة لكنهم احتفظوا بلغتهم وعاداتهم. ما الدرس؟'),
+   o:['التأثر الحضاري المتوازن ممكن: استيعاب ما هو مفيد مع الحفاظ على الهوية الجوهرية — هذا الانفتاح الذكي','التأثر الأجنبي يلغي الهوية دائماً','يجب رفض كل تأثير أجنبي','الهوية تضيع بالتأثر'],a:0,
+   model:'الدرس التاريخي:\nالأمازيغ = نموذج للانفتاح المتوازن:\n✅ ما استوعبوه: العمارة، الإدارة، التجارة\n✅ ما حافظوا عليه: اللغة، الدين، التنظيم القبلي\nالخلاصة: الهوية القوية تنفتح دون أن تذوب'}
+
+]},
+h4:{lv:'b',nm:'المغرب في عهد المرابطين — توحيد البلاد وانتشار الإسلام',qs:[
+  {lv:'b1',q:'حدِّد مؤسس دولة المرابطين ومنطقة انطلاقها.',t:'mcq',o:['يحيى بن إبراهيم + عبدالله بن ياسين — انطلقت من الصحراء الكبرى','ادريس الأول — من فاس','يوسف بن تاشفين — من مراكش','لا مؤسس محدد'],a:0},
+  {lv:'b1',q:'سمِّ: يوسف بن تاشفين وحَّد المغرب والأندلس وأسَّس مراكش.',t:'tf',correct:true,corr:'نعم. يوسف بن تاشفين أسَّس مراكش 1062م وامتد نفوذه للأندلس بعد معركة الزلاقة 1086م.'},
+  {lv:'b2',q:'لاحظ الخط الزمني واستنتج: ما المرحلة الأقصر في تاريخ دولة المرابطين؟',t:'mcq',
+   sup:S('stat','📊 مراحل دولة المرابطين',TABLE(['المرحلة','الفترة','المدة'],[['التأسيس والتوسع','1040-1086م','46 سنة'],['الذروة','1086-1106م','20 سنة'],['علي بن يوسف','1106-1143م','37 سنة'],['الانهيار','1143-1147م','4 سنوات']])),
+   o:['مرحلة الانهيار — 4 سنوات فقط','مرحلة التأسيس','مرحلة الذروة','علي بن يوسف'],a:0},
+  {lv:'b2',q:'هل انهيار دولة المرابطين يعني فشل مشروعها الحضاري بالكامل؟',t:'tf',
+   correct:false,corr:'خطأ. رغم الانهيار السياسي، ترك المرابطون إرثاً معمارياً ودينياً وحضارياً أثَّر في المغرب لقرون.'},
+  {lv:'b3',q:'انطلاقاً من الخط الزمني، استنتج العوامل التي قد تُفسِّر سرعة انهيار المرابطين.',t:'mcq',
+   sup:S('task','📝 المهمة','استعمل الجدول + معرفتك لتحليل أسباب الانهيار السريع للمرابطين.'),
+   o:['تمرد الموحدين + الضعف الداخلي + ضغط الأندلس = انهيار سريع','لأسباب مجهولة','بسبب غزو أجنبي فقط','الانهيار كان طبيعياً'],a:0,
+   model:'أسباب الانهيار:\n1- بروز حركة الموحدين بزعامة ابن تومرت\n2- الانشغال بمعارك الأندلس\n3- التراخي بعد الازدهار\n4- الضعف الداخلي وتفكك الوحدة'},
+  {lv:'b1',q:'ما معنى كلمة "مرابط" وما أصل تسمية الدولة المرابطية؟',t:'mcq',o:['المرابط: المتمركز في رباط = حصن ديني. الدولة انطلقت من رباط في موريتانيا الإسلامية','مرابط تعني الغني','الاسم أجنبي المصدر','لا أصل لغوي للتسمية'],a:0},
+  {lv:'b2',q:'لاحظ الخريطة واستنتج: ما الأقاليم التي ضمَّتها دولة المرابطين في أوجها؟',t:'mcq',
+   sup:S('img','🗺️ امتداد دولة المرابطين','الخريطة تُظهر: المغرب كاملاً + الجزائر الغربية + موريتانيا + الأندلس (إسبانيا المسلمة) + شمال مالي.'),
+   o:['المغرب + الجزائر الغربية + موريتانيا + الأندلس — إمبراطورية ممتدة عبر قارتَيْن','المغرب فقط','الأندلس فقط','شمال أفريقيا فقط دون الأندلس'],a:0},
+  {lv:'b2',q:'انتصار المرابطين في معركة الزلاقة 1086م أنقذ الأندلس من السقوط.',t:'tf',
+   correct:true,corr:'نعم. معركة الزلاقة وقَّفت التقدم المسيحي مؤقتاً وأنقذت مملكات الأندلس الإسلامية من الزوال.'},
+  {lv:'b3',q:'قيِّم الدور الحضاري للمرابطين في توحيد المغرب والأندلس.',t:'mcq',
+   sup:S('task','📝 المهمة','استعمل معرفتك لتقييم الإسهام الحضاري لدولة المرابطين.'),
+   o:['المرابطون: وحَّدوا المغرب + أسَّسوا مراكش + أنقذوا الأندلس + نشروا الإسلام في غرب أفريقيا — إسهام حضاري ضخم','دولة بدون إسهام حضاري','الأندلس أهم من توحيد المغرب','لا قيمة لدولة المرابطين'],a:0,
+   model:'الإسهام الحضاري المريني:\n• سياسياً: توحيد المغرب والأندلس\n• عمرانياً: تأسيس مراكش (1062م)\n• دينياً: نشر الإسلام في موريتانيا ومالي\n• دفاعياً: معركة الزلاقة'},
+  {lv:'b3',q:'ما الدرس الذي يمكن استخلاصه من سقوط دولة المرابطين في أقل من 4 سنوات؟',t:'mcq',
+   sup:S('task','📝 التفكير','دولة المرابطين انهارت بسرعة رغم عظمتها. ما الدروس التاريخية في ذلك؟'),
+   o:['الدولة القوية تحتاج: وحدة داخلية + تجديد مستمر + مواجهة التحديات الجديدة — التراخي والثروة الزائدة يُفضيان للضعف','الدول الكبيرة لا تسقط أبداً','السقوط كان عشوائياً','لا دروس في التاريخ'],a:0,
+   model:'الدروس:\n1. القوة الداخلية أهم من الامتداد الجغرافي\n2. التجديد الفكري شرط الاستمرار\n3. الترف والرخاء يُضعفان الهمَّة\n4. المعارضة الداخلية تُعجِّل الانهيار'}
+
+]},
+g3:{lv:'b',nm:'المميزات الطبيعية للمغرب — السهول والأحواض المائية',qs:[
+  {lv:'b1',q:'عدِّد ثلاث سهول رئيسية في المغرب.',t:'mcq',o:['سهل الغرب + سهل سوس + سهل الحوز','هضبة المسيفي فقط','لا سهول في المغرب','الجبال فقط'],a:0},
+  {lv:'b1',q:'سمِّ: السهول المغربية هي المناطق الأكثر كثافة سكانية في البلاد.',t:'tf',correct:true,corr:'نعم. السهول تتيح الفلاحة والعيش — لذا تتركز فيها أكبر المدن.'},
+  {lv:'b2',q:'لاحظ الخريطة واستنتج: لماذا يُعدُّ سهل الغرب من أغنى المناطق فلاحياً؟',t:'mcq',
+   sup:S('img','🗺️ سهل الغرب','سهل الغرب بين نهرَيْ سبو وبهت. تربة طينية خصبة. أمطار 500-700 ملم. شبكة ري مكثفة.'),
+   o:['التربة الخصبة + الري + الأمطار المعتدلة = إنتاج فلاحي متنوع','بسبب الجبال العالية','لأنه بعيد عن البحر','لا سبب واضح'],a:0},
+  {lv:'b2',q:'هل الأحواض المائية بالمغرب كافية لتزويد كل السكان بالماء الكافي؟',t:'tf',
+   correct:false,corr:'خطأ. يعاني المغرب من شُح مائي متزايد يستوجب ترشيد الاستهلاك.'},
+  {lv:'b3',q:'انطلاقاً من الخريطة، أنجز مقارنة بين سهلَيْن في ثلاثة محاور.',t:'mcq',
+   sup:S('task','📝 المهمة','قارن بين سهل الغرب وسهل سوس في: الأمطار، الفلاحة، النهر الرئيسي.'),
+   o:['الغرب: أمطار معتدلة+فلاحة متنوعة+نهر سبو / سوس: أمطار قليلة+بساتين الحوامض+نهر سوس','كلاهما متطابقان','لا فروق','المعلومات غير كافية'],a:0,
+   model:'| المحور | سهل الغرب | سهل سوس |\n|---|---|---|\n| الأمطار | 500-700 ملم | 200-350 ملم |\n| الفلاحة | حبوب+خضر | حوامض+أفوكادو |\n| النهر | سبو | سوس |'},
+  {lv:'b1',q:'ما الفرق بين السهل والهضبة؟',t:'mcq',o:['السهل: منخفض ومستوٍ بالقرب من البحر / الهضبة: مرتفعة ومستوية في الداخل','كلاهما متطابقان','الهضبة أخفض من السهل','السهل أكثر ارتفاعاً'],a:0},
+  {lv:'b2',q:'لاحظ الجدول واستنتج: ما السهل المغربي الأغنى بالموارد المائية؟',t:'mcq',
+   sup:S('stat','📊 السهول المغربية وأنهارها',TABLE(['السهل','الأنهار الرئيسية','المساحة'],[['الغرب','سبو + بهت','600,000 هكتار'],['الحوز','تانسيفت','300,000 هكتار'],['سوس','سوس','280,000 هكتار'],['تريفة','بوسيكور','150,000 هكتار']])),
+   o:['سهل الغرب — أكبر مساحة + أنهار أكثر (سبو وبهت)','سهل الحوز','سهل سوس','سهل تريفة'],a:0},
+  {lv:'b2',q:'السدود المائية في المغرب تؤثر سلباً على الفلاحة.',t:'tf',
+   correct:false,corr:'خطأ. السدود تُوفِّر الماء للري في فصل الجفاف وتحمي من الفيضانات وتُولِّد الكهرباء.'},
+  {lv:'b3',q:'اشرح سبب تركُّز الفلاحة المروية في سهول المغرب لا في جباله.',t:'mcq',
+   sup:S('task','📝 التطبيق','لماذا يُفضِّل الفلاحون زراعة السهول على زراعة المنحدرات الجبلية؟'),
+   o:['السهول: تربة خصبة + ري سهل + ميكنة ممكنة + نقل سريع للمنتوج / الجبال: انحدار يُصعِّب الحرث والري والنقل','الجبال أفضل للفلاحة','لا فرق بين السهل والجبل للفلاحة','الفلاحة تنتشر عشوائياً'],a:0,
+   model:'مزايا فلاحة السهول:\n✅ تربة طينية خصبة (ترسبات الأنهار)\n✅ سهولة الري (تحت الأرض أو بالقنوات)\n✅ استخدام الجرارات والآلات\n✅ قرب من شبكات الطرق'},
+  {lv:'b3',q:'ما أثر بناء سدود مائية جديدة على التنمية الفلاحية في المغرب؟',t:'mcq',
+   sup:S('task','📝 المهمة','المغرب يُنجز مشاريع سدود جديدة. ما التأثير المتوقع على الفلاحة؟'),
+   o:['توسيع المساحات المسقية + استقرار الإنتاج في سنوات الجفاف + دعم الصناعات الغذائية + خلق فرص الشغل القروي','السدود تُقلِّل الإنتاج الفلاحي','لا أثر للسدود على الفلاحة','السدود تُدمِّر البيئة دون فائدة'],a:0,
+   model:'أثر السدود على الفلاحة:\n📈 المساحات المسقية: من 1.5 مليون هكتار → 2 مليون\n🌾 الاستقرار: ضمان الإنتاج حتى في سنوات الجفاف\n🏭 الصناعة: تطوير مصانع التحويل الغذائي\n👨‍🌾 الشغل: توفير مناصب في القطاع الفلاحي'}
+
+]},
+g4:{lv:'b',nm:'مميزات وطني — الثروة النباتية والحيوانية',qs:[
+  {lv:'b1',q:'عدِّد ثلاثة أنواع من الغطاء النباتي في المغرب.',t:'mcq',o:['غابات الأرز + الفلين + الأركان','غابات الأمازون','الصحراء فقط','لا غابات في المغرب'],a:0},
+  {lv:'b1',q:'حدِّد: شجرة الأركان نبتة أصيلة في المغرب ومصنَّفة كإرث عالمي.',t:'tf',correct:true,corr:'نعم. شجرة أركان خاصة بالمغرب وقد صنَّفت اليونسكو منطقتها محمية للتراث البيوسفيري.'},
+  {lv:'b2',q:'لاحظ الجدول واستنتج: ما منطقة المغرب الأغنى بالغطاء النباتي؟',t:'mcq',
+   sup:S('stat','📊 الغطاء النباتي حسب المنطقة',TABLE(['المنطقة','نوع الغطاء','المساحة (هكتار)'],[['الريف والشمال','غابات كثيفة','600,000'],['الأطلس','أرز+عرعر','700,000'],['سوس-أنتي أطلس','أركان','700,000'],['الجنوب','هزيل+متفرق','ضعيف']])),
+   o:['الأطلس وسوس-أنتي أطلس (700,000 هكتار لكل منهما) — الأغنى','الجنوب أغنى','الريف وحده','لا فروق'],a:0},
+  {lv:'b2',q:'إزالة الغابات في المغرب لا تؤثر على حياة السكان.',t:'tf',
+   correct:false,corr:'خطأ. الغابات تضمن التوازن المائي وتحمي من الانجراف — إزالتها تُهدِّد مصادر المياه.'},
+  {lv:'b3',q:'انطلاقاً من الجدول، قدِّم حججاً لحماية غابات الأركان.',t:'mcq',
+   sup:S('task','📝 المهمة','مستثمر يريد تحويل مساحة من غابات الأركان لمزارع صناعية. كيف تُقنعه بالحفاظ عليها؟'),
+   o:['الأركان: تراث يونسكو + مصدر دخل (زيت الأركان) + صابر الصحراء — الحفاظ عليه أكثر ربحاً على المدى البعيد','الاستثمار الصناعي أفضل دائماً','الغابات عبء اقتصادي','لا حجة للحماية'],a:0,
+   model:'حجج حماية الأركان:\n1. تراث يونسكو → سياحة بيئية\n2. زيت الأركان → صادرات (100 مليون دولار/سنة)\n3. الحماية من الصحراء\n4. مصدر عيش للنساء الأمازيغيات'},
+  {lv:'b1',q:'ما الفرق بين الغطاء النباتي الطبيعي والغطاء المزروع؟',t:'mcq',o:['الطبيعي: ينبت بدون تدخل الإنسان / المزروع: يزرعه الإنسان ويعتني به','كلاهما متطابقان','الطبيعي أقل أهمية','المزروع أقدم'],a:0},
+  {lv:'b2',q:'لاحظ الجدول واستنتج: في أي منطقة تتركز مشاريع التشجير بالمغرب؟',t:'mcq',
+   sup:S('stat','📊 مشاريع التشجير بالمغرب',TABLE(['المنطقة','المساحة المُشجَّرة (ألف هكتار)','الهدف'],[['الريف','120','مكافحة الانجراف'],['الأطلس الكبير','90','حماية مصادر المياه'],['الجنوب الشرقي','60','مكافحة التصحر'],['السواحل','30','الحماية من الرياح']])),
+   o:['الريف (120 ألف هكتار) — الأكثر تشجيراً لمكافحة الانجراف الحاد','الجنوب الشرقي','السواحل','الأطلس الكبير'],a:0},
+  {lv:'b2',q:'حرائق الغابات في المغرب تسبب أضراراً بيئية لا يمكن تعويضها.',t:'tf',
+   correct:true,corr:'نعم. الغابات تحتاج عشرات السنين للنمو من جديد — الحريق يُدمِّر ما بناه الزمن في ساعات.'},
+  {lv:'b3',q:'قدِّم اقتراحاً لمشروع حماية الغابات يشمل التلاميذ كشركاء.',t:'mcq',
+   sup:S('task','📝 المهمة','مديرية المياه والغابات تطلب مشاركة المدارس في حماية الغطاء النباتي. ما مقترحك؟'),
+   o:['مشروع: نادي الغابة المدرسي — تشجير حدود المدرسة + تحسيس بأخطار الحرائق + رحلات للمحميات الطبيعية + تقارير مصوَّرة','حرق الغابات لتوليد الدخان','قطع الأشجار للاستفادة منها','عدم الاكتراث بالغطاء النباتي'],a:0,
+   model:'مشروع نادي الغابة:\n🌳 التشجير: 20 شجرة/سنة في حدود المدرسة\n📚 التحسيس: ورش عن الحرائق وأسبابها\n🚌 الرحلات: زيارة محميات طبيعية\n📸 التوثيق: ألبوم صور + تقارير\n🤝 الشراكة: مديرية الغابات'},
+  {lv:'b3',q:'ما العلاقة بين الثروة الحيوانية والثروة النباتية في النظام البيئي؟',t:'mcq',
+   sup:S('task','📝 التفكير','ما يحدث للحيوانات عند تراجع الغطاء النباتي؟ وما يحدث للنباتات عند انعدام الحيوانات؟'),
+   o:['علاقة تبادلية: الحيوانات تحتاج النباتات للتغذية + النباتات تحتاج الحيوانات للتلقيح ونقل البذور — تدمير أحدهما يُضعف الآخر','لا علاقة بينهما','الحيوانات تُدمِّر النباتات','النباتات تُدمِّر الحيوانات'],a:0,
+   model:'دورة التوازن البيئي:\nالنباتات ← الحشرات ← الطيور والقوارض ← المفترسات\nإزالة حلقة واحدة:\n• قطع الأشجار → هجرة الطيور → تكاثر الحشرات → تلف المحاصيل\nالتوازن البيئي ضرورة وليس رفاهية'}
+
+]},
+c3:{lv:'k',nm:'أعبِّر عن رأيي وأحترم رأي الآخر',qs:[
+  {lv:'k1',q:'حدِّد أهمية التعبير عن الرأي باحترام في الحياة المدنية.',t:'mcq',o:['تعزيز الحوار الديمقراطي + بناء الثقة + احترام التنوع','يُسبِّب الخلافات','ضار بالوحدة','يُفضي إلى الفوضى'],a:0},
+  {lv:'k1',q:'الانتقاد البنّاء يختلف عن الإهانة الشخصية.',t:'tf',correct:true,corr:'نعم. الانتقاد البنّاء يستهدف الأفكار والأفعال، بينما الإهانة تستهدف الشخص.'},
+  {lv:'k2',q:'لاحظ الحوار وأبدِ تقييمك: من منهما يُعبِّر عن رأيه بطريقة أفضل؟',t:'mcq',
+   sup:S('doc','💬 حوار','أمين: "اقتراح سلمى سيء وهي لا تفهم شيئاً."\nسلمى: "لا أوافق على اقتراح أمين لأن الطريقة الأخرى أكثر فعالية، وهذه حجتي..."'),
+   o:['سلمى: تُعبِّر مع الحجة دون مساس بالشخص / أمين: ينتقد الشخص لا الفكرة','أمين أفضل','كلاهما متساويان','كلاهما خاطئان'],a:0},
+  {lv:'k2',q:'هل رفض الاستماع لرأي الآخر يُعزِّز الحوار الديمقراطي؟',t:'tf',
+   correct:false,corr:'خطأ. الديمقراطية تقوم على الإنصات والحوار.'},
+  {lv:'k3',q:'أنجز نموذجاً لكيفية التعبير عن الاختلاف في الرأي مع زميل.',t:'mcq',
+   sup:S('task','📝 الوضعية','اختلفتَ مع زميلك حول طريقة تنظيم حفل القسم. كيف تُعبِّر عن رأيك المختلف؟'),
+   o:['أقول: أرى أن اقتراحي أفضل لأن... ما رأيك في هذه الحجج؟ — ثم نصوت للأغلبية','أرفض رأيه بشكل قاطع','أصمت دون قناعة','أُثير الجدل بلا حجة'],a:0,
+   model:'نموذج التعبير البنّاء:\n1- "أقدّر رأيك و..."\n2- "لكنني أختلف لأن..."\n3- تقديم حجة واضحة\n4- "ما رأيك في هذا المقترح؟"\n5- قبول التصويت بالأغلبية'},
+  {lv:'k1',q:'ما الفرق بين الحوار والجدال؟',t:'mcq',o:['الحوار: تبادل آراء بهدف الفهم والتوافق / الجدال: تبادل حاد بهدف الانتصار لا الفهم','كلاهما متطابقان','الجدال أفضل من الحوار','الحوار هو الجدال نفسه'],a:0},
+  {lv:'k2',q:'لاحظ الحوار وأبدِ تقييمك: ما الأخطاء التي ارتكبها كريم في حواره؟',t:'mcq',
+   sup:S('doc','💬 حوار بين كريم وأستاذه','كريم: "أنا لا أوافق على هذا الدرس!"\nالأستاذ: "لماذا؟ أشرح لنا."\nكريم: "لأنه ممل ولا فائدة منه!"\nالأستاذ: "هل لديك مقترح أفضل؟"\nكريم: "لا، لكنه ممل بكل بساطة."'),
+   o:['أخطاء كريم: رأي دون حجة + نقد دون بديل + غياب الاحترام. الصواب: "أرى أن...لأن...وأقترح..."','كريم على صواب في كل شيء','الأستاذ هو المخطئ','لا أخطاء في الحوار'],a:0},
+  {lv:'k2',q:'الاتفاق دائماً هو نتيجة الحوار الناجح.',t:'tf',
+   correct:false,corr:'خطأ. الحوار الناجح يهدف للفهم المتبادل — قد ينتهي باختلاف محترم وهذا أيضاً نتيجة إيجابية.'},
+  {lv:'k3',q:'صمِّم قواعد للنقاش الإيجابي داخل قسمك.',t:'mcq',
+   sup:S('task','📝 المهمة','قسمك يُعاني من نقاشات حادة وسوء فهم. صمِّم ميثاق النقاش الإيجابي.'),
+   o:['الميثاق: 1-أتكلم بعد الإذن 2-لا أقاطع 3-أنتقد الفكرة لا الشخص 4-أستمع كاملاً قبل الرد 5-أقبل الاختلاف','القواعد تُقيِّد الحرية','لا حاجة لقواعد','الصوت الأعلى يفوز'],a:0,
+   model:'ميثاق النقاش الإيجابي:\n1⃣ أطلب الكلمة قبل التحدث\n2⃣ أستمع حتى النهاية\n3⃣ أنتقد الأفكار لا الأشخاص\n4⃣ أُقدِّم حجة مع كل رأي\n5⃣ أقبل الاختلاف المحترم\n6⃣ أشكر مَن أفادني'},
+  {lv:'k3',q:'هل يمكن للشخص الهادئ أن يُعبِّر عن رأيه بفعالية؟ كيف؟',t:'mcq',
+   sup:S('task','📝 التفكير','يشعر بعض التلاميذ الهادئين بصعوبة التعبير عن آرائهم. ما الحلول؟'),
+   o:['نعم: الكتابة بدل الكلام + التحضير المسبق للرأي + البدء بمجموعات صغيرة + طلب الوقت للتفكير — الهدوء ليس ضعفاً','الهادئ لا يستطيع التعبير','التعبير حكر على المتحدثين','الهدوء يعني الموافقة'],a:0,
+   model:'طرق التعبير للشخص الهادئ:\n📝 الكتابة: ورقة رأي أو اقتراح\n🗓️ التحضير: صياغة الرأي مسبقاً\n👥 المجموعات الصغيرة: أسهل من الكل\n⏱️ طلب الوقت: "سأُفكِّر وأُجيبك"\nالهدوء = قوة لا ضعف'}
+
+]},
+c4:{lv:'k',nm:'أستقل بتعلمي — أُنمِّي قدرتي على التعلم الذاتي',qs:[
+  {lv:'k1',q:'عدِّد ثلاث استراتيجيات للتعلم الذاتي الفعّال.',t:'mcq',o:['وضع أهداف واضحة + تنظيم الوقت + مراجعة منتظمة','الاعتماد الكلي على الأستاذ','الدراسة يوم الامتحان فقط','تجنب الأسئلة الصعبة'],a:0},
+  {lv:'k1',q:'التعلم الذاتي يعني أنك لا تحتاج أبداً لمساعدة الآخرين.',t:'tf',correct:false,corr:'خطأ. التعلم الذاتي يعني المبادرة والاستقلالية لكنه لا يمنع طلب المساعدة عند الحاجة.'},
+  {lv:'k2',q:'لاحظ جدول وقت دراسة الطالب وأبدِ رأيك: ما الإشكال في جدوله؟',t:'mcq',
+   sup:S('stat','📊 جدول دراسة أيوب',TABLE(['اليوم','الوقت المخصص'],[['الاثنين إلى الخميس','لا دراسة'],['الجمعة','8 ساعات لكل المواد']])),
+   o:['الدراسة متركزة في يوم واحد — يُسبِّب الإرهاق. الأفضل توزيع 1-2 ساعة يومياً','الجدول مثالي','8 ساعات كافية','المشكل في المواد'],a:0},
+  {lv:'k2',q:'التخطيط المسبق للدراسة يُحسِّن النتائج المدرسية.',t:'tf',correct:true,corr:'نعم. الدراسات التربوية تثبت أن التخطيط يُقلِّل التوتر ويُحسِّن التثبيت.'},
+  {lv:'k3',q:'ضع خطة دراسية أسبوعية لمادة الاجتماعيات.',t:'mcq',
+   sup:S('task','📝 المهمة','لديك امتحان الاجتماعيات بعد أسبوعَيْن. كيف تُنظِّم دراستك الذاتية؟'),
+   o:['الأسبوع الأول: مراجعة الدروس (45د/يوم) / الأسبوع الثاني: التطبيق على أسئلة + مراجعة النقاط الصعبة','الدراسة ليلة الامتحان فقط','لا خطة ضرورية','الاعتماد على الأستاذ وحده'],a:0,
+   model:'الخطة الدراسية:\nالأسبوع الأول:\n• السبت-الثلاثاء: مراجعة الدروس (45د/يوم)\n• الأربعاء: ملخصات\nالأسبوع الثاني:\n• السبت-الثلاثاء: أسئلة تدريبية\n• الأربعاء: مراجعة النقاط الصعبة'},
+  {lv:'k1',q:'ما الفرق بين المراجعة السطحية والمراجعة العميقة للدروس؟',t:'mcq',o:['السطحية: قراءة مرة واحدة دون تمحيص / العميقة: فهم + ربط الأفكار + تطبيق + مراجعة','كلتاهما سواء','السطحية أفضل توفيراً للوقت','لا فرق في النتائج'],a:0},
+  {lv:'k2',q:'لاحظ الجدول وقيِّم: أيُّ الطلاب لديه أفضل استراتيجية للتعلم الذاتي؟',t:'mcq',
+   sup:S('stat','📊 استراتيجيات التعلم',TABLE(['الطالب','الاستراتيجية'],[['رانية','تقرأ الدرس + تُلخِّص + تضع أسئلة + تُراجع بعد يومَيْن'],['كريم','يقرأ مرة واحدة ليلة الامتحان'],['أمين','يُعيد كتابة الدرس فقط بدون فهم']])),
+   o:['رانية — استراتيجيتها متكاملة: فهم + تلخيص + أسئلة + مراجعة متباعدة','كريم الأفضل','أمين الأفضل','جميعهم متساوون'],a:0},
+  {lv:'k2',q:'التعلم الذاتي لا يتطلب أي انضباط أو نظام.',t:'tf',
+   correct:false,corr:'خطأ. التعلم الذاتي يتطلب انضباطاً أعلى من التعلم الموجَّه لأنه لا توجد رقابة خارجية.'},
+  {lv:'k3',q:'اقترح أسلوباً لمراجعة درس تاريخي معقَّد بطريقة التعلم الذاتي.',t:'mcq',
+   sup:S('task','📝 المهمة','لديك درس عن دولة الموحدين. كيف تُراجعه ذاتياً بفعالية؟'),
+   o:['1-قراءة أولى للفهم 2-تلخيص بالخريطة الذهنية 3-وضع أسئلة وتجربة الإجابة 4-مراجعة بعد يومَيْن 5-ربط الدرس بدروس سابقة','قراءة مرة واحدة كافية','حفظ الكلمات دون فهم','لا طريقة للمراجعة الذاتية'],a:0,
+   model:'خطوات المراجعة الذاتية الفعالة:\n1⃣ القراءة الأولى: فهم عام\n2⃣ الخريطة الذهنية: تنظيم الأفكار\n3⃣ الأسئلة الذاتية: اختبار الفهم\n4⃣ المراجعة المتباعدة: بعد يومَيْن\n5⃣ الربط: بين الدروس المتعلقة'},
+  {lv:'k3',q:'هل يمكن استخدام التكنولوجيا الرقمية لتعزيز التعلم الذاتي؟ كيف؟',t:'mcq',
+   sup:S('task','📝 التطبيق','لديك هاتف ذكي وإنترنت. كيف تستعملهما لتعزيز تعلمك الذاتي في الاجتماعيات؟'),
+   o:['التطبيقات التعليمية + مقاطع فيديو توضيحية + خرائط تفاعلية + ملخصات رقمية + مجموعات دراسية إلكترونية','التكنولوجيا تُعيق التعلم','الهاتف للترفيه فقط','لا استخدام للتكنولوجيا في التعلم'],a:0,
+   model:'التكنولوجيا في خدمة التعلم:\n📱 تطبيقات: Anki للبطاقات، Khan Academy\n🎥 فيديو: توضيح مفاهيم التاريخ والجغرافيا\n🗺️ خرائط: Google Earth للجغرافيا\n👥 مجموعات: تبادل الملاحظات مع الزملاء'}
+
+]},
+h5:{lv:'b',nm:'المغرب في عهد الموحدين — تميُّز في الهندسة المعمارية',qs:[
+  {lv:'b1',q:'حدِّد مؤسس دولة الموحدين ومبدأ تأسيسها.',t:'mcq',o:['محمد بن تومرت — على أساس الدعوة للتوحيد','يوسف بن تاشفين — من الصحراء','يعقوب المنصور — من فاس','إدريس الأول — على أساس الدم'],a:0},
+  {lv:'b1',q:'سمِّ: الكتبية بمراكش هي أشهر المآثر المعمارية التي خلّفها الموحدون.',t:'tf',correct:true,corr:'نعم. جامع الكتبية بمراكش ومنارة حسان بالرباط من أبرز المآثر الموحدية.'},
+  {lv:'b2',q:'لاحظ الخط الزمني واستنتج: من أطول حاكم في دولة الموحدين؟',t:'mcq',
+   sup:S('stat','📊 حكام الموحدين',TABLE(['الحاكم','الفترة','المدة'],[['عبد المؤمن','1130-1163م','33 سنة'],['يوسف الأول','1163-1184م','21 سنة'],['يعقوب المنصور','1184-1199م','15 سنة'],['محمد الناصر','1199-1213م','14 سنة']])),
+   o:['عبد المؤمن بن علي — 33 سنة','يوسف الأول','يعقوب المنصور','محمد الناصر'],a:0},
+  {lv:'b2',q:'هل الهزيمة في معركة العقاب 1212م أنهت الوجود الإسلامي في الأندلس فوراً؟',t:'tf',
+   correct:false,corr:'خطأ. رغم النكسة، استمر الوجود الإسلامي في الأندلس حتى سقوط غرناطة 1492م.'},
+  {lv:'b3',q:'انطلاقاً من الجدول، استنتج علاقة مدة الحكم باستقرار الدولة.',t:'mcq',
+   sup:S('task','📝 المهمة','لاحظ أن عبد المؤمن حكم 33 سنة والمنصور 15 سنة فقط. كيف يؤثر ذلك على قوة الدولة؟'),
+   o:['الحكم الطويل يُتيح بناء مؤسسات راسخة + استقرار سياسي + تطور حضاري','لا علاقة بين المدة والاستقرار','الحكم القصير أفضل دائماً','المدة لا تُحدِّد شيئاً'],a:0,
+   model:'الحكم الطويل → الاستقرار:\n• يُمكِّن من تنفيذ مشاريع كبرى\n• يُرسِّخ المؤسسات والقوانين\n• يُعزِّز الوحدة'},
+  {lv:'b1',q:'ما العاصمة التي اتخذها الموحدون مقراً لحكمهم؟',t:'mcq',o:['مراكش','فاس','الرباط','تطوان'],a:0},
+  {lv:'b2',q:'لاحظ الخط الزمني واستنتج: من هو السلطان الموحدي الذي حكم أطول مدة؟',t:'mcq',
+   sup:S('stat','📊 حكام الموحدين بالتفصيل',TABLE(['الحاكم','مدة الحكم'],[['عبد المؤمن بن علي','33 سنة'],['يوسف الأول','21 سنة'],['يعقوب المنصور','15 سنة'],['محمد الناصر','14 سنة'],['يوسف الثاني','9 سنوات'],['إدريس الأول الموحدي','6 سنوات']])),
+   o:['عبد المؤمن بن علي — 33 سنة (أطول حكم موحدي)','يوسف الأول','يعقوب المنصور','محمد الناصر'],a:0},
+  {lv:'b2',q:'بنى الموحدون مساجدهم بأسلوب معماري مستوحى من تصاميم بيزنطية.',t:'tf',
+   correct:false,corr:'خطأ. عمارة الموحدين مغربية-أندلسية أصيلة تُميِّزها الصوامع المربعة والنقوش الهندسية الدقيقة.'},
+  {lv:'b3',q:'لماذا تُعدُّ منارة حسان بالرباط شاهداً على طموحات الموحدين؟',t:'mcq',
+   sup:S('task','📝 المهمة','بُدئ في بناء مسجد حسان ليكون أكبر مساجد العالم الإسلامي. توفي الناصر وبقي المشروع ناقصاً. ما الدلالة؟'),
+   o:['المنارة الناقصة دليل على طموح الدولة الموحدية في الريادة الإسلامية + دليل على أن الموت يوقف المشاريع الكبرى','الموحدون بنوا المنارة بشكل مقصود ناقصة','المنارة دمَّرها الزلزال','لا دلالة للمنارة الناقصة'],a:0,
+   model:'دلالة منارة حسان:\n• الطموح: أراد الموحدون بناء أكبر مسجد إسلامي\n• القوة: الموارد المالية والبشرية الضخمة\n• الضعف الإنساني: الحروب والوفاة أوقفت المشروع\n• الأثر: شاهد تاريخي مغربي فريد'},
+  {lv:'b3',q:'قارن بين الطابع المعماري الموحدي وأي أسلوب معماري تعرفه.',t:'mcq',
+   sup:S('task','📝 المهمة','الموحدون: صوامع مربعة + نقوش هندسية + بساطة الواجهات. قارن مع أسلوب معماري آخر.'),
+   o:['المقارنة مع الأندلسي: كلاهما يستخدم الزليج والنقوش، لكن الموحدي أكثر هيمنة وضخامة بينما الأندلسي أكثر رهافة وتفصيلاً','لا فروق معمارية','الموحدي أجمل بكثير بدون منافسة','أسلوب مستورد من الخارج'],a:0,
+   model:'المقارنة المعمارية:\n| المعيار | الموحدي | الأندلسي |\n|---|---|---|\n| الأبراج | مربعة ضخمة | مستديرة رشيقة |\n| الزخرفة | هندسية + كتابية | نباتية + هندسية |\n| الفلسفة | الجلال والهيمنة | الجمال والرقي |'}
+
+]},
+h6:{lv:'b',nm:'المغرب في عهد المرينيين — الإبداع الحضاري والمكانة الدولية',qs:[
+  {lv:'b1',q:'عدِّد ثلاثة مآثر معمارية خلّفها المرينيون في المغرب.',t:'mcq',o:['المدرسة البوعنانية + المدرسة العطارين + مدارس فاس المرينية','جامع القرويين','القصر الملكي','لا مآثر تاريخية'],a:0},
+  {lv:'b1',q:'حدِّد: فاس كانت عاصمة دولة المرينيين ومركزاً علمياً عالمياً في العصور الوسطى.',t:'tf',correct:true,corr:'نعم. فاس في العهد المريني كانت تجتذب العلماء من كل أنحاء العالم الإسلامي.'},
+  {lv:'b2',q:'لاحظ وصف المدرسة البوعنانية واستنتج: ما الهدف من زخرفتها البديعة؟',t:'mcq',
+   sup:S('img','🖼️ المدرسة البوعنانية','جدران: زليج ملون + نقوش جبسية + خشب منقوش. الصحن: نافورة مركزية. النقوش: آيات قرآنية وأشعار.'),
+   o:['تعظيم العلم وتكريم الطلاب + التعبير عن الهوية الحضارية المغربية-الأندلسية','للزخرفة فقط دون هدف','لإخفاء عيوب البناء','لمنافسة الغرب'],a:0},
+  {lv:'b2',q:'هل انهيار دولة المرينيين أدى إلى اندثار حضارتهم المعمارية؟',t:'tf',
+   correct:false,corr:'خطأ. التراث المعماري المريني يستمر شاهداً حضارياً إلى اليوم ومصنَّفاً ضمن التراث الإنساني.'},
+  {lv:'b3',q:'قارن بين الإبداع المريني والموحدي في مجال العمارة.',t:'mcq',
+   sup:S('task','📝 المهمة','أنجز جدول مقارنة بين عمارة الموحدين وعمارة المرينيين.'),
+   o:['الموحدون: صوامع ضخمة + طابع ديني-عسكري / المرينيون: مدارس مزخرفة + دقة فنية + طابع تعليمي','كلاهما متطابقان','المرينيون لا عمارة لهم','الموحدون أفضل في كل شيء'],a:0,
+   model:'| المعيار | الموحدون | المرينيون |\n|---|---|---|\n| الطابع | ديني-عسكري | تعليمي-فني |\n| أبرز المآثر | الكتبية+منارة حسان | المدارس الفاسية |\n| التأثير | الأندلس+المغرب | تراث وطني إلى اليوم |'},
+  {lv:'b1',q:'ما الجامعة التي طوَّرها المرينيون وجعلوا منها مركزاً علمياً عالمياً؟',t:'mcq',o:['جامعة القرويين بفاس','جامعة الأزهر بمصر','جامعة تمبكتو','جامعة بولونيا الإيطالية'],a:0},
+  {lv:'b2',q:'لاحظ الخريطة واستنتج: ما اتجاه التوسع الجغرافي لدولة المرينيين؟',t:'mcq',
+   sup:S('img','🗺️ دولة المرينيين','الخريطة تُظهر: عاصمة فاس + التوسع نحو المغرب كله + فترات من النفوذ على تلمسان + صلات مع الأندلس.'),
+   o:['التوسع نحو الغرب والجنوب المغربي + مرحلياً نحو المشرق (تلمسان) + الحفاظ على صلات مع الأندلس','نحو أفريقيا جنوب الصحراء','نحو المشرق فقط','لا توسع جغرافي'],a:0},
+  {lv:'b2',q:'المرينيون كانوا أول من أسَّس المدارس الدينية في المغرب.',t:'tf',
+   correct:false,corr:'خطأ. المدارس الدينية وُجدت قبلهم، لكن المرينيين طوَّروها وزخرفوها بشكل فريد لم يُسبَق.'},
+  {lv:'b3',q:'قيِّم أهمية جامعة القرويين كإرث مريني ومغربي.',t:'mcq',
+   sup:S('task','📝 المهمة','جامعة القرويين تُعدُّ من أقدم الجامعات في العالم. ما قيمتها التاريخية والراهنة؟'),
+   o:['التاريخية: أقدم جامعة في العالم (859م) — سابقة لجامعات أوروبا / الراهنة: لا تزال تُدرِّس العلوم الإسلامية وتُخرِّج علماء','جامعة عادية دون قيمة','لا تزال مغلقة','جامعة إيطالية الأصل'],a:0,
+   model:'قيمة القرويين:\n📅 التاريخية: تأسست 859م → أقدم جامعة ناشطة\n🌍 الدولية: استقطبت علماء من كل العالم الإسلامي\n📚 العلمية: الفقه + الرياضيات + الفلسفة + الأدب\n🇲🇦 الوطنية: رمز المجد العلمي المغربي'},
+  {lv:'b3',q:'كيف يمكن الاستفادة من التراث المعماري المريني في تطوير السياحة المغربية؟',t:'mcq',
+   sup:S('task','📝 المهمة','فاس تضم مدارس مرينية بديعة. كيف تستثمرها سياحياً؟'),
+   o:['السياحة التراثية: تأهيل المواقع + ترجمة للسياح + جولات مُرشَّدة + مراكز للحرف التقليدية + مهرجانات ثقافية = رافد اقتصادي ضخم','هدم المدارس للبناء العصري','إغلاقها للزوار','لا علاقة بين التراث والسياحة'],a:0,
+   model:'تثمين التراث المريني سياحياً:\n🏛️ تأهيل المواقع: ترميم + إضاءة\n📖 التفسير: ملصقات + مرشدون سياحيون\n🎨 الحرف: معارض داخل المدارس\n🎭 المهرجانات: الفن المعماري والموسيقى\n💰 الأثر: إيرادات سياحية + حفظ التراث'}
+
+]},
+g5:{lv:'b',nm:'المميزات الطبيعية — الثروة السمكية والمعدنية',qs:[
+  {lv:'b1',q:'عدِّد ثلاثة معادن رئيسية يُنتجها المغرب.',t:'mcq',o:['الفوسفاط + النحاس + الفضة','الذهب + البترول + الألماس','الحديد وحده','لا معادن في المغرب'],a:0},
+  {lv:'b1',q:'يحتل المغرب المرتبة الأولى عالمياً في احتياطيات الفوسفاط.',t:'tf',correct:true,corr:'نعم. يمتلك المغرب أكثر من 70% من الاحتياطيات العالمية المعروفة من الفوسفاط.'},
+  {lv:'b2',q:'لاحظ الجدول واستنتج: ما قيمة الفوسفاط في الاقتصاد المغربي؟',t:'mcq',
+   sup:S('stat','📊 الصادرات المعدنية (2022)',TABLE(['المعدن','القيمة (مليار دولار)'],[['الفوسفاط','6.1'],['النحاس','0.5'],['الفضة','0.3'],['الزنك','0.2']])),
+   o:['الفوسفاط يُمثِّل أكثر من 87% من قيمة الصادرات المعدنية — ركيزة اقتصادية استراتيجية','النحاس أهم','جميع المعادن متساوية','الفوسفاط لا قيمة له'],a:0},
+  {lv:'b2',q:'هل الثروة السمكية المغربية مستدامة إذا استمرَّت الصيادة المكثفة دون تنظيم؟',t:'tf',
+   correct:false,corr:'خطأ. الإفراط في الصيد يُهدِّد التنوع البحري — وضع المغرب أنظمة لحصص الصيد للحفاظ على الثروة.'},
+  {lv:'b3',q:'انطلاقاً من الجدول، قدِّم مقترحاً لتنويع الاقتصاد المعدني المغربي.',t:'mcq',
+   sup:S('task','📝 المهمة','الاعتماد المفرط على الفوسفاط خطر اقتصادي. كيف تُنوِّع الاقتصاد المعدني؟'),
+   o:['تطوير تحويل الفوسفاط لأسمدة + استثمار النحاس والفضة + التنقيب عن معادن جديدة','رفع صادرات الفوسفاط فقط','تقليص التعدين','الاعتماد على الاستيراد'],a:0,
+   model:'استراتيجية التنويع:\n1. تحويل الفوسفاط → أسمدة مصنَّعة\n2. تطوير قطاع النحاس\n3. استثمار الطاقة المتجددة\n4. تعزيز السياحة المعدنية'},
+  {lv:'b1',q:'ما الفرق بين الثروة المعدنية المتجددة وغير المتجددة؟',t:'mcq',o:['المتجددة: تتكون بسرعة (كالأسماك) / غير المتجددة: تنضب مع الاستخراج (كالفوسفاط والنحاس)','كلتاهما متجددتان','كلتاهما غير متجددتَيْن','لا فرق بينهما'],a:0},
+  {lv:'b2',q:'لاحظ الخريطة واستنتج: في أي منطقة يتركز استخراج الفوسفاط بالمغرب؟',t:'mcq',
+   sup:S('img','🗺️ مناطق استخراج الفوسفاط','الخريطة: خريبكة (الأكبر) + اليوسفية + بن جرير. جميعها في المنطقة الوسطى من المغرب.'),
+   o:['المنطقة الوسطى من المغرب (خريبكة - اليوسفية - بن جرير)','الشمال فقط','الجنوب الصحراوي','الساحل الأطلسي'],a:0},
+  {lv:'b2',q:'الصيد الحرفي والصناعي في المغرب يخضعان لنفس الأنظمة والقوانين.',t:'tf',
+   correct:false,corr:'خطأ. الصيد الصناعي يخضع لحصص أكثر صرامة ومتطلبات تقنية أعلى لحماية الثروة السمكية.'},
+  {lv:'b3',q:'اشرح كيف يُمكن تحويل الفوسفاط إلى ثروة أكبر للمغرب.',t:'mcq',
+   sup:S('task','📝 المهمة','المغرب يُصدِّر الفوسفاط خاماً. ما الفائدة من تحويله محلياً قبل التصدير؟'),
+   o:['تحويل الفوسفاط إلى أسمدة = ضرب قيمته 3-4 مرات + خلق مناصب شغل + تطوير صناعة كيميائية وطنية','التصدير الخام أفضل دائماً','لا فائدة للتحويل المحلي','الأسمدة أرخص من الفوسفاط الخام'],a:0,
+   model:'مزايا التحويل المحلي:\n💰 القيمة المضافة: الفوسفاط الخام ×1 / الأسمدة ×3-4\n👷 الشغل: مصانع كيميائية تُشغِّل آلاف العمال\n🏭 الصناعة: تطوير قطاع كيميائي متخصص\n🌍 التصدير: منتج ذو قيمة عالية'},
+  {lv:'b3',q:'ما أهمية تنويع مصادر الثروة المعدنية لحماية الاقتصاد المغربي؟',t:'mcq',
+   sup:S('task','📝 المهمة','إذا انخفض سعر الفوسفاط عالمياً، كيف يؤثر ذلك على الاقتصاد؟ ما الحل؟'),
+   o:['انخفاض سعر الفوسفاط = أزمة اقتصادية حادة إذا لم يُنوَّع الاقتصاد / الحل: تطوير الطاقة المتجددة + السياحة + الفلاحة كبدائل مكمِّلة','الفوسفاط لا يتأثر بالأسعار العالمية','لا حل للاعتماد على مورد واحد','تنويع الموارد مكلف دون فائدة'],a:0,
+   model:'خطر الاعتماد على مورد واحد:\nمثال: انهيار أسعار النفط 2014-2016 → أزمة في الدول النفطية\nالحل المغربي:\n• الطاقة الشمسية (نور ورزازات)\n• السياحة (20 مليون زائر/سنة)\n• الفلاحة البيولوجية\n• الصناعة التحويلية'}
+
+]},
+g6:{lv:'b',nm:'مميزات وطني — الواجهتان البحريتان',qs:[
+  {lv:'b1',q:'حدِّد طول الواجهتَيْن البحريتَيْن للمغرب إجمالاً.',t:'mcq',o:['حوالي 3500 كلم (أطلسي: 2900 + متوسطي: 600)','200 كلم فقط','1000 كلم','5000 كلم'],a:0},
+  {lv:'b1',q:'حدِّد: ميناء طنجة المتوسط يُعدُّ من أكبر الموانئ في أفريقيا.',t:'tf',correct:true,corr:'نعم. يحتل طنجة المتوسط مراتب متقدمة في تصنيفات الموانئ الأفريقية من حيث حجم المبادلات.'},
+  {lv:'b2',q:'لاحظ الخريطة واستنتج: لماذا تتركز الموانئ الكبرى على الساحل الأطلسي أكثر؟',t:'mcq',
+   sup:S('img','🗺️ موانئ المغرب','الأطلسي: الدار البيضاء+أكادير+الصويرة+داخلة / المتوسط: طنجة المتوسط+الناظور. الساحل الأطلسي أطول (2900 كلم).'),
+   o:['الساحل الأطلسي أطول + يُطلُّ على خطوط الملاحة العالمية + سهول خلفية كبيرة','الساحل المتوسطي أعمق','لا سبب واضح','الموانئ موزعة بالتساوي'],a:0},
+  {lv:'b2',q:'للواجهتَيْن البحريتَيْن المغربيتَيْن نفس المزايا الاقتصادية تماماً.',t:'tf',
+   correct:false,corr:'خطأ. الأطلسي: صيد غني + خطوط ملاحة دولية / المتوسطي: قُرب من أوروبا + الربط بالمضيق — لكل واجهة مزاياها.'},
+  {lv:'b3',q:'انطلاقاً من الخريطة، قدِّم حججاً تُبيِّن دور الواجهتَيْن في اقتصاد المغرب.',t:'mcq',
+   sup:S('task','📝 المهمة','لماذا الموقع الجغرافي للمغرب يجعله نقطة ربط تجاري مهمة؟'),
+   o:['الموقع على ملتقى المحيط والمتوسط + قرب من أوروبا (14 كلم) + بوابة أفريقيا + احتياطي سمكي ضخم','الموقع عادي','الجغرافيا عائق','لا دور للواجهتَيْن'],a:0,
+   model:'الحجج الاقتصادية:\n1. ملتقى المحيط الأطلسي والمتوسط\n2. 14 كلم فقط عن أوروبا\n3. 3500 كلم ساحل = ثروة سمكية\n4. ميناء طنجة المتوسط: مركز إقليمي'},
+  {lv:'b1',q:'ما المضيق الذي يفصل المغرب عن أوروبا؟ ما عرضه؟',t:'mcq',o:['مضيق جبل طارق — عرضه في أضيق نقطة 14 كلم','مضيق هرمز — 50 كلم','مضيق باب المندب — 30 كلم','قناة السويس — 200 كلم'],a:0},
+  {lv:'b2',q:'لاحظ الجدول واستنتج: ما الميناء المغربي الأعلى في حركة البضائع؟',t:'mcq',
+   sup:S('stat','📊 أكبر موانئ المغرب',TABLE(['الميناء','الواجهة','حركة البضائع (مليون طن)'],[['طنجة المتوسط','البحر المتوسط','77'],['ميناء الدار البيضاء','الأطلسي','38'],['ميناء أكادير','الأطلسي','12'],['ميناء الناظور','البحر المتوسط','8']])),
+   o:['طنجة المتوسط (77 مليون طن) — الأكبر بفارق كبير','الدار البيضاء','أكادير','الناظور'],a:0},
+  {lv:'b2',q:'الصيد البحري في المغرب يتركز فقط على الساحل الأطلسي.',t:'tf',
+   correct:false,corr:'خطأ. الصيد موجود في الواجهتَيْن، لكن الأطلسي أغنى بسبب التيارات الباردة التي تُنشِّط الحياة البحرية.'},
+  {lv:'b3',q:'اشرح دور ميناء طنجة المتوسط في تحويل المغرب إلى محور تجاري إفريقي.',t:'mcq',
+   sup:S('task','📝 المهمة','طنجة المتوسط من أكبر موانئ أفريقيا. كيف يُساهم في تطوير التجارة الإفريقية-الأوروبية؟'),
+   o:['المغرب = نقطة عبور إجبارية + عمق أفريقي + قرب أوروبي → طنجة المتوسط يُحوِّل المغرب إلى مركز تجاري يربط القارتَيْن','طنجة ميناء محلي فقط','لا علاقة بين المغرب وأفريقيا','دور تجاري ضعيف'],a:0,
+   model:'دور طنجة المتوسط:\n🌍 التموضع: ملتقى الأطلسي والمتوسط\n🚢 الخدمة: 77 مليون طن/سنة\n🔗 الربط: أوروبا ↔ أفريقيا جنوب الصحراء\n🇲🇦 الاستراتيجية: المغرب = بوابة أفريقيا'},
+  {lv:'b3',q:'قدِّم خطة لتطوير الاقتصاد البحري المغربي في الأفق المستقبلي.',t:'mcq',
+   sup:S('task','📝 المهمة','المغرب لديه 3500 كلم ساحل وثروة بحرية ضخمة. ما رؤيتك لتطوير اقتصاده البحري؟'),
+   o:['خطة: 1-تطوير أسطول الصيد + معامل التحويل 2-السياحة البحرية (قوارب رياضية + غوص) 3-الطاقة البحرية (رياح بحرية) 4-تربية الأسماك (الأكواكولتور) 5-تصدير المأكولات البحرية','الحد من الصيد كلياً','لا مستقبل للاقتصاد البحري','الاكتفاء بالوضع الحالي'],a:0,
+   model:'رؤية الاقتصاد البحري:\n🐟 صيد: تحديث الأسطول + الحصص المستدامة\n🦐 تربية: أكواكولتور (500 ألف طن/سنة)\n⛵ سياحة: مراسٍ + رياضات بحرية\n💨 طاقة: مزارع رياح بحرية\n🏭 تحويل: مصانع المعلبات والمجمَّدات'}
+
+]},
+c5:{lv:'k',nm:'أتعلم تدبير الاختلاف وحل النزاعات بطريقة سلمية',qs:[
+  {lv:'k1',q:'عدِّد ثلاثة أساليب سلمية لحل النزاعات.',t:'mcq',o:['الحوار + الوساطة + التفاوض والتحكيم','الشجار + الصراخ + الإقصاء','الصمت الكامل','اللجوء للعنف'],a:0},
+  {lv:'k1',q:'الوساطة تعني الاستعانة بطرف ثالث محايد لتسهيل الحل بين المتخاصمين.',t:'tf',correct:true,corr:'نعم. الوساطة أسلوب ناجح لأن الطرف المحايد يُساعد على رؤية الأمور من زوايا مختلفة.'},
+  {lv:'k2',q:'لاحظ الوضعية وحدِّد أفضل طريقة لحل النزاع.',t:'mcq',
+   sup:S('doc','📋 وضعية','خلال لعبة الكرة، تشاجر أمين وسلمى على هدف — كلٌّ منهما يُصرُّ على أنه صحيح.'),
+   o:['طلب وساطة محكَّم محايد من الفريق + الرجوع للقواعد','مواصلة الشجار','إيقاف اللعبة كلياً','الانسحاب والبكاء'],a:0},
+  {lv:'k2',q:'الاعتذار هو تعبير عن الضعف.',t:'tf',
+   correct:false,corr:'خطأ. الاعتذار عند الخطأ تعبير عن القوة والنضج الأخلاقي.'},
+  {lv:'k3',q:'طبِّق: صمِّم خطوات لحل نزاع بين فريقَيْن على استخدام الملعب.',t:'mcq',
+   sup:S('task','📝 الوضعية','فريقان تلاميذيان في نزاع حول استخدام الملعب في نفس الوقت. أنت المسؤول عن الحل.'),
+   o:['1-الاستماع للطرفَيْن 2-تحديد المصالح المشتركة 3-اقتراح تقسيم عادل للوقت 4-كتابة الاتفاق 5-متابعة التطبيق','إلغاء الملعب للجميع','السماح للأقوى','الإبلاغ فقط'],a:0,
+   model:'خطوات الحل السلمي:\n1⃣ استماع هادئ للطرفَيْن\n2⃣ تحديد المشكل الفعلي\n3⃣ البحث عن حلول مشتركة\n4⃣ الاتفاق على جدول التناوب\n5⃣ تدوين الاتفاق وتوقيعه'},
+  {lv:'k1',q:'ما الفرق بين النزاع والاختلاف؟',t:'mcq',o:['الاختلاف: تباين طبيعي في الآراء / النزاع: توتر ينشأ عن تعارض المصالح أو سوء الفهم','كلاهما متطابقان','النزاع أفضل من الاختلاف','الاختلاف دائماً يتحول لنزاع'],a:0},
+  {lv:'b2',q:'لاحظ الجدول واستنتج: ما أسلوب حل النزاعات الأكثر فعالية؟',t:'mcq',
+   sup:S('stat','📊 مقارنة أساليب حل النزاعات',TABLE(['الأسلوب','سرعة الحل','الاستدامة','الرضا الطرفَيْن'],[['الحوار المباشر','متوسطة','عالية','عالي'],['الوساطة','متوسطة','عالية','عالٍ جداً'],['التحكيم','سريعة','متوسطة','متوسط'],['التجاهل','لا حل','ضعيفة','ضعيف']])),
+   o:['الوساطة — أعلى رضا من الطرفَيْن + استدامة عالية','التجاهل الأفضل','التحكيم دائماً الأفضل','الحوار والوساطة بنفس الكفاءة'],a:0},
+  {lv:'k2',q:'من يُقرِّر مَن يكون الوسيط في النزاع؟',t:'mcq',
+   sup:S('doc','📋 وضعية الوساطة','نزاع بين سلمى وأمين. كريم يعرض نفسه وسيطاً. سلمى تقبل وأمين يرفض.'),
+   o:['الطرفان معاً يوافقان على الوسيط — موافقة طرف واحد فقط لا تكفي للوساطة','كريم يُقرِّر وحده','الأستاذ يفرض الوسيط','لا حاجة لاتفاق على الوسيط'],a:0},
+  {lv:'k3',q:'أنجز نموذجاً لعقد وساطة بين طرفَيْن.',t:'mcq',
+   sup:S('task','📝 المهمة','تلميذان تنازعا على مقعد في الفصل. صمِّم عقد وساطة بينهما.'),
+   o:['العقد يتضمن: الطرفَيْن + الوسيط + موضوع النزاع + الحل المتفق عليه + التوقيعات + تاريخ المراجعة','عقد شفهي دون توثيق','لا حاجة لعقد','العقد يكتبه الوسيط وحده'],a:0,
+   model:'نموذج عقد الوساطة:\n👥 الأطراف: سلمى | أمين\n🤝 الوسيط: المعلم / رئيس القسم\n📋 الموضوع: مقعد الفصل\n✅ الحل: تناوب أسبوعي + احترام القرار\n📅 المراجعة: بعد أسبوعَيْن\n✍️ التوقيعات: الطرفان + الوسيط'},
+  {lv:'k3',q:'كيف تتصرف عند شهادتك لنزاع حاد بين زميلَيْن؟',t:'mcq',
+   sup:S('task','📝 الوضعية','خلال الاستراحة، رأيت نزاعاً بين زميلَيْن يكاد يتحول للعنف الجسدي.'),
+   o:['1-أفصل بينهما بهدوء 2-أُخفِّف التوتر بالكلام 3-أطلب مساعدة أستاذ أو مشرف 4-لا أُصعِّد ولا أُشجِّع على الشجار','أُصوِّر الشجار','أُشجِّع الأقوى','أتركهما وأبتعد'],a:0,
+   model:'التصرف الصحيح:\n1⃣ الفصل الهادئ (لا تدخل جسدي خطير)\n2⃣ تهدئة الكلام: "هدّؤوا، تكلموا"\n3⃣ استدعاء مسؤول فوراً\n4⃣ لا تُصوِّر ولا تُشاهد كمتفرج\n5⃣ كن شاهداً عدلاً لاحقاً'}
+
+]},
+c6:{lv:'k',nm:'أُنجز مشروعاً تربوياً — التخطيط والتنفيذ والعرض',qs:[
+  {lv:'k1',q:'حدِّد ثلاث مراحل رئيسية في إنجاز مشروع تربوي.',t:'mcq',o:['التخطيط + التنفيذ + العرض والتقييم','التنفيذ فقط','العرض دون تخطيط','لا مراحل محددة'],a:0},
+  {lv:'k1',q:'المشروع التربوي يهدف إلى تعميق التعلم وتنمية مهارات البحث والتعاون.',t:'tf',correct:true,corr:'نعم. المشروع يُنمِّي: التفكير النقدي + البحث + العمل الجماعي + الاتصال والعرض.'},
+  {lv:'k2',q:'لاحظ خطة المشروع وأبدِ تقييمك لمواطن الضعف.',t:'mcq',
+   sup:S('doc','📋 خطة مشروع','الموضوع: التنمية المستدامة. المدة: 3 أيام. المصادر: محرك بحث واحد. العرض: تقرير مكتوب دون صور.'),
+   o:['الضعف: مدة قصيرة + مصدر واحد + عرض غير متنوع. التحسين: مدة أسبوع + 3 مصادر + عرض بالوسائط','الخطة كاملة ومثالية','المدة كافية','مصدر واحد كافٍ'],a:0},
+  {lv:'k2',q:'يمكن تعديل خطة المشروع في منتصف التنفيذ إذا ظهرت معلومات جديدة.',t:'tf',correct:true,corr:'نعم. المرونة في التخطيط فضيلة — الخطة الجيدة تُعدَّل وفق المعطيات الجديدة دون التخلي عن الهدف.'},
+  {lv:'k3',q:'ضع خطة مشروع تربوي عن دولة الموحدين.',t:'mcq',
+   sup:S('task','📝 المهمة','الموضوع: الإرث المعماري الموحدي في المغرب. ضع خطة منظَّمة.'),
+   o:['1-اختيار المآثر (الكتبية+منارة حسان) 2-البحث (كتب+إنترنت) 3-إنجاز ملف مصوَّر 4-عرض أمام القسم','تقديم بدون بحث','نسخ من الانترنت مباشرة','الكتابة فقط بدون صور'],a:0,
+   model:'خطة المشروع:\n📌 الموضوع: الإرث المعماري الموحدي\n👥 الفريق: 4 تلاميذ\n📅 المدة: أسبوعان\n📚 المصادر: كتاب + مواقع موثوقة + صور\n🎤 العرض: 10 دقائق + أسئلة'},
+  {lv:'k1',q:'ما الفرق بين المشروع التربوي والنشاط العادي؟',t:'mcq',o:['المشروع: هدف محدد + خطة + تنفيذ + تقييم + أثر / النشاط: عمل عادي دون هذا الإطار الكامل','كلاهما متطابقان','النشاط أفضل دائماً','المشروع أصعب بلا فائدة'],a:0},
+  {lv:'k2',q:'لاحظ الجدول وقيِّم: أي المشاريع الأكثر نضجاً؟',t:'mcq',
+   sup:S('stat','📊 مقارنة مشاريع',TABLE(['المشروع','الأهداف','المدة','المصادر','التقييم'],[['أ','محددة','4 أسابيع','متعددة','موجود'],['ب','غامضة','يوم واحد','مصدر واحد','غائب'],['ج','محددة','أسبوع','متعددة','غائب']])),
+   o:['المشروع (أ) — أهداف محددة + مدة كافية + مصادر متعددة + تقييم = المشروع الأكثر اكتمالاً','المشروع (ب)','المشروع (ج)','جميعها متساوية'],a:0},
+  {lv:'k2',q:'العمل الجماعي دائماً أفضل من العمل الفردي في المشاريع التربوية.',t:'tf',
+   correct:false,corr:'خطأ. يعتمد الأمر على طبيعة المشروع — بعض المهام تُنجَز بكفاءة أكبر بشكل فردي، وأخرى تستلزم التعاون.'},
+  {lv:'k3',q:'كيف تُقيِّم مشروعاً تربوياً أنجزته مجموعتك؟',t:'mcq',
+   sup:S('task','📝 المهمة','بعد إنهاء مشروع عن الحضارة المرينية، كيف تُقيِّمه بشكل موضوعي؟'),
+   o:['التقييم: مقارنة النتائج بالأهداف + معدل الالتزام بالجدول الزمني + جودة العرض + ردود فعل المستمعين + تقييم ذاتي للفريق','التقييم بالنظرة السريعة فقط','لا تقييم بعد الإنجاز','التقييم يكون قبل لا بعد'],a:0,
+   model:'معايير تقييم المشروع:\n✅ الهدف: هل تحقَّق؟\n✅ الجدول: هل التُزم به؟\n✅ الجودة: هل المحتوى دقيق؟\n✅ العرض: هل كان واضحاً ومُنظَّماً؟\n✅ الأثر: هل استفاد المستمعون؟\n✅ الفريق: هل التعاون كان فعالاً؟'},
+  {lv:'k3',q:'اقترح طريقة لتوزيع الأدوار في مشروع جماعي بشكل عادل.',t:'mcq',
+   sup:S('task','📝 المهمة','فريقك من 4 أعضاء يُنجز مشروعاً عن الثروة السمكية. كيف تُوزِّع الأدوار بعدل؟'),
+   o:['التوزيع وفق الكفاءات: باحث + مُصمِّم مرئي + عارض شفهي + منسِّق — كل عضو يتقلَّد دوراً يُناسب قدراته + التناوب في المشاريع اللاحقة','الرئيس يأخذ كل المهام','التوزيع العشوائي','عضو واحد يعمل والباقون يتفرجون'],a:0,
+   model:'نموذج التوزيع العادل:\n👨‍🔬 الباحث: جمع المعلومات\n🎨 المُصمِّم: إعداد العرض البصري\n🎤 العارض: التقديم أمام الفصل\n📋 المنسِّق: متابعة الجدول والتواصل\n→ في المشروع القادم: تبادل الأدوار'}
+
+]},
+h7:{lv:'b',nm:'المغرب في عهد السعديين والعلويين — الازدهار والمكانة الدولية',qs:[
+  {lv:'b1',q:'حدِّد متى تأسست الدولة العلوية ومن مؤسسها.',t:'mcq',o:['المولى الشريف العلوي — منتصف القرن السابع عشر (1666م)','يوسف بن تاشفين — القرن الحادي عشر','إدريس الأول — القرن الثامن','لا مؤسس محدد'],a:0},
+  {lv:'b1',q:'سمِّ: السلطان سيدي محمد بن عبد الله وطَّد علاقات المغرب الدولية وأسَّس الصويرة.',t:'tf',correct:true,corr:'نعم. أسَّس مدينة الصويرة وطوَّر العلاقات الدبلوماسية — والمغرب أول دولة اعترفت باستقلال الولايات المتحدة 1786م.'},
+  {lv:'b2',q:'لاحظ الوثيقة واستنتج: ما أهمية معاهدة الصداقة المغربية-الأمريكية؟',t:'mcq',
+   sup:S('doc','📜 معاهدة السلم والصداقة (1786م)','أُبرمت بين المغرب والولايات المتحدة. المغرب كان أول دولة تعترف باستقلال أمريكا (1777م). لا تزال سارية المفعول حتى اليوم.'),
+   o:['أقدم معاهدة أمريكية سارية + شهادة على انفتاح المغرب + دليل على مكانته الدولية','معاهدة عادية','انتهت مدتها','فُرضت بالقوة'],a:0},
+  {lv:'b2',q:'بناء مدينة الصويرة بواجهتها المعمارية الأوروبية يعني أن المغرب تخلى عن هويته.',t:'tf',
+   correct:false,corr:'خطأ. الصويرة مثال على التمازج الحضاري — واجهة أوروبية مع هوية مغربية أصيلة.'},
+  {lv:'b3',q:'انطلاقاً من الوثيقة، قيِّم سياسة الانفتاح في عهد سيدي محمد بن عبد الله.',t:'mcq',
+   sup:S('task','📝 المهمة','ما مزايا سياسة الانفتاح؟ ما مخاطرها؟'),
+   o:['المزايا: تجارة + اعتراف دولي + نقل تقنيات / المخاطر: نفوذ أجنبي + خطر الاستغلال','الانفتاح ضار دائماً','لا مخاطر للانفتاح','لا مزايا للانفتاح'],a:0,
+   model:'تقييم سياسة الانفتاح:\n✅ المزايا:\n• تطور التجارة والصادرات\n• مكانة دولية معترف بها\n⚠️ المخاطر:\n• نفوذ الدول الأوروبية المتزايد\n• خطر التبعية الاقتصادية'},
+  {lv:'b1',q:'من هو السلطان العلوي الذي أسَّس المغرب الحديث ووحَّد أقاليمه؟',t:'mcq',o:['المولى إسماعيل (1672-1727م) — وحَّد المغرب وأرسى نظام الحكم العلوي','المولى الشريف العلوي','محمد بن عبد الله','الحسن الأول'],a:0},
+  {lv:'b2',q:'لاحظ الجدول واستنتج: ما الإنجاز الأبرز للمولى إسماعيل؟',t:'mcq',
+   sup:S('stat','📊 إنجازات المولى إسماعيل',TABLE(['المجال','الإنجاز'],[['التوحيد','طرد الإسبان من المحمدية وإنهاء الوجود الأجنبي'],['العمران','بناء مكناس عاصمة فخمة'],['الأمن','تأسيس جيش نظامي دائم'],['الدبلوماسية','علاقات مع فرنسا وبريطانيا']])),
+   o:['التوحيد الترابي + العمران المكناسي + الجيش النظامي + الدبلوماسية = دولة متكاملة','البناء فقط دون سياسة','الدبلوماسية وحدها','لا إنجازات تُذكَر'],a:0},
+  {lv:'b2',q:'كانت مكناس عاصمة الدولة المرينية.',t:'tf',
+   correct:false,corr:'خطأ. مكناس أصبحت عاصمة الدولة العلوية في عهد المولى إسماعيل — فاس كانت عاصمة المرينيين.'},
+  {lv:'b3',q:'قيِّم أهمية الاعتراف بالولايات المتحدة الأمريكية كأول دولة في العالم.',t:'mcq',
+   sup:S('task','📝 المهمة','المغرب أول دولة اعترفت باستقلال أمريكا 1777م. ما الدلالة الاستراتيجية لذلك؟'),
+   o:['الاعتراف المبكر = دبلوماسية ذكية + بناء علاقة مميزة مع قوة صاعدة + المغرب سبق به الدول الكبرى = ريادة دبلوماسية','لا أهمية للاعتراف','المغرب أُجبر على الاعتراف','قرار طائش بلا فائدة'],a:0,
+   model:'الدلالات الاستراتيجية:\n1. رؤية مستقبلية: التحالف مع قوة صاعدة\n2. الانفتاح: تجاوز حدود العالم الإسلامي التقليدي\n3. الريادة: سبق الدول الأوروبية بسنوات\n4. الأثر: معاهدة 1786م لا تزال سارية'},
+  {lv:'b3',q:'ما الفرق بين الاستقلالية السياسية والانفتاح الاقتصادي كسياسة خارجية؟',t:'mcq',
+   sup:S('task','📝 التحليل','سيدي محمد بن عبد الله فتح موانئ تجارية مع أوروبا مع الحفاظ على السيادة. كيف يجمع بين الأمرَيْن؟'),
+   o:['الاستقلالية: قرارات سيادية لا تخضع لإملاءات أجنبية / الانفتاح: تبادل تجاري وثقافي دون فقدان القرار = التوازن الأمثل','الانفتاح يعني فقدان الاستقلالية','الاستقلالية تعني الانعزال التام','لا يمكن الجمع بينهما'],a:0,
+   model:'معادلة التوازن:\nالاستقلالية: نعم للتجارة + لا للتدخل في الشؤون الداخلية\nالانفتاح: أسواق مفتوحة + علاقات دبلوماسية + تبادل التقنيات\nالنموذج: المغرب اليوم: شراكة مع الاتحاد الأوروبي مع الحفاظ على القرار السيادي'}
+
+]},
+h8:{lv:'b',nm:'المغرب في القرن التاسع عشر — المبادرات الإصلاحية ومواجهة الاستعمار',qs:[
+  {lv:'b1',q:'حدِّد أبرز مبادرتَيْن إصلاحيتَيْن في المغرب في القرن التاسع عشر.',t:'mcq',o:['إصلاح الجيش على النمط الأوروبي + إرسال بعثات علمية للخارج','إلغاء الجيش','الانعزال التام','رفض كل إصلاح'],a:0},
+  {lv:'b1',q:'حدِّد: مؤتمر مدريد 1880م فرض على المغرب أنظمة الحماية القنصلية التي قلّصت سيادته.',t:'tf',correct:true,corr:'نعم. مؤتمر مدريد كان بداية التدخل الأوروبي المنظَّم خطوة نحو الحماية 1912م.'},
+  {lv:'b2',q:'لاحظ الخط الزمني واستنتج: ما التسلسل المنطقي للأحداث المؤدية للحماية؟',t:'mcq',
+   sup:S('stat','📊 أحداث مؤدية للحماية',TABLE(['السنة','الحدث'],[['1880','مؤتمر مدريد'],['1904','اتفاقية فرنسية-إنجليزية'],['1906','مؤتمر الجزيرة الخضراء'],['1907','بداية التدخل المسلح'],['1912','معاهدة الحماية']])),
+   o:['1880: بداية الضغط → 1904: تقسيم النفوذ → 1906: دولي → 1907: عسكري → 1912: رسمي — تسلسل متدرج','الحماية جاءت فجأة','1912 كان حدثاً منفرداً','لا تسلسل بين الأحداث'],a:0},
+  {lv:'b2',q:'مقاومة المغرب للاستعمار في القرن 19 كانت نزاعاً داخلياً لا مقاومة وطنية.',t:'tf',
+   correct:false,corr:'خطأ. المقاومة كانت وطنية ضد التدخل الأجنبي وإن اتخذت في البداية طابعاً قبلياً.'},
+  {lv:'b3',q:'انطلاقاً من الخط الزمني، اكتب تحليلاً لمسار التدخل الاستعماري في المغرب.',t:'mcq',
+   sup:S('task','📝 المهمة','كيف تحوَّل التدخل من ضغط دبلوماسي إلى احتلال رسمي؟'),
+   o:['المسار: ضغط دبلوماسي → اتفاقيات سرية → ضغط دولي → تدخل عسكري → احتلال رسمي — تصعيد تدريجي','الاحتلال عشوائي','لا مخطط للاستعمار','الأحداث مستقلة'],a:0,
+   model:'التحليل:\nالمرحلة 1 (1880-1904): ضغط دبلوماسي\nالمرحلة 2 (1904-1906): تقسيم دولي للنفوذ\nالمرحلة 3 (1907-1912): تدخل عسكري\nالمرحلة 4 (1912): الحماية الرسمية'},
+  {lv:'b1',q:'ما معنى "الحماية" في السياق الاستعماري؟',t:'mcq',o:['نظام يفرض فيه بلد أجنبي سلطته على بلد آخر مع إبقاء سلطته المحلية شكلياً','شكل من أشكال التحالف بين متساويَيْن','نظام للمساعدة التنموية','شراكة اقتصادية متوازنة'],a:0},
+  {lv:'b2',q:'لاحظ الخريطة واستنتج: ما الدول التي اقتسمت نفوذها على المغرب في إطار الحماية؟',t:'mcq',
+   sup:S('img','🗺️ خريطة المغرب تحت الحماية','الخريطة تُظهر: المنطقة الفرنسية (معظم المغرب) + المنطقة الإسبانية (الشمال والجنوب) + طنجة الدولية.'),
+   o:['فرنسا: الجزء الأكبر + إسبانيا: الشمال والجنوب + دولي: طنجة — تقسيم ثلاثي','فرنسا وحدها','إسبانيا وحدها','المغرب غير مقسَّم'],a:0},
+  {lv:'b2',q:'الحسن الأول كان من أشد المعارضين للهيمنة الأوروبية على المغرب.',t:'tf',
+   correct:true,corr:'نعم. الحسن الأول (1873-1894م) سعى للإصلاح العسكري وتحديث المغرب لمقاومة التدخل الأوروبي المتزايد.'},
+  {lv:'b3',q:'حلِّل أسباب عجز المغرب عن مقاومة الحماية الفرنسية في 1912م.',t:'mcq',
+   sup:S('task','📝 المهمة','رغم مقاومة المغرب، فُرضت الحماية. ما العوامل التي أضعفت المغرب أمام التدخل الأوروبي؟'),
+   o:['التخلف التقني (أسلحة بدائية) + الضعف الاقتصادي + الانقسامات الداخلية + الضغط الدبلوماسي الأوروبي المتحالف','القوة العسكرية وحدها','لا أسباب للضعف','المغرب لم يُقاوم'],a:0,
+   model:'أسباب تراجع المغرب:\n• عسكرياً: تفوق تقني أوروبي\n• اقتصادياً: ديون لأوروبا\n• سياسياً: ضعف المخزن\n• دولياً: توافق الدول الكبرى (مؤتمر الجزيرة)\n• محلياً: تفرق الزعامات القبلية'},
+  {lv:'b3',q:'قيِّم: هل كانت المقاومة المغربية للاستعمار في القرن 19 فعالة رغم النتائج؟',t:'mcq',
+   sup:S('task','📝 التفكير','المغرب قاوم الاستعمار لكن الحماية فُرضت في نهاية المطاف. هل كانت المقاومة مُجدية؟'),
+   o:['نعم، المقاومة كانت مُجدية: حافظت على الهوية الوطنية + أجَّلت الاستعمار عقوداً + شكَّلت إرثاً نضالياً ألهم جيل الاستقلال','المقاومة كانت بلا فائدة','الاستسلام المبكر كان أفضل','المقاومة جلبت المصائب'],a:0,
+   model:'قيمة المقاومة رغم الهزيمة:\n✅ صونت الهوية الوطنية والثقافية\n✅ أجَّلت الاستعمار عقوداً\n✅ شكَّلت ذاكرة نضالية\n✅ ألهمت الحركة الوطنية لاحقاً\nالدرس: المقاومة قيمة في حد ذاتها حتى لو لم تنجح فورياً'}
+
+]},
+g7:{lv:'b',nm:'الغطاء النباتي والثروة الحيوانية — قراءة خريطة',qs:[
+  {lv:'b1',q:'عدِّد ثلاثة أنواع من الغطاء النباتي في خريطة المغرب.',t:'mcq',o:['غابات الشمال (بلوط+أرز) + الستيب + الصحراء (نباتات متفرقة)','الغابات الاستوائية فقط','لا غطاء نباتي','الصحراء وحدها'],a:0},
+  {lv:'b1',q:'يُساعد الغطاء النباتي على الحدِّ من ظاهرة انجراف التربة والتصحر.',t:'tf',correct:true,corr:'نعم. الجذور تُثبِّت التربة وتمنع الانجراف.'},
+  {lv:'b2',q:'لاحظ الخريطة واستنتج: ما العلاقة بين الأمطار والغطاء النباتي؟',t:'mcq',
+   sup:S('img','🗺️ خريطة الغطاء النباتي','الشمال: أمطار غزيرة → غابات كثيفة / الوسط: أمطار معتدلة → ستيب / الجنوب: أمطار نادرة → نباتات متفرقة'),
+   o:['علاقة طردية: كلما زادت الأمطار، ازداد كثافة الغطاء النباتي','لا علاقة بين الأمطار والنباتات','الأمطار تُقلِّل النباتات','الغطاء يعتمد على الحرارة فقط'],a:0},
+  {lv:'b2',q:'الحيوانات البرية المحمية في الغابات لا دور لها في التوازن البيئي.',t:'tf',
+   correct:false,corr:'خطأ. كل نوع حيواني له دور في السلسلة الغذائية — انقراضه يُؤثِّر على النظام البيئي.'},
+  {lv:'b3',q:'انطلاقاً من الخريطة، قدِّم تقريراً عن التصحر في المغرب.',t:'mcq',
+   sup:S('task','📝 المهمة','أين يحدث التصحر؟ ما أسبابه؟ ما حلوله؟'),
+   o:['التصحر: الجنوب والشرق / الأسباب: تغيرات مناخية + رعي مفرط + قطع الأشجار / الحلول: التشجير + الري + حصاد مياه الأمطار','التصحر لا يوجد في المغرب','التصحر في الشمال','لا حلول للتصحر'],a:0,
+   model:'تقرير التصحر:\n📍 المناطق: الجنوب الشرقي + درعة\n🔴 الأسباب:\n• جفاف متزايد\n• رعي مكثف\n• قطع الأشجار\n🟢 الحلول:\n• مشاريع التشجير\n• تقنيات ري محسَّنة'},
+  {lv:'b1',q:'ما الفرق بين الغابة والغيضة والستيب؟',t:'mcq',o:['الغابة: أشجار كثيفة عالية / الغيضة: أشجار متوسطة / الستيب: حشائش متفرقة في المناطق الجافة','كلها متطابقة','الغابة أصغر من الستيب','الستيب أكثف من الغابة'],a:0},
+  {lv:'b2',q:'لاحظ الجدول واستنتج: في أي موسم تتعرض الغابات المغربية لأعلى خطر للحرائق؟',t:'mcq',
+   sup:S('stat','📊 حرائق الغابات في المغرب حسب الموسم',TABLE(['الموسم','عدد الحرائق','المساحة المحترقة (هكتار)'],[['الربيع','45','1,200'],['الصيف','380','18,500'],['الخريف','60','2,100'],['الشتاء','20','300']])),
+   o:['الصيف — 380 حريق و18,500 هكتار = الأشد بسبب الجفاف والحرارة العالية','الشتاء','الربيع','الخريف'],a:0},
+  {lv:'b2',q:'بعض أنواع الأشجار تحتاج النيران لتكاثرها وتجديدها.',t:'tf',
+   correct:true,corr:'نعم. بعض الأشجار (كالصنوبر) تحتاج حرارة الحريق لفتح ثمارها وإطلاق بذورها — تكيُّف طبيعي رائع.'},
+  {lv:'b3',q:'اقترح مشروعاً مدرسياً للتوعية بحماية الغطاء النباتي.',t:'mcq',
+   sup:S('task','📝 المهمة','المديرية الإقليمية للمياه والغابات تطلب من المدارس المساهمة في التوعية. ما مشروعك؟'),
+   o:['مشروع: "مدرستنا خضراء" — تشجير ساحة المدرسة + رسم جداري عن أهمية الغابات + يوم دراسي مع تلاميذ مدارس أخرى + مسابقة لوحات إعلانية','لا اهتمام بالغطاء النباتي','قطع الأشجار لصنع الورق','لا دور للمدرسة في الحماية'],a:0,
+   model:'مشروع مدرستنا خضراء:\n🌳 التشجير: 30 شجرة في الساحة\n🎨 الجدارية: رسم جماعي عن الغابات\n📚 التوعية: ورشة مع حارس غابة\n🏆 المسابقة: أفضل لوحة عن التشجير\n🤝 الشراكة: المديرية + الجماعة + الجمعيات'},
+  {lv:'b3',q:'ما أثر الجفاف المتكرر على الغطاء النباتي في المغرب؟',t:'mcq',
+   sup:S('task','📝 التحليل','المغرب عاش سنوات جفاف متتالية. ما الأثر على الغطاء النباتي وكيف تُعالجه؟'),
+   o:['الجفاف: تراجع الغطاء + نفوق الحيوانات + توسع التصحر / المعالجة: سدود + محطات تحلية + نباتات مقاومة للجفاف + ترشيد الرعي','الجفاف لا يؤثر على النباتات','النباتات تتكيف وحدها دون تدخل','الجفاف يُحسِّن الغطاء النباتي'],a:0,
+   model:'أثر الجفاف:\n📉 التراجع: غطاء نباتي أقل كثافة\n🐑 الرعي: ضغط مضاعف على ما تبقَّى\n🏜️ التصحر: تقدُّم الصحراء شمالاً\n\nالحلول:\n• برنامج تشجير وطني\n• نباتات مقاومة للجفاف (أركان، حلفاء)\n• تنظيم الرعي + مناطق محمية'}
+
+]},
+g8:{lv:'b',nm:'مميزات وطني — الموارد الفلاحية',qs:[
+  {lv:'b1',q:'عدِّد ثلاث مناطق فلاحية رئيسية في المغرب.',t:'mcq',o:['سهل الغرب + سهل الحوز + سوس-ماسة','الصحراء فقط','لا فلاحة في المغرب','الجبال فقط'],a:0},
+  {lv:'b1',q:'يُعدُّ الفوسفاط والمنتجات الفلاحية أبرز الصادرات المغربية.',t:'tf',correct:true,corr:'نعم. المغرب من الدول المنتجة للطماطم والحوامض والبواكر الفلاحية الموجَّهة للتصدير.'},
+  {lv:'b2',q:'لاحظ الجدول واستنتج: أي المنتجات الفلاحية الأكثر قيمة في الصادرات؟',t:'mcq',
+   sup:S('stat','📊 الصادرات الفلاحية (2022)',TABLE(['المنتج','القيمة (مليار دولار)'],[['الأسماك','2.3'],['الطماطم','0.8'],['البواكر والخضر','0.7'],['الحوامض','0.6'],['زيت الأركان','0.4']])),
+   o:['الأسماك (2.3 مليار) أعلى قيمة','الطماطم أغلى','كلها بنفس القيمة','زيت الأركان الأهم'],a:0},
+  {lv:'b2',q:'التطور الفلاحي في المغرب يعني أن الفلاحة التقليدية اختفت كلياً.',t:'tf',
+   correct:false,corr:'خطأ. يتعايش النموذجان: الفلاحة العصرية للتصدير + الفلاحة التقليدية الاستهلاكية.'},
+  {lv:'b3',q:'انطلاقاً من الجدول، اقترح استراتيجية لتطوير الصادرات الفلاحية.',t:'mcq',
+   sup:S('task','📝 المهمة','وزارة الفلاحة تريد مضاعفة قيمة الصادرات. كيف تُحقِّق ذلك؟'),
+   o:['تطوير التحويل الصناعي (عصائر+معلبات) + الشهادات البيولوجية + استهداف أسواق جديدة (آسيا+إفريقيا)','رفع الكميات فقط','التوقف عن التصدير','الاعتماد على الأركان وحده'],a:0,
+   model:'استراتيجية تطوير الصادرات:\n1. تحويل المنتجات (عصائر حوامض)\n2. شهادات بيو وعضوية (+30% قيمة)\n3. تنويع الأسواق: آسيا + إفريقيا\n4. التحكم في سلاسل التبريد'},
+  {lv:'b1',q:'ما الفرق بين الفلاحة البورية والفلاحة المسقية؟',t:'mcq',o:['البورية: تعتمد على أمطار الطبيعة فقط / المسقية: تستعمل نظام ري اصطناعي','كلتاهما متطابقتان','البورية أكثر إنتاجاً','المسقية تعتمد على الأمطار'],a:0},
+  {lv:'b2',q:'لاحظ الجدول واستنتج: ما المنتوج الفلاحي الذي تطور إنتاجه أكثر خلال عشر سنوات؟',t:'mcq',
+   sup:S('stat','📊 تطور الإنتاج الفلاحي بالمغرب',TABLE(['المنتوج','2012 (مليون طن)','2022 (مليون طن)','نسبة الارتفاع'],[['الطماطم','1.8','3.1','+72%'],['الحوامض','1.5','2.3','+53%'],['البواكر','0.8','1.5','+87%'],['الزيتون','1.2','1.8','+50%']])),
+   o:['البواكر: +87% — أكبر ارتفاع','الطماطم','الحوامض','الزيتون'],a:0},
+  {lv:'b2',q:'يمكن للمغرب الاكتفاء بإنتاجه الفلاحي دون الاستيراد.',t:'tf',
+   correct:false,corr:'خطأ. المغرب يستورد الحبوب والسكر وبعض المواد الغذائية — التنويع الفلاحي يُقلِّص الاستيراد لكن لا يلغيه.'},
+  {lv:'b3',q:'اشرح أهمية القطاع الفلاحي في التنمية الاجتماعية للعالم القروي.',t:'mcq',
+   sup:S('task','📝 المهمة','35% من العمالة في المغرب في الفلاحة. ما الأثر الاجتماعي لتطوير هذا القطاع؟'),
+   o:['تطوير الفلاحة = تحسين دخل الفلاح + تقليص الهجرة القروية + توطين الشباب + تنمية الخدمات القروية','الفلاحة لا أثر اجتماعي لها','التطوير يُغني المدن لا القرى','35% قليلون ولا أهمية لهم'],a:0,
+   model:'الأثر الاجتماعي للتطوير الفلاحي:\n💰 الدخل: ارتفاع مستوى معيشة الفلاح\n🏡 الاستقرار: الشباب يبقى في القرية\n🏥 الخدمات: مداخيل أعلى = مدارس + صحة أفضل\n🌾 الأمن الغذائي: إنتاج محلي = استقلالية'},
+  {lv:'b3',q:'ما دور التعاونيات الفلاحية في تحسين وضع صغار الفلاحين؟',t:'mcq',
+   sup:S('task','📝 المهمة','فلاح صغير لا يستطيع شراء جرار أو بيع إنتاجه بسعر جيد. كيف يُساعده الانخراط في تعاونية؟'),
+   o:['التعاونية: شراء جماعي للمعدات + تسويق مشترك للإنتاج + تدريب + شهادات بيولوجية = قدرة تفاوضية أعلى للفلاح الصغير','التعاونية لا تُفيد الفلاح','الفلاح يعمل وحده أفضل','التعاونية تُضيِّع الأرباح'],a:0,
+   model:'فوائد التعاونية:\n🚜 الشراء المشترك: جرار للجميع بسعر مخفَّض\n📦 التسويق: بيع مباشر دون وسطاء (+30% سعر)\n📚 التدريب: تقنيات فلاحية حديثة\n🏅 الشهادات: بيو-عضوي = سعر أعلى\n🤝 التضامن: مخاطر مُوزَّعة على الجميع'}
+
+]},
+c7:{lv:'k',nm:'المساواة بين الرجال والنساء — الحق الدستوري والواقع',qs:[
+  {lv:'k1',q:'أين يكفل الدستور المغربي مبدأ المساواة بين الجنسَيْن؟',t:'mcq',o:['الفصل 19 من دستور 2011 — المساواة في الحقوق السياسية والاقتصادية والاجتماعية','الدستور لا يتطرق لهذا','في قانون التربية فقط','في قانون العمل فقط'],a:0},
+  {lv:'k1',q:'سمِّ: المغرب أعطى المرأة حق التصويت والترشح للانتخابات.',t:'tf',correct:true,corr:'نعم. المرأة المغربية حصلت على حق التصويت 1963م، وتُمثِّل اليوم حصة 30% من مقاعد البرلمان.'},
+  {lv:'k2',q:'لاحظ الإحصائيات وأبدِ رأيك: هل تحقَّقت المساواة الفعلية بشكل كامل؟',t:'mcq',
+   sup:S('stat','📊 مؤشرات المساواة (2023)',TABLE(['المؤشر','النساء','الرجال'],[['التعليم الجامعي','51%','49%'],['سوق العمل','22%','78%'],['مناصب القيادة','19%','81%']])),
+   o:['المساواة في التعليم تحقَّقت لكن في سوق العمل والقيادة فجوة كبيرة تستوجب إجراءات إضافية','المساواة اكتملت','لا مساواة في أي مجال','الإحصائيات غير صحيحة'],a:0},
+  {lv:'k2',q:'التمييز ضد المرأة في العمل مقبول إذا كان عرفاً اجتماعياً سائداً.',t:'tf',
+   correct:false,corr:'خطأ. التمييز غير القانوني حتى لو كان عرفاً — الدستور والقانون فوق الأعراف المخالفة للحقوق.'},
+  {lv:'k3',q:'قيِّم: كيف تُساهم كطالب في تعزيز المساواة داخل المدرسة؟',t:'mcq',
+   sup:S('task','📝 الوضعية','في مجلس القسم، يرى بعضهم أن مناصب القيادة للذكور فقط.'),
+   o:['أرفض بهدوء وأستدلُّ بالدستور وأقترح انتخاباً على أساس الكفاءة لا الجنس','أوافق على التمييز','أصمت','أُيِّد الأغلبية دون تفكير'],a:0,
+   model:'الموقف المدني:\n1- "الدستور يضمن المساواة"\n2- الدليل: "51% من الجامعيين إناث"\n3- المقترح: "ننتخب وفق الكفاءة وحدها"'},
+  {lv:'k1',q:'ما الفرق بين المساواة والإنصاف؟',t:'mcq',o:['المساواة: نفس المعاملة للجميع / الإنصاف: معاملة تُراعي الاختلافات لتحقيق نتائج عادلة','كلاهما متطابقان','الإنصاف أقل من المساواة','المساواة أفضل دائماً'],a:0},
+  {lv:'k2',q:'لاحظ الجدول وأبدِ رأيك في تطور وضع المرأة المغربية في المناصب القيادية.',t:'mcq',
+   sup:S('stat','📊 تطور تمثيل المرأة في المغرب',TABLE(['السنة','في البرلمان','في الحكومة','في القضاء'],[['2002','1%','5%','8%'],['2011','17%','10%','20%'],['2021','25%','15%','28%'],['2023','28%','18%','31%']])),
+   o:['تطور ملحوظ من 2002 إلى 2023 في جميع المجالات — لكن المساواة الكاملة (50%) لم تتحقق بعد، تستوجب استمرار الجهود','المساواة اكتملت تماماً','لا تطور يُذكر','الأرقام مبالَغ فيها'],a:0},
+  {lv:'k2',q:'مُدوَّنة الأسرة (الشريعة العائلية) المغربية أعطت المرأة حقوقاً متساوية مع الرجل.',t:'tf',
+   correct:false,corr:'يصعب الإجابة بنعم أو لا — إصلاح 2004م وسَّع حقوق المرأة في الطلاق والولاية لكن لا تزال فجوات قائمة في بعض المجالات.'},
+  {lv:'k3',q:'قدِّم مقترحاً لتعزيز مشاركة المرأة في الحياة العامة المغربية.',t:'mcq',
+   sup:S('task','📝 المهمة','انطلاقاً من الجدول، اقترح إجراءات لتسريع وتيرة تحقيق المساواة.'),
+   o:['الاقتراحات: نظام الكوتا + برامج دعم قيادة المرأة + مكافحة الصور النمطية في التعليم + تشجيع المرأة على الترشح + إجازة الأمومة مدفوعة','لا حاجة لإجراءات إضافية','المساواة تتحقق وحدها','الكوتا تُعيق الاستحقاق'],a:0,
+   model:'إجراءات تعزيز المشاركة:\n1. الكوتا في القوائم الانتخابية\n2. برامج تكوين القيادات النسائية\n3. مكافحة الصور النمطية في الكتب المدرسية\n4. إجازة أمومة مدفوعة الأجر\n5. توفير دور حضانة للعاملات'},
+  {lv:'k3',q:'كيف تُساهم في تعزيز ثقافة المساواة في محيطك اليومي؟',t:'mcq',
+   sup:S('task','📝 التفكير','المساواة لا تتحقق فقط بالقوانين بل بالسلوك اليومي. ما دورك كتلميذ؟'),
+   o:['التصرفات اليومية: عدم التمييز في الألعاب + تشجيع الزميلات على القيادة + رفض العبارات التمييزية + المساواة في توزيع المهام المنزلية','لا دور لي','التمييز أمر طبيعي','المساواة قانون لا علاقة لي به'],a:0,
+   model:'المساواة في التفاصيل اليومية:\n• في القسم: إشراك الجميع بالتساوي\n• في الألعاب: لا تمييز بين بنات وبنين\n• في الكلام: رفض النكات التمييزية\n• في البيت: المشاركة في المهام دون تفريق\n→ التغيير يبدأ بسلوكياتنا اليومية'}
+
+]},
+c8:{lv:'k',nm:'الديمقراطية المحلية — مجلس الجماعة الحضرية والقروية',qs:[
+  {lv:'k1',q:'حدِّد صلاحيتَيْن رئيسيتَيْن لمجلس الجماعة.',t:'mcq',o:['التخطيط العمراني + توفير الخدمات (الماء+الإنارة+النظافة)','صنع القوانين الوطنية','الحرب والسلام','الأمن الوطني'],a:0},
+  {lv:'k1',q:'يُنتخَب المجلس الجماعي كل 6 سنوات من طرف المواطنين مباشرة.',t:'tf',correct:true,corr:'نعم. أعضاء المجلس الجماعي ينتخبهم سكان الجماعة بالاقتراع المباشر — جوهر الديمقراطية المحلية.'},
+  {lv:'k2',q:'لاحظ وضعية الجماعة وحدِّد الأولويات الصحيحة.',t:'mcq',
+   sup:S('stat','📊 مشاكل الجماعة',TABLE(['المشكل','درجة الأولوية'],[['غياب ماء الشرب','🔴 طارئ'],['رصف الطرق','🟡 مهم'],['إنارة عمومية','🟡 مهم'],['مسبح عمومي','🟢 كمالي']])),
+   o:['الأولوية: ماء الشرب أولاً (حق أساسي) ثم الطرق ثم الإنارة — المسبح ليس أولوية','المسبح أولاً','جميعها بنفس الأولوية','لا أولوية محددة'],a:0},
+  {lv:'k2',q:'يمكن للمواطنين المشاركة في قرارات المجلس الجماعي عبر العرائض.',t:'tf',correct:true,corr:'نعم. القانون التنظيمي للجماعات يُتيح تقديم العرائض والمشاركة في الجلسات العامة.'},
+  {lv:'k3',q:'طبِّق: قدِّم مقترحاً لتحسين خدمات جماعتك.',t:'mcq',
+   sup:S('task','📝 المهمة','أنت عضو في مجلس تلاميذ يعتزم رفع عريضة للمجلس الجماعي. ما مقترحك؟'),
+   o:['مقترح: إنشاء حديقة عمومية — الحجج: تقليص ظاهرة التسكع + تنشيط الرياضة + تحسين البيئة — وثيقة: عريضة مُعلَّلة','مطالبة عشوائية','رفع عريضة بدون توقيعات','رسالة مجهولة'],a:0,
+   model:'نموذج العريضة:\n📝 الموضوع: مقترح إنشاء حديقة عمومية\n🔍 الوضعية: غياب فضاءات الترفيه\n💡 المقترح: موقع + تجهيزات + تكلفة تقريبية\n✅ المنتظَر: جلسة نقاش + قرار\n📝 التوقيعات: 50+ مواطن'},
+  {lv:'k1',q:'ما الفرق بين الجماعة الحضرية والجماعة القروية؟',t:'mcq',o:['الحضرية: تدير المدن وتعدادها فوق 35,000 نسمة / القروية: تدير الأرياف وتعدادها أقل','كلتاهما متطابقتان','الحضرية أقل أهمية','القروية تمتلك موارد أكبر'],a:0},
+  {lv:'k2',q:'لاحظ الجدول واستنتج: ما مجال ميزانية الجماعة الأكبر في الإنفاق؟',t:'mcq',
+   sup:S('stat','📊 توزيع ميزانية جماعة نموذجية',TABLE(['المجال','نسبة الميزانية'],[['البنية التحتية (طرق+ماء+كهرباء)','45%'],['التعليم والثقافة','20%'],['الخدمات الاجتماعية','18%'],['التسيير الإداري','12%'],['الرياضة والشباب','5%']])),
+   o:['البنية التحتية (45%) — لأنها الأساس الذي يعتمد عليه كل شيء آخر','التعليم والثقافة','التسيير الإداري','الرياضة والشباب'],a:0},
+  {lv:'k2',q:'يمكن للمواطن اللجوء إلى القضاء لمحاسبة المجلس الجماعي على إهدار المال العام.',t:'tf',
+   correct:true,corr:'نعم. المواطن يمكنه الشكوى لدى المحاكم الإدارية أو المجلس الأعلى للحسابات في حالة إهدار المال العام.'},
+  {lv:'k3',q:'ما الفرق بين المواطن الفاعل والمواطن السلبي في علاقته بالجماعة؟',t:'mcq',
+   sup:S('task','📝 المقارنة','صف تصرف مواطنَيْن: (أ) ينتقد فقط / (ب) ينتقد + يقترح + يشارك.'),
+   o:['الفاعل (ب): ينتقد بنّاءً + يقترح حلولاً + يشارك في صنع القرار + يُدافع عن المال العام / السلبي (أ): ينتقد دون مشاركة','الانتقاد وحده مشاركة كافية','المواطن السلبي أفضل','لا فرق بين الاثنَيْن'],a:0,
+   model:'المواطن الفاعل:\n✅ يصوِّت في الانتخابات\n✅ يحضر الجلسات العامة\n✅ يُقدِّم عرائض مُعلَّلة\n✅ يتابع تنفيذ المشاريع\n✅ يشارك في الجمعيات المحلية\n\nالمواطن السلبي:\n❌ ينتقد دون اقتراح\n❌ يتذمر دون فعل'},
+  {lv:'k3',q:'صمِّم خطة لزيارة مجلس جماعتك بشكل احترافي.',t:'mcq',
+   sup:S('task','📝 المهمة','قسمك يُعتزم زيارة مقر الجماعة. ما الخطوات التي تُنظِّم بها هذه الزيارة؟'),
+   o:['خطة: 1-التحضير (أسئلة مسبقاً + فريق المتابعة) 2-الاتصال بالجماعة لتحديد موعد 3-الزيارة الميدانية 4-التقرير النهائي + ما تعلمناه','الزيارة عشوائية بدون تنظيم','لا فائدة من الزيارة','الزيارة دون تقرير'],a:0,
+   model:'خطة الزيارة المنظَّمة:\n📋 التحضير: تحديد 5 أسئلة + فريق ملاحظة\n📞 التنسيق: مراسلة الجماعة لتحديد موعد\n🎒 الزيارة: دفتر ملاحظات + تصوير بإذن\n📝 التقرير: ما رأيناه + ما تعلمناه\n🎤 العرض: تقديم للفصل + توصيات'}
+
+]},
+h9:{lv:'b',nm:'المغرب في عهد العلويين — السلطان سيدي محمد بن عبد الله والمكانة الدولية',qs:[
+  {lv:'b1',q:'ما الاسم الكامل للسلطان الذي وطَّد مكانة المغرب الدولية في القرن 18؟',t:'mcq',o:['السلطان سيدي محمد بن عبد الله (1757-1790م)','السلطان يوسف بن تاشفين','السلطان الحسن الأول','السلطان محمد الخامس'],a:0},
+  {lv:'b1',q:'حدِّد: المغرب أول دولة في العالم اعترفت باستقلال الولايات المتحدة الأمريكية.',t:'tf',correct:true,corr:'نعم. المغرب اعترف باستقلال الولايات المتحدة عام 1777م.'},
+  {lv:'b2',q:'لاحظ الوثيقة واستنتج: ما أهمية مدينة الصويرة في السياسة الخارجية المغربية؟',t:'mcq',
+   sup:S('doc','📜 ميناء الصويرة في القرن 18','مدينة بتصميم مختلط. تستقبل سفن أوروبا وأمريكا. مركز الدبلوماسية المغربية مع الغرب.'),
+   o:['الصويرة = بوابة دبلوماسية وتجارية مع الغرب + نموذج للانفتاح المنضبط','مدينة عادية','تجارية فقط','بنيت للدفاع العسكري'],a:0},
+  {lv:'b2',q:'التوازن بين الانفتاح على الغرب والحفاظ على السيادة كان مستحيلاً في القرن 18.',t:'tf',
+   correct:false,corr:'خطأ. سيدي محمد بن عبد الله نجح نسبياً: علاقات دبلوماسية مع الحفاظ على السيادة والهوية.'},
+  {lv:'b3',q:'قارن بين سياسة الانفتاح في القرن 18 وسياسة المغرب الدولية اليوم.',t:'mcq',
+   sup:S('task','📝 المهمة','استعمل معرفتك لمقارنة مكانة المغرب الدولية قديماً وحديثاً.'),
+   o:['القرن 18: انفتاح دبلوماسي تجاري / اليوم: عضوية دولية + اتفاقيات شراكة + مبادرات إفريقية','المغرب منعزل اليوم','القرن 18 أفضل','لا مقارنة ممكنة'],a:0,
+   model:'| المعيار | القرن 18 | اليوم |\n|---|---|---|\n| الإطار | معاهدات ثنائية | منظمات دولية |\n| الشركاء | أوروبا + أمريكا | العالم كله |\n| التحدي | الاستعمار الوشيك | التنافس الاقتصادي |'},
+  {lv:'b1',q:'ما المقصود بـ"الشيخ المأمون" في الثقافة السياسية المغربية؟',t:'mcq',o:['لقب إجلال يُطلَق على السلاطين العلويين الذين يتمتعون بالشرعية الدينية والشعبية','لقب عسكري','لقب أجنبي','لقب يخص العلماء فقط'],a:0},
+  {lv:'b2',q:'لاحظ الجدول واستنتج: ما السلطان العلوي الذي حكم أطول مدة؟',t:'mcq',
+   sup:S('stat','📊 أبرز سلاطين العلويين',TABLE(['السلطان','فترة الحكم','الإنجاز الأبرز'],[['المولى إسماعيل','1672-1727م (55 سنة)','توحيد المغرب'],['سيدي محمد بن عبد الله','1757-1790م (33 سنة)','الانفتاح الدولي'],['الحسن الأول','1873-1894م (21 سنة)','الإصلاح العسكري'],['محمد الخامس','1927-1961م (34 سنة)','الاستقلال']])),
+   o:['المولى إسماعيل — 55 سنة حكم (الأطول)','سيدي محمد بن عبد الله','محمد الخامس','الحسن الأول'],a:0},
+  {lv:'b2',q:'علاقة المغرب بالولايات المتحدة بدأت مع الاستقلال الأمريكي فقط.',t:'tf',
+   correct:false,corr:'خطأ. العلاقات بدأت قبل ذلك — واعتراف المغرب بأمريكا 1777م ثم المعاهدة 1786م قبل الاستقلال الرسمي للمغرب بأكثر من قرن ونصف.'},
+  {lv:'b3',q:'ما الدروس التي يمكن استخلاصها من السياسة الخارجية لسيدي محمد بن عبد الله؟',t:'mcq',
+   sup:S('task','📝 المهمة','سيدي محمد بن عبد الله: فتح الأبواب تجارياً + بنى علاقات دبلوماسية + حافظ على السيادة. ما الدروس؟'),
+   o:['الدروس: الانفتاح المحسوب أقوى من الانعزال + التحالف مع القوى الصاعدة ذكاء استراتيجي + التوازن بين الدين والانفتاح ممكن','الانعزال أفضل سياسة خارجية','لا دروس في التاريخ','سياسة القرن 18 لا تنطبق اليوم'],a:0,
+   model:'الدروس الاستراتيجية:\n1. الانفتاح المنضبط: تجارة دون تبعية\n2. الاعتراف المبكر: التحالف مع المستقبل\n3. التوازن: دبلوماسية + هوية + سيادة\n4. الصويرة: الجسر الثقافي التجاري'},
+  {lv:'b3',q:'كيف يستلهم المغرب المعاصر من رصيده الدبلوماسي التاريخي؟',t:'mcq',
+   sup:S('task','📝 التطبيق','المغرب اليوم عضو في الاتحاد الأفريقي + شراكة مع الاتحاد الأوروبي + علاقات مع الولايات المتحدة. ما الاستمرارية التاريخية؟'),
+   o:['استمرارية من القرن 18: انفتاح دولي + تنويع الشركاء + الحضور الإفريقي = السياسة الخارجية المغربية لم تنقطع عن جذورها','لا علاقة بين الماضي والحاضر','المغرب منعزل اليوم','السياسة الخارجية الحديثة مستوردة'],a:0,
+   model:'خيط التاريخ الدبلوماسي:\n🏛️ القرن 18: معاهدة أمريكا + موانئ مفتوحة\n🌍 القرن 19: محاولة التوازن مع أوروبا\n🔓 1956م: الاستقلال + الانخراط الدولي\n🌐 اليوم: الاتحاد الأفريقي + الاتحاد الأوروبي\n← نفس الفلسفة: انفتاح محسوب + سيادة'}
+
+]},
+h10:{lv:'b',nm:'المغرب في القرن التاسع عشر — النضال ضد الاستعمار وبداية التحرر',qs:[
+  {lv:'b1',q:'حدِّد التاريخ الرسمي لفرض الحماية الفرنسية على المغرب.',t:'mcq',o:['30 مارس 1912م — معاهدة فاس','1881م','1900م','1956م'],a:0},
+  {lv:'b1',q:'حدِّد: وثيقة المطالبة بالاستقلال 1944م نقطة تحوُّل في الحركة الوطنية المغربية.',t:'tf',correct:true,corr:'نعم. وثيقة 11 يناير 1944م أعلنت رسمياً مطالبة المغرب بالاستقلال.'},
+  {lv:'b2',q:'لاحظ الخط الزمني واستنتج: ما الحدث الأكثر أثراً في تسريع الاستقلال؟',t:'mcq',
+   sup:S('stat','📊 أحداث مسار الاستقلال',TABLE(['السنة','الحدث'],[['1944','وثيقة الاستقلال'],['1947','خطاب طنجة'],['1953','نفي محمد الخامس'],['1955','عودة محمد الخامس'],['1956','الاستقلال']])),
+   o:['نفي محمد الخامس (1953) وحَّد الشعب وصعَّد المقاومة → عودته (1955) → الاستقلال (1956)','وثيقة 1944 وحدها','خطاب طنجة 1947 هو الحاسم','الاستقلال جاء دون أسباب'],a:0},
+  {lv:'b2',q:'حركة المقاومة المغربية كانت منقسمة ولم تتحد قط.',t:'tf',
+   correct:false,corr:'خطأ. وحَّد نفي محمد الخامس الحركة الوطنية حول شخصه.'},
+  {lv:'b3',q:'انطلاقاً من الخط الزمني، اكتب تحليلاً لمسار حركة الاستقلال.',t:'mcq',
+   sup:S('task','📝 المهمة','ما العوامل التي أدت إلى الاستقلال؟'),
+   o:['المسار: وعي سياسي (1944) → زعامة وطنية (1947) → استفزاز استعماري (1953) → ردُّ فعل شعبي → استقلال (1956)','الاستقلال منحة فرنسية','الاستقلال جاء فجأة','عامل واحد أدى للاستقلال'],a:0,
+   model:'العوامل الداخلية:\n• الوعي الوطني المتصاعد\n• دور الحركة الوطنية\n• وحدة الشعب حول محمد الخامس\nالعوامل الخارجية:\n• نتائج الحرب العالمية\n• موجة الاستقلالات\n• ضغط الأمم المتحدة'},
+  {lv:'b1',q:'ما الحدث التاريخي الذي أطلق عليه المغاربة "يوم الشهداء"؟',t:'mcq',o:['مجزرة آنوال 1921م — أو الأحداث الدامية لعهد الحماية كمظاهرات 1952م','معركة الزلاقة','استقلال المغرب','المسيرة الخضراء'],a:0},
+  {lv:'b2',q:'لاحظ الجدول واستنتج: ما الحركة الوطنية التي كان لها التأثير الأكبر على مسار الاستقلال؟',t:'mcq',
+   sup:S('stat','📊 التيارات الوطنية المغربية',TABLE(['التيار','التأسيس','الأسلوب','التأثير'],[['حزب الاستقلال','1943','سياسي-وثائقي','كبير: وثيقة 1944م'],['المقاومة المسلحة','1950-1955','عمليات ضد الاستعمار','مرتفع: ضغط عسكري'],['المقاومة الشعبية','1953','تظاهرات+إضرابات','كبير: ضغط شعبي']])),
+   o:['جميعها تكاملت: السياسي + المسلح + الشعبي = ضغط متكامل أدى للاستقلال','حزب الاستقلال وحده','المقاومة المسلحة وحدها','التيارات تعارضت ولم تتكامل'],a:0},
+  {lv:'b2',q:'محمد الخامس كان أول من دعا للاستقلال التام من الحماية الفرنسية.',t:'tf',
+   correct:false,corr:'خطأ. الحركة الوطنية ووثيقة 1944م سبقت خطاب طنجة 1947م — لكن خطاب الملك أعطى الحركة زخماً وشرعية ملكية قوية.'},
+  {lv:'b3',q:'قيِّم دور الشعب المغربي في انتزاع الاستقلال.',t:'mcq',
+   sup:S('task','📝 المهمة','الاستقلال لم يمنحه أحد بل انتُزع. ما أدوار مختلف فئات الشعب في ذلك؟'),
+   o:['العلماء: شرعية دينية + الفلاحون: مقاومة مسلحة + النساء: تظاهرات + الطلاب: أدوار تنظيمية + التجار: إضرابات = حركة وطنية شاملة من كل الفئات','الاستقلال منحة فرنسية','فئة واحدة فقط نضلت','الملك وحده حقَّق الاستقلال'],a:0,
+   model:'أدوار الفئات الاجتماعية:\n👴 العلماء: فتاوى دعم المقاومة\n👨‍🌾 الفلاحون: مقاومة مسلحة في الجبال\n👩 النساء: إخفاء المناضلين + تظاهرات\n👨‍🎓 الطلاب: تنظيم + توعية\n🏪 التجار: إضرابات + تمويل\n→ استقلال شعبي حقيقي'},
+  {lv:'b3',q:'ما الدلالة الرمزية لعودة محمد الخامس من المنفى في نوفمبر 1955م؟',t:'mcq',
+   sup:S('task','📝 المهمة','وصف عودة محمد الخامس: حشود مليونية + دموع الفرح + الأناشيد الوطنية. ما الدلالة؟'),
+   o:['العودة = انتصار الإرادة الشعبية على القهر الاستعماري + المصالحة بين الملك والشعب + نهاية مرحلة وبداية المستقبل','عودة عادية دون دلالة','الحشود كانت مستأجرة','لا معنى سياسياً للعودة'],a:0,
+   model:'الدلالات الرمزية:\n👑 الوطنية: الملك رمز الأمة كلها\n💪 الانتصار: الإرادة فوق القوة\n🤝 الوحدة: الملك والشعب في معركة واحدة\n🌅 البداية: الاستقلال يبدأ من هنا\n📅 التاريخ: 18 نوفمبر = عيد الاستقلال'}
+
+]},
+g9:{lv:'b',nm:'مميزات وطني — تنوع السكان وتوزعهم الجغرافي',qs:[
+  {lv:'b1',q:'حدِّد المناطق الأكثر كثافة سكانية في المغرب.',t:'mcq',o:['الحواضر الكبرى (الدار البيضاء+الرباط+فاس+مراكش) + السهول الأطلسية','الصحراء الكبرى','الجبال العالية','المناطق الشرقية'],a:0},
+  {lv:'b1',q:'حدِّد: يُجاوز عدد سكان المغرب 37 مليون نسمة ويتوزعون بشكل غير متساوٍ.',t:'tf',correct:true,corr:'نعم. يُقدَّر عدد سكان المغرب بأكثر من 37 مليوناً، مركَّزون في الحواضر والسهول.'},
+  {lv:'b2',q:'لاحظ الجدول واستنتج: ما نسبة سكان الحضر مقابل البادية؟',t:'mcq',
+   sup:S('stat','📊 التوزيع الحضري-القروي',TABLE(['السنة','نسبة الحضر','نسبة البادية'],[['1970','35%','65%'],['1990','48%','52%'],['2010','57%','43%'],['2022','63%','37%']])),
+   o:['2022: 63% حضر vs 37% بادية — المغرب دخل مرحلة الأغلبية الحضرية','البادية تتزايد','النسبة ثابتة','الحضر والبادية متساويان'],a:0},
+  {lv:'b2',q:'التحضر المتسارع في المغرب لا يخلق أي مشاكل اجتماعية.',t:'tf',
+   correct:false,corr:'خطأ. التحضر المتسارع يُولِّد ضغطاً على البنية التحتية والسكن والتشغيل.'},
+  {lv:'b3',q:'انطلاقاً من الجدول، اكتب تقريراً عن التحولات الديمغرافية في المغرب.',t:'mcq',
+   sup:S('task','📝 المهمة','صف تحوُّل التوزيع السكاني منذ 1970 وحلِّل أسبابه.'),
+   o:['التحوُّل: من 35% حضر (1970) إلى 63% (2022) / الأسباب: الهجرة القروية + التصنيع + التعليم','لا تحوُّل ديمغرافي','البادية تتوسع','لا علاقة بين الاقتصاد والتوزيع'],a:0,
+   model:'📈 التحوُّل: 35% → 63% حضر في 52 سنة\n🔑 الأسباب:\n• الهجرة القروية\n• فرص العمل الصناعية\n• تحسن الخدمات الحضرية\n⚠️ التحديات:\n• أحياء غير مخططة\n• ضغط على الخدمات'},
+  {lv:'b1',q:'ما الفرق بين التعداد السكاني والكثافة السكانية؟',t:'mcq',o:['التعداد: عدد السكان الإجمالي / الكثافة: عدد السكان في كل كلم مربع','كلاهما متطابقان','التعداد أكثر دقة','الكثافة تشمل الحيوانات'],a:0},
+  {lv:'b2',q:'لاحظ الجدول واستنتج: ما معدل النمو الديمغرافي السنوي للمغرب؟',t:'mcq',
+   sup:S('stat','📊 تطور عدد سكان المغرب',TABLE(['السنة','عدد السكان (مليون)'],[['1960','11.6'],['1980','19.4'],['2000','28.7'],['2010','32.3'],['2022','37.1']])),
+   o:['معدل نمو يتراوح بين 1.2% و2.5% — تباطأ في السنوات الأخيرة','ثابت لا نمو','نمو سلبي (تراجع)','أكثر من 5% سنوياً'],a:0},
+  {lv:'b2',q:'ارتفاع معدل الخصوبة دائماً ظاهرة إيجابية للتنمية.',t:'tf',
+   correct:false,corr:'خطأ. الخصوبة المرتفعة دون تنمية اقتصادية تُفضي إلى الفقر وضغط على الخدمات — التوازن بين النمو الديمغرافي والتنمية هو المثالي.'},
+  {lv:'b3',q:'اشرح مفهوم الهرم السكاني وأهميته في التخطيط.',t:'mcq',
+   sup:S('task','📝 المهمة','المغرب يتحول من هرم سكاني فتي إلى هرم أكثر نضجاً. ما الانعكاسات على التخطيط؟'),
+   o:['الهرم الفتي: قاعدة عريضة من الشباب = حاجة لمدارس وشغل / الهرم الناضج: قمة تتسع = حاجة لتقاعد وصحة — التخطيط يتكيف مع كل مرحلة','الهرم السكاني لا أهمية له','الهرم ثابت لا يتغير','لا علاقة بين الهرم والتخطيط'],a:0,
+   model:'الهرم السكاني والتخطيط:\n👶 قاعدة عريضة (شباب):\n→ بناء مدارس + إنشاء مناصب شغل + سكن\n\n👴 قمة متسعة (مسنون):\n→ نظام تقاعد + مستشفيات + رعاية اجتماعية\n\nالتحول المغربي: من الأول نحو الثاني'},
+  {lv:'b3',q:'ما أثر الهجرة المغربية إلى الخارج على التوازن الديمغرافي؟',t:'mcq',
+   sup:S('task','📝 المهمة','أكثر من 5 ملايين مغربي يعيشون خارج المغرب. ما الأثر الديمغرافي والاقتصادي؟'),
+   o:['الأثر الديمغرافي: تراجع الشباب في بعض المناطق + الأثر الاقتصادي: تحويلات مالية (10 مليار دولار/سنة) = ثروة هائلة للمغرب','الهجرة ضارة فقط','لا أثر للهجرة','المهاجرون لا يساهمون في الاقتصاد'],a:0,
+   model:'الهجرة: عطاء وفقدان:\n📉 الفقدان: كفاءات + شباب من المناطق النائية\n💰 العطاء:\n• 10 مليار دولار تحويلات/سنة\n• نقل تقنيات وخبرات\n• شبكة علاقات دولية\n🤝 التوازن: المغرب يستثمر رصيد مهاجريه'}
+
+]},
+g10:{lv:'b',nm:'مميزات وطني — التقسيم الجهوي وخصائص كل جهة',qs:[
+  {lv:'b1',q:'كم عدد جهات المغرب وفق القانون التنظيمي للجماعات الترابية؟',t:'mcq',o:['12 جهة','8 جهات','15 جهة','20 جهة'],a:0},
+  {lv:'b1',q:'سمِّ: جهة الدار البيضاء-سطات تُعدُّ الأكثر سكاناً والأعلى ناتجاً اقتصادياً.',t:'tf',correct:true,corr:'نعم. تستقطب جهة الدار البيضاء-سطات أكثر من 20% من سكان المغرب.'},
+  {lv:'b2',q:'لاحظ الجدول واستنتج: ما أبرز التفاوتات الجهوية في المغرب؟',t:'mcq',
+   sup:S('stat','📊 مؤشرات جهوية',TABLE(['الجهة','نسبة الفقر','التمدرس'],[['الدار البيضاء-سطات','7%','98%'],['مراكش-آسفي','16%','92%'],['بني ملال-خنيفرة','18%','89%'],['درعة-تافيلالت','22%','85%']])),
+   o:['تفاوت واضح: الدار البيضاء أقل فقراً + أعلى تمدرساً / الجهات الداخلية تحتاج استثماراً','لا تفاوتات جهوية','كل الجهات متساوية','الجهات الجنوبية أغنى'],a:0},
+  {lv:'b2',q:'التنمية الجهوية تعني الاهتمام بالجهات الغنية فقط.',t:'tf',
+   correct:false,corr:'خطأ. التنمية المتوازنة تهتم بالجهات الأقل نمواً لتقليص الفجوة.'},
+  {lv:'b3',q:'انطلاقاً من الجدول، قدِّم مقترحات لتقليص التفاوتات الجهوية.',t:'mcq',
+   sup:S('task','📝 المهمة','كيف تُقلِّص الفجوة بين جهة الدار البيضاء وجهة درعة-تافيلالت؟'),
+   o:['1-استثمار البنية التحتية 2-تعزيز التعليم في البادية 3-دعم الفلاحة المحلية 4-السياحة الصحراوية','تحويل سكان درعة للبيضاء','رفع الضرائب في الدار البيضاء','لا حل للتفاوتات'],a:0,
+   model:'مقترحات التوازن الجهوي:\n1. الاستثمار العمومي الموجَّه\n2. تعزيز التعليم والصحة القروية\n3. دعم المبادرات المحلية\n4. الاستفادة من الجهوية المتقدمة'},
+  {lv:'b1',q:'ما مبدأ الجهوية المتقدمة الذي أرساه دستور 2011م؟',t:'mcq',o:['منح الجهات صلاحيات موسَّعة وميزانية مستقلة لتدبير شؤونها التنموية بذاتها','مركزة كل القرارات في الرباط','إلغاء الجهات الترابية','اندماج الجهات في وحدات أكبر'],a:0},
+  {lv:'b2',q:'لاحظ الجدول واستنتج: أي الجهات لها أكبر مساحة وأقل كثافة سكانية؟',t:'mcq',
+   sup:S('stat','📊 مساحة وسكان الجهات',TABLE(['الجهة','المساحة (كلم²)','السكان (مليون)'],[['الداخلة-وادي الذهب','284,000','0.1'],['درعة-تافيلالت','79,200','1.6'],['سوس-ماسة','53,789','2.6'],['الدار البيضاء-سطات','19,448','7.2']])),
+   o:['الداخلة-وادي الذهب: 284,000 كلم² وأقل من 100,000 ساكن = أكبر مساحة + أقل كثافة','الدار البيضاء','درعة-تافيلالت','سوس-ماسة'],a:0},
+  {lv:'b2',q:'الجهات المغربية ذات المساحة الكبيرة هي الأغنى اقتصادياً.',t:'tf',
+   correct:false,corr:'خطأ. الدار البيضاء-سطات الأصغر مساحةً هي الأكثر إنتاجاً اقتصادياً — الثروة لا تقاس بالمساحة بل بالنشاط الاقتصادي.'},
+  {lv:'b3',q:'انطلاقاً من الخريطة، قيِّم مدى عدالة التوزيع التنموي بين جهات المغرب.',t:'mcq',
+   sup:S('task','📝 المهمة','الجهات الشمالية والغربية تمتلك بنية تحتية أفضل. هل التوزيع التنموي عادل؟'),
+   o:['التوزيع غير متوازن: الجهات الجنوبية والشرقية أقل تطوراً في البنية التحتية والخدمات — الجهوية المتقدمة تهدف لتصحيح هذا الاختلال','التوزيع عادل تماماً','الجهات الجنوبية أغنى','لا معنى للعدالة في التوزيع'],a:0,
+   model:'واقع التفاوت:\n🏙️ الجهات المتطورة: الدار البيضاء، الرباط، فاس\n⚠️ الجهات الأقل نمواً: الجهات الجنوبية والشرقية\n🎯 الهدف: الجهوية المتقدمة = صناديق التضامن بين الجهات لتقليص الفجوة'},
+  {lv:'b3',q:'ما دور المجلس الجهوي في التنمية المحلية؟',t:'mcq',
+   sup:S('task','📝 المهمة','المجلس الجهوي يختلف عن الحكومة المركزية. ما صلاحياته التنموية المحددة؟'),
+   o:['المجلس الجهوي: البرنامج التنموي الجهوي + تدبير التعليم والصحة والبنية التحتية + الشراكة مع القطاع الخاص + ميزانية جهوية مستقلة','المجلس ينفِّذ فقط قرارات الحكومة','لا صلاحيات تنموية للمجلس','المجلس يتحكم في الأمن فقط'],a:0,
+   model:'صلاحيات المجلس الجهوي:\n📋 التخطيط: البرنامج التنموي الجهوي\n🏫 التعليم: البنايات التعليمية\n🏥 الصحة: المستشفيات الجهوية\n🛣️ البنية: الطرق والمواصلات\n💰 المالية: ميزانية مستقلة + صندوق التضامن'}
+
+]},
+c9:{lv:'k',nm:'نزور مقر جماعتنا ونتعرف على دورها في التنمية المحلية',qs:[
+  {lv:'k1',q:'ما المصالح الرئيسية التي تجدها في مقر الجماعة؟',t:'mcq',o:['مصلحة الحالة المدنية + التعمير + المالية + الخدمات الاجتماعية','مكتب المديرية الإقليمية','المحكمة الابتدائية','مركز الشرطة'],a:0},
+  {lv:'k1',q:'الرئيس المنتخَب لمجلس الجماعة يقود العمل التنموي المحلي.',t:'tf',correct:true,corr:'نعم. رئيس المجلس المنتخَب هو المسؤول التنفيذي عن تنفيذ قرارات المجلس.'},
+  {lv:'k2',q:'لاحظ تقرير زيارة الجماعة وحدِّد أهم ما تعلَّمه التلاميذ.',t:'mcq',
+   sup:S('doc','📋 تقرير زيارة جماعة','زرنا مصلحة التعمير: رخص البناء. الحالة المدنية: الوثائق. قاعة المجلس: الجلسات. التقينا الرئيس الذي شرح مشاريع التنمية.'),
+   o:['الجماعة تدير خدمات يومية + تخطط للتنمية + قرارات تُتخَذ تشاركياً','الجماعة فقط لاستخراج الوثائق','تابعة للحكومة المركزية','لا دور للجماعة في التنمية'],a:0},
+  {lv:'k2',q:'الشفافية في تدبير المال العمومي شرط أساسي للحوكمة الجيدة.',t:'tf',correct:true,corr:'نعم. الحوكمة الجيدة تستلزم: الشفافية + المحاسبة + المشاركة المدنية.'},
+  {lv:'k3',q:'استناداً لزيارة الجماعة، كيف تُساهم كمواطن في التنمية المحلية؟',t:'mcq',
+   sup:S('task','📝 التفكير','ما الأدوار التي يمكن لتلميذ في السادسة ابتدائي القيام بها لدعم الجماعة؟'),
+   o:['المشاركة في حملات النظافة + اقتراح مشاريع شبابية + توعية الأسرة + احترام الفضاءات العامة','الانتخاب فقط (حين تبلغ 18)','لا دور لي حالياً','الانتقاد دون مشاركة'],a:0,
+   model:'المشاركة المدنية للتلميذ:\n🌱 الآن:\n• احترام المرافق العامة\n• المشاركة في حملات النظافة\n📌 مستقبلاً:\n• التصويت (18 سنة)\n• النشاط في الجمعيات المدنية'},
+  {lv:'k1',q:'ما الفرق بين المُنتخَب والمُعيَّن في الإدارة المحلية؟',t:'mcq',o:['المُنتخَب: اختاره الشعب بالتصويت / المُعيَّن: اختارته الحكومة بمرسوم — كلاهما يُكمِّل الآخر','كلاهما متطابقان','المُعيَّن أقل مسؤولية','المُنتخَب لا رقابة عليه'],a:0},
+  {lv:'k2',q:'لاحظ الوضعية وحدِّد: مَن المسؤول عن حل هذه المشكلة؟',t:'mcq',
+   sup:S('doc','📋 وضعية','حي بدون إنارة عمومية منذ أسبوعَيْن. السكان يشتكون.'),
+   o:['الجماعة: مصلحة الإنارة مسؤوليتها المباشرة → يجب توجيه شكوى رسمية لرئيس الجماعة + متابعة مكتوبة','المحكمة','الحكومة المركزية في الرباط','لا مسؤول محدد'],a:0},
+  {lv:'k2',q:'المعلومات المتعلقة بميزانية الجماعة يجب أن تكون متاحة للعموم.',t:'tf',
+   correct:true,corr:'نعم. مبدأ الشفافية في تدبير المال العام يستلزم نشر الميزانية وتقارير الإنجاز للمواطنين.'},
+  {lv:'k3',q:'ما الأدوات التشاركية التي يُتيحها القانون للمواطن في علاقته بالجماعة؟',t:'mcq',
+   sup:S('task','📝 المهمة','المواطن لا يقتصر دوره على التصويت كل 6 سنوات. ما الأدوات الأخرى المتاحة؟'),
+   o:['أدوات المشاركة: العرائض المكتوبة + حضور الجلسات العامة + الشكاوى الإدارية + جمعيات المجتمع المدني + التواصل عبر رقمنة الخدمات','التصويت فقط كل 6 سنوات','لا أدوات للمشاركة','المشاركة محظورة في القانون'],a:0,
+   model:'أدوات المشاركة المدنية:\n📝 العريضة: تُقدَّم لرئيس الجماعة\n🏛️ الجلسات: حق حضور الجلسات العامة\n📧 الشكوى: قانون الشكايات الإدارية\n🤝 الجمعيات: صوت منظَّم أقوى\n💻 الرقمنة: التتبع الإلكتروني للملفات'},
+  {lv:'k3',q:'قيِّم تجربة المشاركة في رسم السياسة العمومية المحلية.',t:'mcq',
+   sup:S('task','📝 التقييم','الجماعة أعدَّت مشروع برنامج تنموي وطلبت آراء السكان. 80% لم يشاركوا. كيف تفسِّر ذلك وكيف تُحسِّنه؟'),
+   o:['الأسباب: غياب التوعية + ضعف الثقة + بُعد المواعيد / الحلول: توعية كثيفة + استشارات إلكترونية + جلسات في الأحياء + تقييم علني للنتائج','80% صحيح لا مشكل','السكان غير مؤهلين للمشاركة','الجماعة لا تحتاج رأي السكان'],a:0,
+   model:'تشخيص ضعف المشاركة:\n🔴 الأسباب:\n• عدم المعرفة بالمشاورة\n• شعور بأن الرأي لا يُؤثِّر\n• ضيق الوقت + بُعد المواعيد\n\n🟢 الحلول:\n• إعلانات + إذاعة محلية\n• استشارة رقمية (واتساب)\n• جلسات في كل حي\n• نشر نتائج المشاورة'}
+
+]},
+c10:{lv:'k',nm:'محاكاة اجتماع المجلس الجماعي — اتخاذ القرار الجماعي',qs:[
+  {lv:'k1',q:'ما القواعد الأساسية لإدارة اجتماع المجلس الجماعي بشكل ديمقراطي؟',t:'mcq',o:['جدول أعمال محدد + احترام الكلمة + التصويت بالأغلبية + توثيق القرارات','لا قواعد','الرئيس يتحدث فقط','قرارات بالإجماع دائماً'],a:0},
+  {lv:'k1',q:'المحضر الرسمي يوثِّق قرارات الاجتماع وهو ملزَم بتنفيذه.',t:'tf',correct:true,corr:'نعم. المحضر وثيقة قانونية — كل قرار وُثِّق فيه ملزَم تنفيذه.'},
+  {lv:'k2',q:'لاحظ نتيجة التصويت في محاكاة المجلس وأبدِ رأيك.',t:'mcq',
+   sup:S('stat','📊 التصويت على مشروع إنشاء حديقة',TABLE(['الموقف','العدد','النسبة'],[['موافق','14','70%'],['معارض','4','20%'],['ممتنع','2','10%']])),
+   o:['القرار بالأغلبية (70%) مقبول ديمقراطياً. المعارضون يجب احترام رأيهم في التنفيذ','القرار يجب الإجماع','الأقلية أحق','لا اعتبار للأغلبية'],a:0},
+  {lv:'k2',q:'المشاركة في محاكاة المجلس تُنمِّي مهارات التفاوض والحوار الديمقراطي.',t:'tf',correct:true,corr:'نعم. المحاكاة تُتيح لكل تلميذ ممارسة الاستماع والتعبير والتصويت.'},
+  {lv:'k3',q:'قيِّم تجربة محاكاة المجلس: ما الذي تعلمته؟ ما الذي يجب تحسينه؟',t:'mcq',
+   sup:S('task','📝 التقييم الذاتي','ما المهارات التي طوَّرتها؟ ما الصعوبات التي واجهتها؟'),
+   o:['تعلمت: الإنصات + الحجاج + التصويت / أحتاج التحسين: وضوح الكلام + قبول الخسارة الديمقراطية','لم أتعلم شيئاً','المحاكاة غير مفيدة','لا حل للصعوبات'],a:0,
+   model:'✅ المهارات المكتسبة:\n• الإنصات للآخرين\n• تقديم الحجج\n• قبول قرار الأغلبية\n📈 مجالات التطوير:\n• وضوح التعبير\n• الإقناع بالأدلة'},
+  {lv:'k1',q:'ما الفرق بين التصويت بالأغلبية البسيطة والأغلبية المطلقة؟',t:'mcq',o:['البسيطة: أكثر من غيره (51% أو أكثر) / المطلقة: أكثر من نصف + 1 من الأعضاء الحاضرين','كلتاهما متطابقتان','البسيطة: 50% المطلقة: 75%','المطلقة أقل من البسيطة'],a:0},
+  {lv:'k2',q:'لاحظ الجدول واستنتج: ما القرار الذي يحتاج أغلبية أكبر؟',t:'mcq',
+   sup:S('stat','📊 نتائج تصويتات مجلس القسم',TABLE(['الموضوع','موافق','معارض','ممتنع'],[['رحلة مدرسية','15','4','1'],['تغيير جدول الحصص','9','9','2'],['ميثاق القسم الجديد','13','5','2']])),
+   o:['تغيير الجدول: تعادل 9-9 → يحتاج جلسة ثانية أو توافقاً + ميثاق القسم: قرار مهم يحتاج أغلبية مريحة','جميعها بنفس الأهمية','الرحلة أصعب القرارات','كل القرارات بأغلبية بسيطة'],a:0},
+  {lv:'k2',q:'الاجتماع الديمقراطي يسمح بالتصويت دون نقاش مسبق.',t:'tf',
+   correct:false,corr:'خطأ. النقاش الكافي قبل التصويت ضرورة ديمقراطية — التصويت دون نقاش يُفضي إلى قرارات متسرعة.'},
+  {lv:'k3',q:'كيف تُعالج حالة التعادل في التصويت داخل المجلس الجماعي؟',t:'mcq',
+   sup:S('task','📝 الوضعية','مجلس القسم يتصوت على مشروع بنتيجة 10-10. كيف تُحلُّ؟'),
+   o:['الحلول الديمقراطية: إعادة النقاش + تأجيل التصويت + البحث عن توافق + صوت الرئيس مُرجِّح كآخر حل','الرئيس يتخذ القرار بدون تصويت','اعتبار التعادل رفضاً','القُرعة'],a:0,
+   model:'معالجة التعادل:\n1⃣ إعادة النقاش: معلومات جديدة\n2⃣ التأجيل: يوم للتفكير\n3⃣ التوافق: البحث عن صيغة وسطى\n4⃣ صوت الرئيس المرجِّح (في بعض الأنظمة)\n5⃣ التعديل: صياغة جديدة مقبولة'},
+  {lv:'k3',q:'ما المهارات الشخصية التي طوَّرتها من خلال محاكاة المجلس؟',t:'mcq',
+   sup:S('task','📝 التأمل','بعد تجربة المحاكاة: فكِّر في المهارات العملية التي اكتسبتها وليس فقط المعلومات.'),
+   o:['المهارات: التحدث أمام الجمهور + الاستماع النشط + الإقناع بالحجج + التعامل مع الخلاف + قبول قرار الأغلبية + الشعور بالمسؤولية المدنية','لم أكتسب أي مهارة','المحاكاة معلومات فقط','المهارات لا تكتسب بالمحاكاة'],a:0,
+   model:'المهارات المُكتسَبة:\n🎤 الخطابة: التحدث بوضوح أمام الآخرين\n👂 الإنصات: الاستماع حتى النهاية\n🧠 التحليل: تقييم الحجج\n🤝 التفاوض: البحث عن توافق\n⚖️ القبول: احترام قرار الأغلبية\n🌱 المسؤولية: الشعور بأثر قراراتنا'}
+
+]},
+h11:{lv:'b',nm:'المغرب الحديث — تحقيق الاستقلال واستكمال الوحدة الترابية',qs:[
+  {lv:'b1',q:'متى حصل المغرب على استقلاله وعاد محمد الخامس من المنفى؟',t:'mcq',o:['نوفمبر 1955م (العودة) + مارس 1956م (الاستقلال الرسمي)','1944م','1962م','1970م'],a:0},
+  {lv:'b1',q:'سمِّ: المسيرة الخضراء 1975م أفضت إلى استرداد الأقاليم الجنوبية سلمياً.',t:'tf',correct:true,corr:'نعم. المسيرة الخضراء في 6 نوفمبر 1975م كانت مبادرة سلمية تاريخية لاسترداد الصحراء المغربية.'},
+  {lv:'b2',q:'لاحظ الخط الزمني واستنتج: ما الأحداث الكبرى في بناء المغرب الحديث؟',t:'mcq',
+   sup:S('stat','📊 أحداث بناء المغرب الحديث',TABLE(['السنة','الحدث'],[['1956','الاستقلال الرسمي'],['1962','أول دستور'],['1963','أول انتخابات'],['1975','المسيرة الخضراء'],['1999','اعتلاء محمد السادس'],['2011','دستور جديد']])),
+   o:['مسار بناء الدولة: استقلال → دستور → انتخابات → وحدة ترابية → إصلاح دستوري','الاستقلال آخر الأحداث','لا علاقة بين الأحداث','المغرب لم يشهد تطوراً'],a:0},
+  {lv:'b2',q:'استكمال الوحدة الترابية يعني نهاية كل نزاعات المغرب الإقليمية.',t:'tf',
+   correct:false,corr:'خطأ. مسألة الصحراء لا تزال محل نقاش أمام الأمم المتحدة.'},
+  {lv:'b3',q:'انطلاقاً من الخط الزمني، قدِّم خطاباً وجيزاً عن مسار بناء المغرب الحديث.',t:'mcq',
+   sup:S('task','📝 المهمة','تخيَّل أنك خطيب في حفل الاحتفال بذكرى الاستقلال.'),
+   o:['1956: استعدنا استقلالنا / 1962: دستور / 1975: وحدة ترابية / 2011: تجديد العقد الاجتماعي — مسار متواصل','المغرب لم يتطور','كل شيء تحقَّق 1956م','لا ذاكرة تاريخية'],a:0,
+   model:'نموذج الخطاب:\nمنذ 1956م بنينا وطناً خطوة خطوة:\n- استعدنا السيادة\n- أرسينا المؤسسات الدستورية\n- استكملنا الوحدة الترابية\n- وتواصل الإصلاح 2011م\nالمستقبل نبنيه بالعلم والعمل.'},
+  {lv:'b1',q:'ما التاريخ المحدد لعيد الاستقلال المغربي ولماذا اختير؟',t:'mcq',o:['18 نوفمبر 1956م — ذكرى تقديم وثيقة الاستقلال 1944م وعودة محمد الخامس 1955م','1 يناير','6 نوفمبر','المسيرة الخضراء'],a:0},
+  {lv:'b2',q:'لاحظ الجدول واستنتج: ما الأقاليم التي استكمل المغرب استرداد سيادته عليها بعد الاستقلال؟',t:'mcq',
+   sup:S('stat','📊 مراحل استكمال الوحدة الترابية',TABLE(['الإقليم','تاريخ الاسترداد','الوسيلة'],[['طرفاية','1958م','مفاوضات مع إسبانيا'],['إفني','1969م','مفاوضات مع إسبانيا'],['الصحراء (الجنوب)','1975-1979م','المسيرة الخضراء + مفاوضات'],['سبتة ومليلية','لا تزال محتلة','مطالبة مستمرة']])),
+   o:['طرفاية 1958م + إفني 1969م + الصحراء 1975م = مراحل تدريجية لاسترداد السيادة / سبتة ومليلية لا تزال قضية مفتوحة','الاسترداد كان دفعة واحدة','لا أقاليم مُستردَّة','الجميع استُردَّ'],a:0},
+  {lv:'b2',q:'المغرب حصل على الاستقلال الكامل والتام في مارس 1956م.',t:'tf',
+   correct:false,corr:'خطأ. استقلال 1956م كان أساسياً لكن الوحدة الترابية اكتملت تدريجياً بين 1958م (طرفاية) و1979م (الجنوب).'},
+  {lv:'b3',q:'ما الدلالة الاستراتيجية للمسيرة الخضراء 1975م؟',t:'mcq',
+   sup:S('task','📝 المهمة','350,000 مغربي عبروا حدود الصحراء سلمياً في 6 نوفمبر 1975م. ما الأهمية الاستراتيجية؟'),
+   o:['الدلالة: استرداد أرض مغربية بالقوة الشعبية السلمية + إفشال الحل العسكري + إثبات أن الإرادة الشعبية أقوى من الأسلحة + ريادة دولية في الحلول السلمية','تحرك عسكري عادي','مظاهرة داخلية بلا أثر','لا دلالة استراتيجية'],a:0,
+   model:'الأهمية الاستراتيجية للمسيرة:\n🌿 السلمية: استرداد بدون حرب رسمية\n👥 الشعبية: قوة الشعب أداة الاسترداد\n🌍 الدولية: ضغط أمام الأمم المتحدة\n📅 التوقيت: استغلال ضعف إسبانيا (مرض فرانكو)\n🏳️ النتيجة: انسحاب إسبانيا وفق اتفاقية مدريد'},
+  {lv:'b3',q:'ما الخيوط المشتركة بين مختلف محطات بناء المغرب الحديث؟',t:'mcq',
+   sup:S('task','📝 التركيب','من الاستقلال 1956م إلى دستور 2011م. ما العناصر المشتركة في مسار البناء الوطني؟'),
+   o:['الخيوط المشتركة: الحفاظ على الوحدة + التدرج الإصلاحي + الثوابت الوطنية (ملكية-إسلام-وطن) + إشراك الشعب في المسار + الانفتاح مع الحفاظ على السيادة','لا خيوط مشتركة','المراحل منفصلة لا رابط','الثوابت تُعيق التطور'],a:0,
+   model:'الخيوط الجامعة:\n🔵 الوحدة: المغرب يسعى لاستكمال أرضه\n🟢 التدرج: إصلاحات بدون قطيعة\n⚓ الثوابت: الملكية + الإسلام + الوحدة\n🤝 المشاركة: الشعب شريك لا متفرج\n🌍 الانفتاح: دولة مدنية حديثة'}
+
+]},
+h12:{lv:'b',nm:'المغرب المعاصر — إصلاحات دستور 2011 والجهوية المتقدمة',qs:[
+  {lv:'b1',q:'ما أبرز مستجدات دستور 2011م في المغرب؟',t:'mcq',o:['تعزيز صلاحيات البرلمان + الجهوية المتقدمة + حقوق الإنسان + ترسيم الأمازيغية','إلغاء البرلمان','إلغاء الانتخابات','تقليص الحريات'],a:0},
+  {lv:'b1',q:'دستور 2011م جعل من الأمازيغية لغة رسمية للمملكة إلى جانب العربية.',t:'tf',correct:true,corr:'نعم. الفصل 5 من دستور 2011م رسَّم الأمازيغية لغةً رسمية — اعتراف بالتنوع الثقافي.'},
+  {lv:'b2',q:'لاحظ الجدول واستنتج: ما الفرق بين الجهوية القديمة والجهوية المتقدمة؟',t:'mcq',
+   sup:S('stat','📊 مقارنة الجهوية',TABLE(['المعيار','الجهوية القديمة','الجهوية المتقدمة'],[['الصلاحيات','محدودة','موسَّعة'],['الميزانية','مركزية','جهوية مستقلة'],['الانتخاب','غير مباشر','مباشر']])),
+   o:['الجهوية المتقدمة: صلاحيات أوسع + ميزانية مستقلة + انتخاب مباشر = ديمقراطية محلية حقيقية','لا فرق','الجهوية القديمة أفضل','لا معنى للجهوية المتقدمة'],a:0},
+  {lv:'b2',q:'الجهوية المتقدمة تُلغي دور الحكومة المركزية في التنمية.',t:'tf',
+   correct:false,corr:'خطأ. الجهوية مكمِّلة لا بديلة للدولة — الشراكة بين المستوى الوطني والجهوي هي المدخل للتنمية.'},
+  {lv:'b3',q:'قيِّم: كيف يُعبِّر دستور 2011م عن تطور المجتمع المغربي؟',t:'mcq',
+   sup:S('task','📝 المهمة','قيِّم مكانة دستور 2011م في مسار الديمقراطية المغربية.'),
+   o:['دستور 2011م يُعبِّر عن: الانفتاح السياسي + الحقوق والحريات + تنويع الهوية + اللامركزية — نقلة نوعية','لا قيمة للدستور','لم يُغيِّر شيئاً','أضعف المغرب'],a:0,
+   model:'تقييم دستور 2011م:\n✅ المكتسبات:\n• حقوق وحريات موسَّعة\n• صلاحيات برلمانية معزَّزة\n• اعتراف رسمي بالأمازيغية\n• جهوية متقدمة للتنمية\n⚠️ التحديات:\n• التطبيق الكامل\n• رفع نسب المشاركة'},
+  {lv:'b1',q:'كم فصلاً يحتوي دستور 2011م؟',t:'mcq',o:['180 فصلاً','50 فصلاً','100 فصلاً','250 فصلاً'],a:0},
+  {lv:'b2',q:'لاحظ الجدول واستنتج: ما المجال الذي عرف أكبر تطور في الحقوق بدستور 2011م؟',t:'mcq',
+   sup:S('stat','📊 مقارنة الحقوق بين دستورَيْ 1996 و2011',TABLE(['المجال','دستور 1996','دستور 2011'],[['اللغات الرسمية','العربية فقط','العربية + الأمازيغية'],['حقوق المرأة','مذكورة باختصار','الفصل 19 المفصَّل'],['البيئة','غير مذكورة','حق في بيئة سليمة'],['صلاحيات البرلمان','محدودة','موسَّعة']])),
+   o:['الأمازيغية + البيئة + حقوق المرأة كلها مجالات جديدة أو موسَّعة — دستور 2011م أشمل من سابقه بكثير','دستور 1996م أفضل','لا فروق بين الدستورَيْن','البيئة الأكثر تطوراً فقط'],a:0},
+  {lv:'b2',q:'رئيس الحكومة في دستور 2011م يُعيَّن بشكل عشوائي.',t:'tf',
+   correct:false,corr:'خطأ. دستور 2011م ينص على تعيين رئيس الحكومة من الحزب الفائز بأكثر المقاعد في الانتخابات — مبدأ ديمقراطي واضح.'},
+  {lv:'b3',q:'قيِّم مدى تطبيق مقتضيات دستور 2011م على أرض الواقع.',t:'mcq',
+   sup:S('task','📝 التقييم','بعد أكثر من 10 سنوات على دستور 2011م، ما المكتسبات وما التحديات في التطبيق؟'),
+   o:['المكتسبات: القوانين التنظيمية صدرت + الجهوية المتقدمة انطلقت + الأمازيغية في المدارس / التحديات: فجوة بين النص والتطبيق في بعض المجالات','التطبيق كامل دون تحديات','التطبيق صفري دون إنجازات','دستور 2011م لا أثر له'],a:0,
+   model:'تقييم ما بعد 2011م:\n✅ المكتسبات:\n• قوانين تنظيمية للجهوية\n• تأهيل الأمازيغية في التعليم\n• المساواة قانونياً بين الجنسَيْن\n⚠️ التحديات:\n• تطبيق فعلي للشفافية\n• رفع نسبة المشاركة السياسية\n• تقليص الفجوة بين القانون والواقع'},
+  {lv:'b3',q:'ما المقتضيات الدستورية التي تُقرِّب المواطن من القرار السياسي؟',t:'mcq',
+   sup:S('task','📝 المهمة','دستور 2011م أدرج آليات جديدة لمشاركة المواطن. ما أبرزها؟'),
+   o:['آليات المشاركة: عرائض المواطنين + الملتمسات التشريعية + هيئات المشاورة + مبادئ الحوكمة الجيدة — الدستور يُقرِّب المواطن من القرار','دستور 2011م لا يُشرك المواطن','المشاركة للانتخابات فقط','آليات دستورية دون تطبيق'],a:0,
+   model:'آليات مشاركة المواطن:\n📜 العرائض: 25,000 توقيع → مناقشة في البرلمان\n📋 الملتمسات: اقتراح قوانين من المواطنين\n🤝 المشاورات: هيئات الحوار والمصالحة\n🔍 المراقبة: الوصول للمعلومة العمومية\n→ ديمقراطية تشاركية لا مجرد تمثيلية'}
+
+]},
+g11:{lv:'b',nm:'مميزات وطني — أنشطة السكان بين التقليدي والعصري',qs:[
+  {lv:'b1',q:'عدِّد ثلاثة أنشطة اقتصادية رئيسية في المغرب.',t:'mcq',o:['الفلاحة + الصناعة + السياحة + الخدمات','الصيد وحده','لا أنشطة اقتصادية','الصناعة فقط'],a:0},
+  {lv:'b1',q:'يُساهم قطاع السياحة بأكثر من 7% من الناتج الداخلي الخام في المغرب.',t:'tf',correct:true,corr:'نعم. السياحة قطاع حيوي يُوظِّف الملايين ويجلب العملة الصعبة.'},
+  {lv:'b2',q:'لاحظ الجدول واستنتج: أي القطاعات يوفر أكثر فرص الشغل؟',t:'mcq',
+   sup:S('stat','📊 الشغل حسب القطاعات (2022)',TABLE(['القطاع','نسبة الشغل','نسبة الناتج'],[['الفلاحة','35%','15%'],['الصناعة','20%','25%'],['البناء','10%','6%'],['الخدمات','35%','54%']])),
+   o:['الفلاحة والخدمات متساويان (35%) — الفلاحة توظف كثيراً لكن مساهمتها في الناتج أقل','الصناعة توظف أكثر','البناء الأول','لا فروق'],a:0},
+  {lv:'b2',q:'التحول من الفلاحة التقليدية للحديثة يعني التخلي عن كل الأساليب القديمة.',t:'tf',
+   correct:false,corr:'خطأ. الأساليب التقليدية كزراعة الزعفران وزيت الأركان لها قيمة عالية في الأسواق البيولوجية.'},
+  {lv:'b3',q:'انطلاقاً من الجدول، حلِّل ظاهرة التباين بين نسبة الشغل والإنتاجية في الفلاحة.',t:'mcq',
+   sup:S('task','📝 المهمة','لماذا يُشغِّل القطاع الفلاحي 35% من العمال لكنه لا يُنتج سوى 15%؟'),
+   o:['الفلاحة تقليدية بإنتاجية منخفضة / الحل: تحديث الأساليب + الري + التنظيم التعاوني','الفلاحة غير مهمة','35% و15% متطابقان','لا تباين في الأرقام'],a:0,
+   model:'السبب: الفلاحة التقليدية = يد عاملة كثيرة + إنتاجية قليلة\n\nالحلول:\n1. الميكنة والتحديث\n2. الري الموضعي\n3. التنظيم في تعاونيات\n4. الشهادات البيولوجية'},
+  {lv:'b1',q:'ما الفرق بين القطاع الأولي والقطاع الثانوي والقطاع الثالثي في الاقتصاد؟',t:'mcq',o:['الأولي: استخراج الموارد (فلاحة+صيد+تعدين) / الثانوي: تحويل وصناعة / الثالثي: الخدمات والتجارة','جميعها متطابقة','الأولي هو الأكثر إنتاجاً دائماً','الثالثي أقل أهمية'],a:0},
+  {lv:'b2',q:'لاحظ الجدول واستنتج: ما القطاع الذي شهد أكبر نمو في الناتج الداخلي بين 2010 و2022؟',t:'mcq',
+   sup:S('stat','📊 الناتج الداخلي الخام حسب القطاع (مليار دولار)',TABLE(['القطاع','2010','2022'],[['الفلاحة','13','23'],['الصناعة','30','53'],['الخدمات','54','110']])),
+   o:['الخدمات: من 54 إلى 110 مليار (+104%) — الأكبر نمواً بالقيمة المطلقة','الفلاحة','الصناعة','جميعها بنفس النمو'],a:0},
+  {lv:'b2',q:'الصناعة التقليدية (الحرف اليدوية) لا قيمة اقتصادية لها في المغرب الحديث.',t:'tf',
+   correct:false,corr:'خطأ. الصناعة التقليدية قطاع استراتيجي يُوظِّف ملايين ويُدرُّ عملة صعبة من السياحة والتصدير.'},
+  {lv:'b3',q:'اشرح كيف يُمكن تحويل الصناعة التقليدية إلى رافد تنموي ذكي.',t:'mcq',
+   sup:S('task','📝 المهمة','الحرف اليدوية المغربية (الزليج، الجلد، النسيج) تُباع أحياناً بأسعار متدنية. كيف ترفع قيمتها؟'),
+   o:['رفع القيمة: التسويق الرقمي (أمازون، إيتسي) + شهادات الجودة + التصميم المعاصر + التعاونيات الحرفية + المعارض الدولية = تضاعف الأسعار','الحرف لا يمكن تطويرها','الاستيراد الأرخص دائماً','الحرف للسياحة المحلية فقط'],a:0,
+   model:'تثمين الصناعة التقليدية:\n💻 الرقمنة: متاجر إلكترونية عالمية\n🏅 الجودة: شهادات جودة وأصالة\n🎨 التصميم: دمج التراث والحداثة\n🤝 التعاونيات: قوة تفاوض أفضل\n🌍 التصدير: أسواق أوروبا وأمريكا'},
+  {lv:'b3',q:'ما الفرق بين التنمية الاقتصادية والتنمية البشرية؟',t:'mcq',
+   sup:S('task','📝 المهمة','دولة تنمو اقتصادياً لكن يزداد فقراء فيها. هل هذا تنمية حقيقية؟'),
+   o:['الاقتصادية: رفع الناتج الداخلي / البشرية: تحسين حياة كل إنسان. النمو دون توزيع عادل ليس تنمية حقيقية','الاقتصادية والبشرية نفس الشيء','الاقتصادية أهم','التنمية البشرية تضر الاقتصاد'],a:0,
+   model:'التنمية الحقيقية:\n📊 اقتصادية: رفع الناتج + الصادرات\n👨‍👩‍👧 بشرية: تعليم + صحة + حقوق + مستوى معيشة\n\nالمقياس الحقيقي: مؤشر التنمية البشرية (IDH)\nيجمع: الصحة + التعليم + مستوى المعيشة\nالمغرب يسعى لتحقيق التوازن بينهما'}
+
+]},
+g12:{lv:'b',nm:'مميزات وطني — التقسيم الجهوي ومشاريع التنمية',qs:[
+  {lv:'b1',q:'اذكر جهتَيْن مغربيتَيْن وأبرز مشروع تنموي في كل منهما.',t:'mcq',o:['طنجة-تطوان-الحسيمة: طنجة المتوسط / سوس-ماسة: ميناء أكادير وزراعة الحوامض','لا مشاريع تنموية','كل الجهات نفس المشاريع','لا أعرف جهات المغرب'],a:0},
+  {lv:'b1',q:'سمِّ: مشروع نور ورزازات للطاقة الشمسية من أكبر المشاريع في أفريقيا والعالم.',t:'tf',correct:true,corr:'نعم. مجمَّع نور للطاقة الشمسية في ورزازات من أبرز مشاريع الطاقة المتجددة عالمياً.'},
+  {lv:'b2',q:'لاحظ الجدول واستنتج: ما الجهة التي تستفيد من تنوع مشاريع التنمية؟',t:'mcq',
+   sup:S('stat','📊 مشاريع تنموية جهوية',TABLE(['الجهة','القطاع 1','القطاع 2','القطاع 3'],[['طنجة-تطوان','الميناء','الصناعة','السياحة'],['الدار البيضاء','الصناعة','المالية','التجارة'],['سوس-ماسة','الفلاحة','السياحة','الصيد'],['درعة-تافيلالت','الطاقة الشمسية','السياحة الصحراوية','الواحات']])),
+   o:['جميع الجهات الأربع تتنوع مشاريعها (3 قطاعات كل منها) — تنوع يُعزِّز المناعة الاقتصادية','درعة فقط','الدار البيضاء وحدها','لا تنوع في أي جهة'],a:0},
+  {lv:'b2',q:'مشاريع التنمية الجهوية ستُحقِّق أهدافها دون مشاركة السكان.',t:'tf',
+   correct:false,corr:'خطأ. نجاح مشاريع التنمية مشروط بمشاركة السكان وانخراطهم.'},
+  {lv:'b3',q:'انطلاقاً من الجدول، قدِّم تقريراً مقارناً بين جهتَيْن في مجال التنمية.',t:'mcq',
+   sup:S('task','📝 المهمة','أين أفضل مكان للاستثمار السياحي في المغرب؟'),
+   o:['سوس-ماسة: سياحة شاطئية+ثقافية+فلاحية = متكاملة / درعة: سياحة صحراوية فريدة. الاختيار حسب نوع السياحة','الدار البيضاء للسياحة فقط','لا سياحة في المغرب','جميعها متساوية'],a:0,
+   model:'| المعيار | سوس-ماسة | درعة |\n|---|---|---|\n| نوع السياحة | شاطئية+جبلية | صحراوية+واحات |\n| الموسم | طول السنة | أكتوبر-أبريل |\n\nالتوصية: سوس-ماسة للاستثمار الآمن / درعة للسياحة البديلة'},
+  {lv:'b1',q:'ما الفرق بين مشروع التنمية والمبادرة التنموية؟',t:'mcq',o:['المشروع: خطة منظَّمة بأهداف وموارد وجدول زمني / المبادرة: فكرة في طور التبلور تسبق المشروع','كلاهما متطابقان','المبادرة أشمل من المشروع','المشروع أقل تنظيماً'],a:0},
+  {lv:'b2',q:'لاحظ الجدول واستنتج: ما المشروع التنموي الأكبر قيمة استثمارية؟',t:'mcq',
+   sup:S('stat','📊 مشاريع تنموية كبرى بالمغرب',TABLE(['المشروع','الجهة','التكلفة (مليار درهم)'],[['نور ورزازات (طاقة شمسية)','درعة','18'],['ميناء طنجة المتوسط','طنجة','24'],['طريق سريع تطوان-الحسيمة','الشمال','15'],['مشروع أكادير الكبير','سوس-ماسة','8']])),
+   o:['ميناء طنجة المتوسط (24 مليار درهم) — الأكبر استثماراً','نور ورزازات','الطريق السريع','مشروع أكادير'],a:0},
+  {lv:'b2',q:'المشاريع التنموية الكبرى تُنجَز دائماً في الآجال المحددة.',t:'tf',
+   correct:false,corr:'خطأ. كثير من المشاريع تعرَّضت لتأخيرات بسبب التعقيدات التقنية أو المالية أو البيروقراطية.'},
+  {lv:'b3',q:'قيِّم أثر مشروع الطاقة الشمسية (نور ورزازات) على التنمية المستدامة.',t:'mcq',
+   sup:S('task','📝 المهمة','مجمَّع نور للطاقة الشمسية يُنتج طاقة نظيفة. ما أثره البيئي والاقتصادي والاجتماعي؟'),
+   o:['البيئي: تقليص ثاني أكسيد الكربون + الاقتصادي: تصدير الطاقة + الاجتماعي: شغل محلي + تقليص فاتورة الطاقة = أثر تنموي متكامل','أثر بيئي فقط','لا أثر اقتصادي','يضر بالبيئة'],a:0,
+   model:'تقييم مشروع نور:\n🌿 البيئي:\n• 760,000 طن CO2 أقل/سنة\n• طاقة نظيفة 580 ميغاواط\n💰 الاقتصادي:\n• تصدير طاقة لأوروبا\n• توفير 250 مليون دولار سنوياً\n👥 الاجتماعي:\n• 4000 منصب شغل\n• تنمية ورزازات'},
+  {lv:'b3',q:'ما العوامل التي يجب توفرها لنجاح المشاريع التنموية الجهوية؟',t:'mcq',
+   sup:S('task','📝 المهمة','بعض المشاريع التنموية تفشل رغم التمويل. ما العوامل الضرورية للنجاح؟'),
+   o:['عوامل النجاح: دراسة جدوى صادقة + مشاركة السكان + جودة التنفيذ + متابعة صارمة + استدامة ما بعد الإنجاز + شفافية مالية','التمويل وحده كافٍ','السرعة في التنفيذ الأهم','لا عوامل محددة للنجاح'],a:0,
+   model:'شروط نجاح المشاريع التنموية:\n1️⃣ دراسة جدوى: اقتصادية + بيئية + اجتماعية\n2️⃣ مشاركة: السكان المحليون شركاء\n3️⃣ تنفيذ: شركات كفؤة + رقابة صارمة\n4️⃣ متابعة: تقارير دورية + تقييم\n5️⃣ استدامة: بعد الإنجاز لا إهمال\n6️⃣ شفافية: نشر الحسابات'}
+
+]},
+c11:{lv:'k',nm:'نساهم في تنمية جماعتنا — مشاريع المواطنة الفاعلة',qs:[
+  {lv:'k1',q:'حدِّد ثلاثة أشكال من مشاركة الشباب في تنمية الجماعة.',t:'mcq',o:['مشاريع التشجير + حملات النظافة + العرائض المدنية + العمل التطوعي','الترشح للانتخابات فقط','الانتقاد دون مشاركة','لا دور للشباب'],a:0},
+  {lv:'k1',q:'العمل التطوعي في الجمعيات المدنية هو شكل من أشكال المواطنة الفاعلة.',t:'tf',correct:true,corr:'نعم. التطوع تجسيد حقيقي للمسؤولية الجماعية.'},
+  {lv:'k2',q:'لاحظ وصف مشروع المواطنة وقيِّم فعاليته.',t:'mcq',
+   sup:S('doc','📋 مشروع: تشجير حي السلام','الفريق: 12 تلميذاً. الهدف: غرس 100 شجرة. المراحل: طلب تصريح + شراء الشتلات + يوم الغرس. النتيجة: 87 شجرة + شراكة مع الجماعة.'),
+   o:['مشروع ناجح: خطوات منظَّمة + شراكة مع الجماعة + 87% إنجاز','فاشل لأنه لم يُنجز 100%','غير مفيد','13 شجرة ناقصة تجعله فاشلاً'],a:0},
+  {lv:'k2',q:'الشراكة مع الجماعة ضرورية لنجاح المشاريع المحلية.',t:'tf',correct:true,corr:'نعم. الجماعة تُقدِّم الدعم الرسمي — الشراكة تُعزِّز الاستدامة.'},
+  {lv:'k3',q:'صمِّم مشروعاً مواطناً لتنمية حيِّك أو قريتك.',t:'mcq',
+   sup:S('task','📝 المهمة','فكِّر في مشكل في محيطك وصمِّم مشروعاً لحله.'),
+   o:['مشروع: مكتبة حي / الهدف: تشجيع القراءة / الفريق: 8 تلاميذ / الموارد: كتب بتبرعات + مكان في مقر الجماعة / المؤشر: 200 كتاب + 50 منخرط','مشروع بدون هدف','بدون فريق','بلا موارد'],a:0,
+   model:'بطاقة المشروع المواطن:\n📌 الاسم: مكتبة الحي\n🎯 الهدف: تشجيع القراءة\n👥 الفريق: 8-10 تلاميذ\n📅 المدة: شهر واحد\n💰 الموارد: تبرعات + دار الشباب\n📊 مؤشر النجاح: 200 كتاب + 50 منتسب'},
+  {lv:'k1',q:'ما الفرق بين التضامن الإلزامي والتضامن التطوعي؟',t:'mcq',o:['الإلزامي: مفروض بالقانون (الضرائب، التأمين) / التطوعي: من قناعة شخصية (تبرعات، جمعيات)','كلاهما متطابقان','التطوعي مفروض','الإلزامي أفضل دائماً'],a:0},
+  {lv:'k2',q:'لاحظ الجدول واستنتج: ما المبادرة التضامنية الأكثر أثراً؟',t:'mcq',
+   sup:S('stat','📊 مبادرات تضامنية مدرسية',TABLE(['المبادرة','عدد المستفيدين','الوقت المستغرق'],[['جمع ملابس','40 أسرة','5 أيام'],['حصص دعم تعليمي','15 تلميذاً','شهر'],['تشجير الحي','الحي كله','يوم واحد'],['زيارة دار الشيخوخة','30 مسناً','نصف يوم']])),
+   o:['جمع الملابس أكبر عدد من المستفيدين (40 أسرة) / الحي الأوسع نطاقاً (الجميع) — الأكثر أثراً يعتمد على المعيار: الكم أو العمق','جمع الملابس وحده','دار الشيخوخة الأفضل','الدعم التعليمي الأهم'],a:0},
+  {lv:'k2',q:'التضامن مع الضعفاء واجب أخلاقي بغض النظر عن الانتماء.',t:'tf',
+   correct:true,corr:'نعم. الإنسانية المشتركة تُلزمنا جميعاً بالتضامن مع كل مَن يحتاج المساعدة بصرف النظر عن الجنسية أو الدين أو الانتماء.'},
+  {lv:'k3',q:'ما الفرق بين الإحسان المؤقت والمشاركة الدائمة في التنمية الاجتماعية؟',t:'mcq',
+   sup:S('task','📝 المهمة','تبرع لأسرة فقيرة بغذاء لأسبوع / مشروع لإيجاد فرصة عمل لرب الأسرة. ما الأجدى؟'),
+   o:['الإحسان المؤقت يُساعد في الأزمة / لكن المشاركة الدائمة (تدريب + شغل) تُحقِّق الاستقلالية الدائمة — الثانية أعمق أثراً','الإحسان أفضل دائماً','المشاركة مكلفة بلا فائدة','كلاهما متساويان في الأثر'],a:0,
+   model:'الإحسان vs المشاركة:\n❤️ الإحسان: أسرع + مباشر في الأزمة\n⚙️ المشاركة: أعمق + يُعطي أدوات الاستقلال\n\nالتكامل المثالي:\n• الإحسان في الأزمات الطارئة\n• المشاركة للخروج الدائم من الهشاشة'},
+  {lv:'k3',q:'كيف تُنظِّم مشروعاً تضامنياً بشكل احترافي لضمان استدامته؟',t:'mcq',
+   sup:S('task','📝 المهمة','تُريد تأسيس نادٍ تضامني في مدرستك يستمر عاماً بعد عام. كيف تُنظِّمه؟'),
+   o:['الاستدامة: ميثاق + هيكل ثابت + تجديد سنوي للأعضاء + شراكات مع جمعيات + توثيق المنجزات + انتخاب هيئة كل سنة','نشاط لمرة واحدة','لا حاجة لتنظيم رسمي','الاستدامة مستحيلة'],a:0,
+   model:'بنية النادي التضامني المستدام:\n📜 الميثاق: أهداف + قيم + قواعد\n🗳️ الانتخاب: رئيس + كاتب + خازن\n📅 الخطة: مشروع واحد/شهر\n🤝 الشراكات: جمعيات + جماعة\n📁 التوثيق: تقرير سنوي + ذاكرة النادي\n🔄 التجديد: انتخابات بداية كل سنة'}
+
+]},
+c12:{lv:'k',nm:'تنظيم حملة تضامن مع الأشخاص في وضعية صعبة',qs:[
+  {lv:'k1',q:'ما المقصود بـ"الأشخاص في وضعية صعبة" في سياق التضامن الاجتماعي؟',t:'mcq',o:['ذوو الإعاقة + المسنِّون المحتاجون + الأسر المعوزة + أطفال الشارع','الأغنياء فقط','المرضى في المستشفيات فقط','لا أحد في وضعية صعبة'],a:0},
+  {lv:'k1',q:'التضامن الاجتماعي قيمة دينية ووطنية وإنسانية في آن واحد.',t:'tf',correct:true,corr:'نعم. التضامن جوهر المجتمع المتماسك — يُوصي به الدين ويُكرِّسه الدستور.'},
+  {lv:'k2',q:'لاحظ حملة التضامن وقيِّم مدى نجاحها.',t:'mcq',
+   sup:S('doc','📋 حملة: قافلة الملابس','الفريق: 20 تلميذاً. التوعية بالإذاعة المدرسية. النتيجة: 350 قطعة ملابس لـ40 أسرة.'),
+   o:['حملة ناجحة: تنظيم جيد + شراكات + أثر ملموس (350 قطعة لـ40 أسرة)','حملة فاشلة','350 قطعة قليلة','لا أثر للحملة'],a:0},
+  {lv:'k2',q:'العطاء الحقيقي يشمل الوقت والجهد وليس المال فقط.',t:'tf',correct:true,corr:'نعم. تقديم الوقت والمهارة هو أيضاً عطاء قيِّم.'},
+  {lv:'k3',q:'خطِّط لحملة تضامن مع ذوي الإعاقة في مدرستك.',t:'mcq',
+   sup:S('task','📝 المهمة','في مدرستك 3 تلاميذ من ذوي الإعاقة البصرية. خطِّط لحملة توعية وتضامن.'),
+   o:['1-لقاء تحسيسي عن الإعاقة 2-يوم "أعيش يوم معصوب العينَيْن" 3-دعم مواد القراءة بالبرايل 4-تشكيل مجموعات مساعدة','تجاهل التلاميذ','جمع المال فقط','حفلة دون فعل'],a:0,
+   model:'خطة حملة التضامن:\n1⃣ التوعية:\n• ورشة عن الإعاقة البصرية\n• يوم تجريبي "الحياة بدون بصر"\n2⃣ الدعم العملي:\n• توفير مواد البرايل\n• مجموعات مساعدة في الفصل\n3⃣ رفع توصية للجماعة\n4⃣ التقييم: استبيان لقياس الأثر'},
+  {lv:'k1',q:'ما المقصود بـ"التضمين الاجتماعي" (الإدماج) لذوي الإعاقة؟',t:'mcq',o:['ضمان وصول ذوي الإعاقة لنفس الفرص والخدمات والمشاركة مثل غيرهم','عزل ذوي الإعاقة في مؤسسات خاصة','تقديم المساعدة المادية فقط','الاعتناء بهم في البيت'],a:0},
+  {lv:'k2',q:'لاحظ الجدول واستنتج: ما الفئة التي تعاني أكثر من الإقصاء الاجتماعي بالمغرب؟',t:'mcq',
+   sup:S('stat','📊 مؤشرات الإقصاء الاجتماعي',TABLE(['الفئة','نسبة العمل','الوصول للتعليم','الوصول للصحة'],[['ذوو الإعاقة','15%','40%','55%'],['ساكنة الأرياف النائية','45%','70%','60%'],['النساء في البادية','22%','80%','75%'],['الأسر المعوزة','30%','85%','65%']])),
+   o:['ذوو الإعاقة: نسب أدنى في الشغل (15%) والتعليم (40%) — الأكثر إقصاءً','ساكنة الأرياف','النساء في البادية','الأسر المعوزة'],a:0},
+  {lv:'k2',q:'بناء المصاعد في المباني العمومية يُعدُّ رفاهية لا ضرورة.',t:'tf',
+   correct:false,corr:'خطأ. إمكانية الوصول للمباني العمومية حق دستوري لذوي الإعاقة — المصعد ضرورة لا رفاهية.'},
+  {lv:'k3',q:'صمِّم "ميثاق المدرسة الشاملة" الذي يضمن إدماج التلاميذ ذوي الإعاقة.',t:'mcq',
+   sup:S('task','📝 المهمة','مدرستك تُريد أن تكون "مدرسة شاملة" تُدمج التلاميذ ذوي الإعاقة. ما مقتضيات الميثاق؟'),
+   o:['الميثاق: بيئة ملائمة (ممرات + مصاعد) + مواد مكيَّفة + تكوين الأساتذة + مجموعات مساعدة + رفض كل شكل من التمييز','إعفاء ذوي الإعاقة من الدراسة','مدارس خاصة منفصلة','لا حاجة لتكييف'],a:0,
+   model:'ميثاق المدرسة الشاملة:\n🏗️ البيئة: ممرات + حمامات مُكيَّفة\n📚 التعليم: مناهج مُكيَّفة + وقت إضافي\n👨‍🏫 التكوين: تدريب الأساتذة على الشمولية\n👥 المجتمع: مجموعات دعم من الزملاء\n🚫 المناخ: صفر تمييز وصفر تنمر\n📋 القانون: احترام مدونة حماية الأشخاص'},
+  {lv:'k3',q:'كيف يُمكن تحويل تجربة حملة التضامن إلى ثقافة مستمرة في المدرسة؟',t:'mcq',
+   sup:S('task','📝 المهمة','حملة التضامن انتهت. كيف تُحوِّل أثرها إلى ثقافة دائمة في مدرستك؟'),
+   o:['التحويل: دمج التضامن في حياة القسم اليومية + نادٍ تضامني دائم + تكريم المبادرات + توثيق التجارب + إشراك الآباء','حملة استثنائية لا تتكرر','التضامن يُضعف التنافسية','لا يمكن أن يكون ثقافة دائمة'],a:0,
+   model:'تحويل الحدث إلى ثقافة:\n📆 اليومي: دقيقة تضامن في بداية الأسبوع\n🏆 التكريم: جائزة المبادرة التضامنية\n📖 التوثيق: كتاب التجارب التضامنية\n👨‍👩‍👧 الآباء: إشراكهم في المشاريع\n🌱 الزرع: التضامن = قيمة لا حدث'}
+
+]},
+};
+const ALLDATA={...DATA,...DATA2};
+const DATA3={};
+const FINALDATA={...ALLDATA,...DATA3};
+
+
+/* ═══ UNITS CONFIG ═══ */
+const UNITS=[
+  /* ═══ الأسدوس الأول ═══ */
+  {id:'u1',nm:'المغرب — مهد الإنسان والحضارات الأمازيغية',ls:[
+    {id:'h1',tp:'h',nm:'المغرب مهد الإنسان — منهجية عمل المؤرخ ومواقع ما قبل التاريخ'},
+    {id:'h2',tp:'h',nm:'المغرب القديم — مظاهر الحضارة الأمازيغية'},
+    {id:'g1',tp:'g',nm:'خريطة العالم المسطحة — قراءة خريطة العالم والكرة الأرضية'},
+    {id:'g2',tp:'g',nm:'مواقع النطاقات المناخية الكبرى على الخريطة'},
+    {id:'c1',tp:'c',nm:'أحترم القوانين — الحرية والمسؤولية'},
+    {id:'c2',tp:'c',nm:'أشارك في مجلس القسم وانتخاب مكاتبه'},
+  ]},
+  {id:'u2',nm:'المغرب القديم — التأثيرات الحضارية والدولة المرابطية',ls:[
+    {id:'h3',tp:'h',nm:'المغرب القديم — الاحتلال الروماني والمقاومة الأمازيغية'},
+    {id:'h4',tp:'h',nm:'المغرب في عهد المرابطين — توحيد البلاد وانتشار الإسلام'},
+    {id:'g3',tp:'g',nm:'المميزات الطبيعية للمغرب — السهول والأحواض المائية'},
+    {id:'g4',tp:'g',nm:'مميزات وطني — الثروة النباتية والحيوانية'},
+    {id:'c3',tp:'c',nm:'أعبِّر عن رأيي وأحترم رأي الآخر'},
+    {id:'c4',tp:'c',nm:'أستقل بتعلمي — أُنمِّي قدرتي على التعلم الذاتي'},
+  ]},
+  {id:'u3',nm:'المغرب في عهد الموحدين والمرينيين',ls:[
+    {id:'h5',tp:'h',nm:'المغرب في عهد الموحدين — تميُّز في الهندسة المعمارية'},
+    {id:'h6',tp:'h',nm:'المغرب في عهد المرينيين — الإبداع الحضاري والمكانة الدولية'},
+    {id:'g5',tp:'g',nm:'المميزات الطبيعية — الثروة السمكية والمعدنية'},
+    {id:'g6',tp:'g',nm:'مميزات وطني — الواجهتان البحريتان'},
+    {id:'c5',tp:'c',nm:'أتعلم تدبير الاختلاف وحل النزاعات بطريقة سلمية'},
+    {id:'c6',tp:'c',nm:'أُنجز مشروعاً تربوياً — التخطيط والتنفيذ والعرض'},
+  ]},
+  /* ═══ الأسدوس الثاني ═══ */
+  {id:'u4',nm:'المغرب في عهد السعديين والعلويين الأوائل',ls:[
+    {id:'h7',tp:'h',nm:'المغرب في عهد المرينيين — الوثائق والشهادات التاريخية'},
+    {id:'h8',tp:'h',nm:'المغرب في عهد العلويين — السلطان سيدي محمد بن عبد الله وانفتاح المغرب على المحيط'},
+    {id:'g7',tp:'g',nm:'الغطاء النباتي والثروة الحيوانية — قراءة خريطة'},
+    {id:'g8',tp:'g',nm:'مميزات وطني — مميزات وطني: الموارد الفلاحية'},
+    {id:'c7',tp:'c',nm:'المساواة بين الرجال والنساء — الحق الدستوري والواقع'},
+    {id:'c8',tp:'c',nm:'الديمقراطية المحلية — مجلس الجماعة الحضرية والقروية'},
+  ]},
+  {id:'u5',nm:'المغرب في عهد العلويين — التحديات والإصلاحات',ls:[
+    {id:'h9',tp:'h',nm:'المغرب في عهد العلويين — السلطان سيدي محمد بن عبد الله والمكانة الدولية'},
+    {id:'h10',tp:'h',nm:'المغرب في القرن التاسع عشر — المبادرات الإصلاحية ومواجهة الاستعمار'},
+    {id:'g9',tp:'g',nm:'مميزات وطني — تنوع السكان وتوزعهم الجغرافي'},
+    {id:'g10',tp:'g',nm:'مميزات وطني — التقسيم الجهوي وخصائص كل جهة'},
+    {id:'c9',tp:'c',nm:'نزور مقر جماعتنا ونتعرف على دورها في التنمية المحلية'},
+    {id:'c10',tp:'c',nm:'محاكاة اجتماع المجلس الجماعي — اتخاذ القرار الجماعي'},
+  ]},
+  {id:'u6',nm:'المغرب — الاستقلال وبناء الدولة الحديثة',ls:[
+    {id:'h11',tp:'h',nm:'المغرب في القرن التاسع عشر — النضال ضد الاستعمار وتحقيق الاستقلال'},
+    {id:'h12',tp:'h',nm:'المغرب الحديث — استكمال الوحدة الترابية وبناء الدولة'},
+    {id:'g11',tp:'g',nm:'مميزات وطني — أنشطة السكان بين التقليدي والعصري'},
+    {id:'g12',tp:'g',nm:'مميزات وطني — التقسيم الجهوي ومشاريع التنمية'},
+    {id:'c11',tp:'c',nm:'نساهم في تنمية جماعتنا — مشاريع المواطنة الفاعلة'},
+    {id:'c12',tp:'c',nm:'تنظيم حملة تضامن مع الأشخاص في وضعية صعبة'},
+  ]},
+];
+
+/* ═══ ALSO LINK g7/g8/g9/g10 to existing data keys ═══ */
+/* g7 → reuse g3 questions style, g8 → g4, g9 → g6, g10 → g5 */
+const FALLBACK={
+  g7:FINALDATA.g3, g8:FINALDATA.g4,
+  g9:FINALDATA.g6, g10:FINALDATA.g5,
+  h11:FINALDATA.h9, h12:FINALDATA.h10,
+};
+function getLessonData(id){
+  return FINALDATA[id] || FALLBACK[id] || null;
+}
+
+/* ═══ STATE ═══ */
+const LET=['أ','ب','ج','د'];
+const TLBL={b1:'م1 — تذكر',b2:'م2 — فهم',b3:'م3 — تطبيق',k1:'ك1 — استقبال',k2:'ك2 — استجابة',k3:'ك3 — تقييم'};
+const TSEP={
+  b1:'🔵 المستوى 1 — التذكر',b2:'🟡 المستوى 2 — الفهم + دعامة',b3:'🔷 المستوى 3 — التطبيق + دعامة + نموذج الجواب',
+  k1:'🟢 الاستقبال (التعرُّف)',k2:'🟠 الاستجابة (التعبير) + دعامة',k3:'🟣 التقييم (الالتزام) + دعامة + نموذج الجواب',
+};
+const TCSS={b1:'b1',b2:'b2',b3:'b3',k1:'k1',k2:'k2',k3:'k3'};
+
+let CU=null, CL=null, ANS={};
+
+/* ═══ RENDER UNITS ═══ */
+function renderUnits(){
+  const UCOL=['gr','bl','pu','or','cy','ro'];
+  const g=document.getElementById('ug');
+  g.innerHTML='';
+  UNITS.forEach((u,ui)=>{
+    const col=UCOL[ui%UCOL.length];
+    const d=document.createElement('div');
+    d.className='uc';
+    const lc=u.ls.length;
+    const ls=u.ls.map(l=>{
+      const ic=l.tp==='h'?'📜':l.tp==='g'?'🗺️':'⚖️';
+      const ac=CL===l.id?(l.tp==='h'?' ha':l.tp==='g'?' ga':' ca'):'';
+      const lbl=l.tp==='h'?'تاريخ':l.tp==='g'?'جغرافيا':'مدنية';
+      return`<div class="lb${ac}" onclick="openLesson('${u.id}','${l.id}')">
+        <div class="li ${l.tp}">${ic}</div>
+        <div class="ln">${l.nm}</div>
+        <span class="llb ${l.tp}">${lbl}</span>
+      </div>`;
+    }).join('');
+    d.innerHTML=`<div class="uch ${col}"><div class="uch-bg"></div><div class="uch-inner"><div class="ucn">${u.ic||ui+1}</div><div class="uch-txt"><h3>${u.nm}</h3><p>${['','درس','درسان','ثلاثة دروس','أربعة دروس','خمسة دروس','ستة دروس','سبعة دروس','ثمانية دروس','تسعة دروس','عشرة دروس'][lc]||lc+' دروس'} تفاعلية</p></div><div class="uch-count">${lc} 📚</div></div></div><div class="ucl">${ls}</div>`;
+    g.appendChild(d);
+  });
+}
+
+/* ═══ OPEN LESSON ═══ */
+function openLesson(uid,lid){
+  CU=uid; CL=lid; ANS={};
+  renderUnits();
+  const u=UNITS.find(x=>x.id===uid);
+  const l=u.ls.find(x=>x.id===lid);
+  const ld=getLessonData(lid);
+  if(!ld){
+    alert('بيانات هذا الدرس غير متوفرة بعد.');
+    return;
+  }
+  const qz=document.getElementById('quiz');
+  qz.style.display='block';
+  renderQuiz(l,ld);
+  qz.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+/* ═══ BUILD QUIZ HEADER ═══ */
+function buildHeader(l,qs){
+  const done=qs.filter((_,qi)=>ANS[qi]!==undefined).length;
+  const ok=qs.filter((_,qi)=>ANS[qi]!==undefined&&isOk(qs[qi],qi)).length;
+  const pct=qs.length?Math.round(done/qs.length*100):0;
+  const SLBL={h:'📜 التاريخ',g:'🗺️ الجغرافيا',c:'⚖️ التربية المدنية'};
+  return`<div class="qhdr ${l.tp}">
+    <div class="qhr">
+      <div style="flex:1">
+        <div class="qhbdg">${SLBL[l.tp]}</div>
+        <div class="qhtit">${l.nm}</div>
+        <div class="qpb"><div class="qpf" style="width:${pct}%"></div></div>
+        <div class="qpt">${done}/${qs.length} سؤالاً أُجيب عنه • ${ok} صحيح</div>
+      </div>
+      <button class="qcls" onclick="closeQuiz()">✕ إغلاق</button>
+    </div>
+  </div>`;
+}
+
+/* ═══ RENDER QUIZ ═══ */
+function renderQuiz(l,ld){
+  const qs=ld.qs;
+  let html=buildHeader(l,qs);
+  html+=`<div class="qbody">`;
+  let lastLv=null;
+  qs.forEach((q,qi)=>{
+    if(q.lv!==lastLv){
+      lastLv=q.lv;
+      html+=`<div class="lvsep ${TCSS[q.lv]}">${TSEP[q.lv]||q.lv}</div>`;
+    }
+    html+=renderQCard(q,qi,l.tp);
+  });
+  if(qs.every((_,qi)=>ANS[qi]!==undefined)) html+=renderScore(qs);
+  html+=`</div>`;
+  document.getElementById('quiz').innerHTML=html;
+  attachHandlers(l,ld);
+}
+
+/* ═══ RENDER Q CARD ═══ */
+function renderQCard(q,qi,tp){
+  const done=ANS[qi]!==undefined;
+  const ok=done&&isOk(q,qi);
+  const cc=done?(ok?'ok':'ko'):'';
+  const supH=q.sup?q.sup:'';
+  const body=q.t==='tf'?renderTF(q,qi,done):renderMCQ(q,qi,done);
+  const fbH=done?`<div class="fbk ${ok?'ok':'ko'}"><span class="fbk-ico">${ok?'✅':'❌'}</span><span>${ok?'إجابة صحيحة!':`${q.t==='tf'&&q.corr?q.corr:'الإجابة الصحيحة: '+(q.o?.[q.a]||'')}`}</span></div>`:'';
+  let modelH='';
+  if(q.model){
+    const show=done&&!ok;
+    modelH=`<div class="model">
+      <div class="model-h" onclick="toggleModel(${qi})"><div class="model-h-left">⭐ نموذج الجواب المتوقع</div><span class="model-arr">${show?'▲':'▼'}</span></div>
+      <div class="model-b${show?' open':''}" id="mb${qi}">${q.model}</div>
+    </div>`;
+  }
+  return`<div class="qc ${cc}" id="qc${qi}">
+    <div class="qch">
+      <div class="qnum ${tp}">${qi+1}</div>
+      <div class="qtx">${q.q}</div>
+      <div class="qtags">
+        <span class="ltag ${q.lv}">${TLBL[q.lv]||q.lv}</span>
+        <span class="ttype">${q.t==='tf'?'✓✗ صح/خطأ':'◉ اختيار'}</span>
+      </div>
+    </div>
+    ${supH}${body}${fbH}${modelH}
+  </div>`;
+}
+
+function renderMCQ(q,qi,done){
+  return`<div class="opts">${(q.o||[]).map((o,oi)=>{
+    let c='opt';
+    if(done){
+      c+=' dis';
+      if(oi===q.a) c+=' rv';
+      if(oi===ANS[qi]&&ANS[qi]!==q.a) c+=' ko';
+      if(oi===ANS[qi]&&ANS[qi]===q.a) c+=' ok';
+    }
+    return`<div class="${c}" data-qi="${qi}" data-oi="${oi}">
+      <span class="olet">${LET[oi]||oi}</span><span>${o}</span>
+    </div>`;
+  }).join('')}</div>`;
+}
+
+function renderTF(q,qi,done){
+  const ua=ANS[qi];
+  let sc='tfb',kc='tfb';
+  if(done){
+    sc+=' dis'; kc+=' dis';
+    if(q.correct===true) sc+=' sah'; else kc+=' kha';
+    if(ua===true&&q.correct===false) sc+=' kha';
+    if(ua===false&&q.correct===true) kc+=' kha';
+  }
+  return`<div class="tfr">
+    <button class="${sc} tfb-t" data-qi="${qi}" data-v="true">✅ صحيح</button>
+    <button class="${kc} tfb-f" data-qi="${qi}" data-v="false">❌ خطأ</button>
+  </div>`;
+}
+
+/* ═══ HANDLERS ═══ */
+function attachHandlers(l,ld){
+  document.querySelectorAll('.opt:not(.dis)').forEach(el=>{
+    el.addEventListener('click',()=>{
+      const qi=+el.dataset.qi, oi=+el.dataset.oi;
+      if(ANS[qi]!==undefined) return;
+      ANS[qi]=oi;
+      animate(qi, oi===ld.qs[qi].a);
+      setTimeout(()=>renderQuiz(l,ld),300);
+    });
+  });
+  document.querySelectorAll('.tfb:not(.dis)').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const qi=+btn.dataset.qi, v=btn.dataset.v==='true';
+      if(ANS[qi]!==undefined) return;
+      ANS[qi]=v;
+      animate(qi, v===ld.qs[qi].correct);
+      setTimeout(()=>renderQuiz(l,ld),300);
+    });
+  });
+}
+
+function toggleModel(qi){
+  const mb=document.getElementById('mb'+qi);
+  if(mb) mb.classList.toggle('open');
+}
+
+function animate(qi,ok){
+  const c=document.getElementById('qc'+qi);
+  if(c){ c.classList.add(ok?'pp':'sk'); setTimeout(()=>c.classList.remove('pp','sk'),400); }
+}
+
+/* ═══ SCORING ═══ */
+function isOk(q,qi){
+  if(q.t==='tf') return ANS[qi]===q.correct;
+  return ANS[qi]===q.a;
+}
+function renderScore(qs){
+  const ok=qs.filter((_,qi)=>ANS[qi]!==undefined&&isOk(qs[qi],qi)).length;
+  const tot=qs.length;
+  const pct=Math.round(ok/tot*100);
+  const em=pct>=80?'🏆':pct>=60?'⭐':'📖';
+  const msg=pct>=80?'ممتاز!':pct>=60?'جيد!':'راجع الدرس';
+  const sub=pct>=80?'أداء متميِّز، واصل!':pct>=60?'راجع الأسئلة الخاطئة.':'أعِد المراجعة ثم حاول.';
+  const col=pct>=80?'#16A34A':pct>=60?'#F59E0B':'#DC2626';
+  const r=46,circ=2*Math.PI*r,dash=circ*(pct/100),gap=circ-dash;
+  const byLv=[...new Set(qs.map(q=>q.lv))].map(lv=>{
+    const lqs=qs.filter(q=>q.lv===lv);
+    const lc=lqs.filter((q,i)=>{const qi=qs.indexOf(q);return ANS[qi]!==undefined&&isOk(q,qi)}).length;
+    return`<div class="bylv-item"><div class="bylv-n">${lc}/${lqs.length}</div><div class="bylv-l">${TLBL[lv]||lv}</div></div>`;
+  }).join('');
+  return`<div class="sw">
+    <div class="sc-ring">
+      <svg viewBox="0 0 110 110"><circle class="sc-bg" cx="55" cy="55" r="${r}"/><circle class="sc-fg" cx="55" cy="55" r="${r}" stroke="${col}" stroke-dasharray="${dash} ${gap}"/></svg>
+      <div class="sc-inner"><div class="sc-pct" style="color:${col}">${pct}%</div><div class="sc-sub">${ok}/${tot}</div></div>
+    </div>
+    <div class="smsg">${em} ${msg}</div>
+    <div class="ssub">${sub}</div>
+    <div class="bylv-wrap">${byLv}</div>
+    <div class="sbts">
+      <button class="btn bgr" onclick="retryLesson()">🔄 إعادة المحاولة</button>
+      <button class="btn bgo" onclick="closeQuiz()">📚 درس آخر</button>
+    </div>
+  </div>`;
+}
+
+function retryLesson(){
+  ANS={};
+  const u=UNITS.find(x=>x.id===CU);
+  const l=u.ls.find(x=>x.id===CL);
+  const ld=getLessonData(CL);
+  if(l&&ld) renderQuiz(l,ld);
+}
+
+function closeQuiz(){
+  CU=null; CL=null; ANS={};
+  document.getElementById('quiz').style.display='none';
+  document.getElementById('quiz').innerHTML='';
+  renderUnits();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ═══ INIT ═══ */
+renderUnits();
+</script>
+</body>
+</html>
